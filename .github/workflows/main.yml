@@ -3,7 +3,7 @@ name: FTP Deploy ke Hosting
 on:
   push:
     branches:
-      - main  # Pastikan sesuai dengan branch yang digunakan
+      - main 
 
 jobs:
   deploy:
@@ -19,5 +19,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./ # Folder yang akan diupload
-          server-dir: ${{ secrets.FTP_PATH }} # Lokasi di server
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_PATH }} 
