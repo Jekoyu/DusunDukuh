@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: url('https://source.unsplash.com/1600x900/?rice-field,village') no-repeat center center;
+            background: url('https://unsplash.com/photos/girl-in-white-dress-walking-on-green-grass-field-during-daytime-XMSUfFloaHU') no-repeat center center;
             background-size: cover;
             height: 100vh;
             display: flex;
