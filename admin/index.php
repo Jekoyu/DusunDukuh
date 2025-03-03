@@ -29,12 +29,15 @@
                 <div class="login-container">
                     <h3 class="text-center">Login</h3>
                     <?php
+                    session_start();
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $username = $_POST['username'];
                         $password = $_POST['password'];
                         
                         if ($username === "superadmin" && $password === "superadmin") {
-                            echo "<div class='alert alert-success text-center'>Login Berhasil!</div>";
+                            $_SESSION['username'] = $username;
+                            header("Location: dashboard.php");
+                            exit();
                         } else {
                             echo "<div class='alert alert-danger text-center'>Username atau Password Salah!</div>";
                         }
