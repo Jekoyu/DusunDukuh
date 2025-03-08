@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('../assets/images/background/hero.jpg');
+            background-image: url('../assets/heroku.webp');
             background-size: cover;
             background-position: center;
         }

@@ -20,7 +20,7 @@
     />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
 
   <body>
@@ -29,30 +29,30 @@
       <div
         class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
       >
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="index.php" class="logo d-flex align-items-center">
           <h1 class="sitename">Dusun Dukuh</h1>
           <span>.</span>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="berita.html">Berita</a></li>
+            <li><a href="index.php" class="active">Home</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="berita.php">Berita</a></li>
             <li class="dropdown">
               <a href="#"
                 ><span>Pejabat</span
                 ><i class="bi bi-chevron-down toggle-dropdown"></i
               ></a>
               <ul>
-                <li><a href="Kel-Tani.html">Kel. Tani</a></li>
+                <li><a href="Kel-Tani.php">Kel. Tani</a></li>
                 <li><a href="#">Kel. Maggot</a></li>
                 <li><a href="#">Kel. Pemuda</a></li>
                 <li><a href="#">PKK</a></li>
                 <li><a href="#">LPMKAL</a></li>
               </ul>
             </li>
-            <li><a href="grografis.html">Geografis</a></li>
+            <li><a href="grografis.php">Geografis</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -114,7 +114,7 @@
     <section class="about">
       <div class="about-img">
         <img
-          src="/assets/Staff/Kades.png"
+          src="assets/Staff/Kades.png"
           alt=""
           class="fade-in-image"
           class="touch-animate-img"
@@ -306,7 +306,7 @@
         <div class="footer-brand">
           <div class="logo-image-container">
             <img
-              src="/assets/Logodesa.png"
+              src="assets/Logodesa.png"
               alt="Logo Desa Sinduharjo"
               class="footer-logo"
             />
@@ -408,14 +408,12 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fyI8V1JwF5Z8D4If6q8BheOB5rj00F2UJ49Yo8"
-      crossorigin="anonymous"
     />
 
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
-      href="/vendor/bootstrap-icons/bootstrap-icons.min.css"
+      href="vendor/bootstrap-icons/bootstrap-icons.min.css"
     />
 
     <!-- PureCounter.js -->
