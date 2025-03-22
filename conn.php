@@ -14,5 +14,5 @@ $conn = new mysqli($host, $username, $password, $dbname, $port);
 if ($conn->connect_error) {
     die("❌ Koneksi Gagal: " . $conn->connect_error);
 }
-echo "✅ Koneksi Berhasil!";
+// echo "✅ Koneksi Berhasil!";
 ?>
