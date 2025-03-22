@@ -102,12 +102,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1 class="h3 mb-2 text-gray-800">Identitas Bisnis</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Identitas</h1>
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                                    <h6 class="m-0 font-weight-bold text-primary">Identitas Bisnis</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Identitas</h6>
                                 </div>
                                 <div class="card-body">
                                     <form id="editForm" action="" method="post" enctype="multipart/form-data">
@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="col-lg-4">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Identitas Bisnis</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Identitas</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-3 text-center">
