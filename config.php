@@ -19,4 +19,4 @@ function loadEnv($path)
 }
 
 // Panggil fungsi untuk membaca .env
-loadEnv('./.env');
+loadEnv(__DIR__ . '/.env');
