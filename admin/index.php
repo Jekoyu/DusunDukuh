@@ -23,15 +23,26 @@ include 'partials/head.php';
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <div class="card shadow mb-4">
+                    <div class="card shadow  mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
                             <h6 class="m-0 font-weight-bold text-primary">Artikel</h6>
                             <a href="tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <div class="form-group row">
+                                    <label for="statusFilter" class="col-sm-2 col-form-label">Filter Status</label>
+                                    <div class="col-sm-2">
+                                        <select id="statusFilter" class="form-control form-control-sm">
+                                            <option value="">All</option>
+                                            <option value="published">Published</option>
+                                            <option value="draft">Draft</option>
+                                            <option value="archived">Archived</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <table class="table table-bordered table-stiped" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr class="text-center">
                                             <th>#</th>
@@ -76,19 +87,24 @@ include 'partials/head.php';
     ?>
     <script>
         $(document).ready(function() {
-            $('#dataTable').DataTable({
+            var table = $('#dataTable').DataTable({
                 "ajax": "data.php",
                 "columns": [{
                         "data": null,
                         "render": function(data, type, row, meta) {
-                            return meta.row + 1;
+                            return meta.row + 1 + table.page.info().start;
                         }
                     },
                     {
                         "data": "title"
                     },
                     {
-                        "data": "content"
+                        "data": "content",
+                        "render": function(data, type, row) {
+                            var words = data.split(' ');
+                            var truncatedContent = words.slice(0, 5).join(' ') + (words.length > 5 ? '...' : '');
+                            return truncatedContent;
+                        }
                     },
                     {
                         "data": "status",
@@ -101,19 +117,23 @@ include 'partials/head.php';
                             } else if (data == "draft") {
                                 return '<span class="badge badge-warning">' + "Draft" + '</span>';
                             }
-
                         }
                     },
                     {
-                        // "data": "scheduled_at",
+                        "data": "scheduled_at",
                         "class": "text-center",
                         "render": function(data, type, row) {
-                            if (row.status == "published") {
+                            if (row.status == "published" || row.status == "archived") {
                                 return '-';
-                            } else if (row.status == "archived") {
-                                return '-';
-                            }else {
-                                return row.scheduled_at;
+                            } else {
+                                const date = new Date(data);
+                                const options = {
+                                    weekday: 'long',
+                                    day: 'numeric',
+                                    month: 'long',
+                                    year: 'numeric'
+                                };
+                                return new Intl.DateTimeFormat('id-ID', options).format(date);
                             }
                         }
                     },
@@ -122,24 +142,39 @@ include 'partials/head.php';
                         "class": "text-center",
                         "render": function(data, type, row) {
                             return `
-                                <div class="dropdown">
-                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-bars"></i>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="edit.php?id=${row.id}">
-                                            <i class="fas fa-edit"></i> Edit
-                                        </a>
-                                        <a class="dropdown-item" href="delete.php?id=${row.id}" onclick="return confirm('Apakah anda yakin untuk mengarsipkan artikel?');">
-                                            <i class="fas fa-archive"></i> Archive
-                                        </a>
-                                    </div>
-                                </div>
-                            `;
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="edit.php?id=${row.id}">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                                <a class="dropdown-item" href="delete.php?id=${row.id}" onclick="return confirm('Apakah anda yakin untuk mengarsipkan artikel?');">
+                                    <i class="fas fa-archive"></i> Archive
+                                </a>
+                            </div>
+                        </div>
+                    `;
                         }
+                    },
+                    {
+                        "data": "created_at",
+                        "visible": false
                     }
-
+                ],
+                "order": [
+                    [6, 'desc']
                 ]
+            });
+
+            $('#statusFilter').on('change', function() {
+                var statusFilter = $(this).val();
+                if (statusFilter) {
+                    table.column(3).search(statusFilter).draw(); 
+                } else {
+                    table.column(3).search('').draw();
+                }
             });
         });
     </script>

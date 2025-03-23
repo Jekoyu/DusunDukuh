@@ -1,99 +1,138 @@
 <?php
 include '../conn.php';
-
-function logError($message)
-{
-    error_log($message, 3, '../log/php-errors.log');
-}
-
+date_default_timezone_set('Asia/Jakarta');
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-
+    $post_id = $_GET['id'];
     $stmt = $conn->prepare("SELECT * FROM posts WHERE id = ?");
-    if ($stmt === false) {
-        logError("Prepare failed: " . htmlspecialchars($conn->error));
-        die("Prepare failed: " . htmlspecialchars($conn->error));
-    }
-    $stmt->bind_param('s', $id);
+    $stmt->bind_param("i", $post_id);
     $stmt->execute();
     $result = $stmt->get_result();
-    $data = $result->fetch_assoc();
+    $post = $result->fetch_assoc();
 
-    if (!$data) {
-        logError("Data not found for ID: " . $id);
-        echo "Data tidak ditemukan!";
-        exit();
+    if (!$post) {
+        die("Artikel tidak ditemukan.");
     }
-}
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+        $status = $_POST['status'];
+        $time = date('Y-m-d H:i:s', time());
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = $_POST['title'];
-    $content = $_POST['content'];
-
-
-    date_default_timezone_set('Asia/Jakarta');
-    $time = date('Y-m-d H:i:s', time());
-
-    try {
-        $stmt = $conn->prepare("UPDATE Artikel SET title = ?, section_1 = ?, section_2 = ?, section_3 = ?, section_4 = ?, section_5 = ?, updated_at = ? WHERE id = ?");
-        if ($stmt === false) {
-            logError("Prepare failed: " . htmlspecialchars($conn->error));
-            die("Prepare failed: " . htmlspecialchars($conn->error));
+        $scheduled_at = null;
+        if ($status === 'draft' && isset($_POST['scheduled_at'])) {
+            $scheduled_at = $_POST['scheduled_at'];
         }
-        $stmt->bind_param('ssssssss', $title, $section_1, $section_2, $section_3, $section_4, $section_5, $time, $id);
-        if ($stmt->execute()) {
+
+        try {
+            $stmt = $conn->prepare("UPDATE posts SET title = ?, content = ?, status = ?, scheduled_at = ?, updated_at = ? WHERE id = ?");
+            $stmt->bind_param('sssssi', $title, $content, $status, $scheduled_at, $time, $post_id);
+
+            if (!$stmt->execute()) {
+                throw new Exception("Error updating post: " . htmlspecialchars($stmt->error));
+            }
+
+             if (isset($_FILES['images']) && $_FILES['images']['error'][0] != 4) {  
+                $total_files = count($_FILES['images']['name']);
+                for ($i = 0; $i < $total_files; $i++) {
+                    $file_name = $_FILES['images']['name'][$i];
+                    $file_tmp = $_FILES['images']['tmp_name'][$i];
+                    $target_dir = "assets/uploads/";
+                    $target_file = $target_dir . basename($file_name);
+
+                    if (getimagesize($file_tmp) === false) {
+                        echo "File {$file_name} is not an image.<br>";
+                        continue;
+                    }
+
+                    if (move_uploaded_file($file_tmp, $target_file)) {
+                        $image_url = __dir__ . $target_file;
+                        $image_stmt = $conn->prepare("INSERT INTO images (post_id, image_url) VALUES (?, ?)");
+                        $image_stmt->bind_param("is", $post_id, $image_url);
+                        if (!$image_stmt->execute()) {
+                            throw new Exception("Error inserting image: " . htmlspecialchars($image_stmt->error));
+                        }
+                    }
+                }
+            }
             header("Location: index.php");
             exit();
-        } else {
-            logError("Execute failed: " . htmlspecialchars($stmt->error));
-            echo "Error: " . htmlspecialchars($stmt->error);
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
         }
-    } catch (Exception $e) {
-        logError("Exception: " . $e->getMessage());
-        echo "Error: " . $e->getMessage();
     }
-
-    $stmt->close();
-    $conn->close();
+} else {
+    echo "ID tidak ditemukan.";
 }
 ?>
 
+<!-- HTML untuk Form Edit Artikel -->
 <?php include 'partials/head.php'; ?>
 
 <body id="page-top">
+    <!-- Page Wrapper -->
     <div id="wrapper">
+        <!-- Sidebar -->
         <?php include 'partials/sidebar.php'; ?>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
             <div id="content">
+                <!-- Topbar -->
                 <?php include 'partials/navbar.php'; ?>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <h1 class="h3 mb-2 text-gray-800">Edit Artikel</h1>
+                    <!-- Form Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                            <h6 class="m-0 font-weight-bold text-primary">Form Edit</h6>
-                            <button type="submit" form="editForm" class="btn btn-primary">Update</button>
+                            <h6 class="m-0 font-weight-bold text-primary">Edit Artikel</h6>
+                            <button type="submit" form="editForm" class="btn btn-primary">Simpan</button>
                         </div>
                         <div class="card-body">
-                            <?php if (isset($data)) : ?>
-                                <form id="editForm" action="" method="post">
-                                    <div class="form-group">
-                                        <label for="title">Judul</label>
-                                        <input type="text" class="form-control" id="title" name="title" value="<?php echo $data['title'] ?>" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="section_1">Konten</label>
-                                        <textarea name="content" class="form-control" rows="15" placeholder="Section 1..."><?php echo htmlspecialchars($data['content'] ?? ''); ?></textarea>
-                                    </div>
-                                </form>
-                            <?php else : ?>
-                                <p>Data tidak ditemukan!</p>
-                            <?php endif; ?>
+                            <form id="editForm" action="edit.php?id=<?php echo $post['id']; ?>" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" value="<?php echo htmlspecialchars($post['title']); ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="content">Content</label>
+                                    <textarea name="content" class="form-control" rows="15" placeholder="Content"><?php echo htmlspecialchars($post['content']); ?></textarea>
+                                </div>
+
+                                <!-- Select untuk status -->
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select name="status" id="status" class="form-control" onchange="toggleDateTimePicker()">
+                                        <option value="published" <?php echo $post['status'] == 'published' ? 'selected' : ''; ?>>Published</option>
+                                        <option value="draft" <?php echo $post['status'] == 'draft' ? 'selected' : ''; ?>>Draft</option>
+                                        <option value="archived" <?php echo $post['status'] == 'archived' ? 'selected' : ''; ?>>Archived</option>
+                                    </select>
+                                </div>
+
+                                <!-- DateTime Picker (Hanya muncul saat status draft) -->
+                                <div class="form-group" id="datetime-container" style="display: <?php echo $post['status'] == 'draft' ? 'block' : 'none'; ?>;">
+                                    <label for="datetime">Schedule Upload</label>
+                                    <input type="datetime-local" name="scheduled_at" id="datetime" class="form-control" value="<?php echo $post['scheduled_at']; ?>">
+                                </div>
+
+                                <!-- Upload Gambar -->
+                                <div class="form-group">
+                                    <label for="images">Upload Gambar</label>
+                                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
+                                    <small class="form-text text-muted">Pilih beberapa gambar untuk diunggah.</small>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php include 'partials/footer.php'; ?>
         </div>
     </div>
 
@@ -112,6 +151,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             tinycomments_mode: 'embedded',
             license_key: 'hqg6c15o9ymi9hrk3qoz9wt1oeaprtauunnqj0jyw41t062t'
         });
+    </script>
+
+    <script type="text/javascript">
+        function toggleDateTimePicker() {
+            const status = document.getElementById("status").value;
+            const datetimeContainer = document.getElementById("datetime-container");
+
+            if (status === "draft") {
+                datetimeContainer.style.display = "block";
+            } else {
+                datetimeContainer.style.display = "none";
+            }
+        }
+
+        window.onload = function() {
+            toggleDateTimePicker();
+        }
     </script>
 
     <?php include 'partials/script.php'; ?>
