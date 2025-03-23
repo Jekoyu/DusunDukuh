@@ -1,39 +1,67 @@
 <?php
 include '../conn.php';
-
 date_default_timezone_set('Asia/Jakarta');
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
-    $section_1 = $_POST['section_1'];
-    $section_2 = $_POST['section_2'];
-    $section_3 = $_POST['section_3'];
-    $section_4 = $_POST['section_4'];
-    $section_5 = $_POST['section_5'];
+    $content = $_POST['content'];
+    $status = $_POST['status'];  
     $time = date('Y-m-d H:i:s', time());
-    
 
+    $scheduled_at = null;
+    if ($status === 'draft' && isset($_POST['scheduled_at'])) {
+        $scheduled_at = $_POST['scheduled_at'];
+    }
+
+    $conn->begin_transaction();
     try {
-        $stmt = $conn->prepare("INSERT INTO Artikel (title, section_1, section_2, section_3, section_4, section_5, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO posts (title, content, status, scheduled_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)");
         if ($stmt === false) {
             die("Prepare failed: " . htmlspecialchars($conn->error));
         }
-        $stmt->bind_param('ssssssss', $title, $section_1, $section_2, $section_3, $section_4, $section_5, $time, $time);
+        $stmt->bind_param('ssssss', $title, $content, $status, $scheduled_at, $time, $time);
 
-        if ($stmt->execute()) {
-            header("Location: index.php");
-            exit();
-        } else {
-            echo "Error: " . htmlspecialchars($stmt->error);
+        if (!$stmt->execute()) {
+            throw new Exception("Error inserting post: " . htmlspecialchars($stmt->error));
         }
+        $post_id = $stmt->insert_id;
+
+        if (isset($_FILES['images'])) {
+            $total_files = count($_FILES['images']['name']);
+            for ($i = 0; $i < $total_files; $i++) {
+                $file_name = $_FILES['images']['name'][$i];
+                $file_tmp = $_FILES['images']['tmp_name'][$i];
+                $target_dir = "assets/uploads/";
+                $target_file = $target_dir . basename($file_name);
+
+                if (getimagesize($file_tmp) === false) {
+                    echo "File {$file_name} is not an image.<br>";
+                    continue;
+                }
+
+                if (move_uploaded_file($file_tmp, $target_file)) {
+                    $image_url = __dir__ . $target_file;
+                    $image_stmt = $conn->prepare("INSERT INTO images (post_id, image_url) VALUES (?, ?)");
+                    $image_stmt->bind_param("is", $post_id, $image_url);
+                    if (!$image_stmt->execute()) {
+                        throw new Exception("Error inserting image: " . htmlspecialchars($image_stmt->error));
+                    }
+                }
+            }
+        }
+
+        $conn->commit();
+
+        header("Location: index.php");
+        exit();
     } catch (Exception $e) {
+        $conn->rollback();
         echo "Error: " . $e->getMessage();
     }
-
     $conn = null;
 }
 ?>
+
 <?php
 include 'partials/head.php';
 ?>
@@ -68,34 +96,43 @@ include 'partials/head.php';
                             <button type="submit" form="addForm" class="btn btn-primary">Simpan</button>
                         </div>
                         <div class="card-body">
-                            <form id="addForm" action="" method="post">
+                            <form id="addForm" action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <input type="text" class="form-control" id="title" name="title" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="section_1">Content</label>
-                                    <textarea name="section_1" class="form-control" rows="15" placeholder="Section 1"></textarea>
+                                    <label for="content">Content</label>
+                                    <textarea name="content" class="form-control" rows="15" placeholder="Content"></textarea>
                                 </div>
 
-                                <!-- <div class="form-group">
-                                    <label for="section_2">Section 2</label>
-                                    <textarea name="section_2" class="form-control" rows="15" placeholder="Section 2...."></textarea>
-                                </div>
+                                <!-- Select untuk status -->
                                 <div class="form-group">
-                                    <label for="section_3">Section 3</label>
-                                    <textarea name="section_3" class="form-control" rows="15" placeholder="Section 3...."></textarea>
+                                    <label for="status">Status</label>
+                                    <select name="status" id="status" class="form-control" onchange="toggleDateTimePicker()">
+                                        <option value="published">Published</option>
+                                        <option value="draft">Draft</option>
+                                        <option value="archived">Archived</option>
+                                    </select>
                                 </div>
-                                <div class="form-group">
-                                    <label for="section_4">Section 4</label>
-                                    <textarea name="section_4" class="form-control" rows="15" placeholder="Section 4...."></textarea>
+
+                                <!-- DateTime Picker (Hanya muncul saat status draft) -->
+                                <div class="form-group" id="datetime-container" style="display: none;">
+                                    <label for="datetime">Schedule Upload</label>
+                                    <input type="datetime-local" name="scheduled_at" id="datetime" class="form-control">
                                 </div>
+
+                                <!-- Upload Gambar -->
                                 <div class="form-group">
-                                    <label for="section_5">Section 5</label>
-                                    <textarea name="section_5" class="form-control" rows="15" placeholder="Section 5...."></textarea>
-                                </div> -->
+                                    <label for="images">Upload Gambar</label>
+                                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
+                                    <small class="form-text text-muted">Pilih beberapa gambar untuk diunggah.</small>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
                         </div>
+
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -131,6 +168,23 @@ include 'partials/head.php';
             tinycomments_mode: 'embedded',
             license_key: 'hqg6c15o9ymi9hrk3qoz9wt1oeaprtauunnqj0jyw41t062t'
         });
+    </script>
+
+    <script type="text/javascript">
+        function toggleDateTimePicker() {
+            const status = document.getElementById("status").value;
+            const datetimeContainer = document.getElementById("datetime-container");
+
+            if (status === "draft") {
+                datetimeContainer.style.display = "block";
+            } else {
+                datetimeContainer.style.display = "none";
+            }
+        }
+
+        window.onload = function() {
+            toggleDateTimePicker();
+        }
     </script>
 
     <?php

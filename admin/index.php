@@ -33,11 +33,13 @@ include 'partials/head.php';
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th>#</th>
-                                            <th>Title</th>
-                                            <th>Text</th>
-                                            <th>Action</th>
+                                            <th>Judul</th>
+                                            <th>Konten</th>
+                                            <th>Status</th>
+                                            <th>Jadwal</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -89,14 +91,54 @@ include 'partials/head.php';
                         "data": "content"
                     },
                     {
-                        "data": null,
+                        "data": "status",
+                        "class": "text-center",
                         "render": function(data, type, row) {
-                            return '<a href="edit.php?id=' + row.id + '" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a> '
-                            // '<a href="delete.php?id=' + row.id + '" class="btn btn-sm btn-danger" onclick="return confirm(\'Are you sure you want to delete this item?\');"><i class="fas fa-trash"></i></a>';
-                            //'<a href="#" class="btn btn-sm btn-danger" onclick="return confirm(\'Are you sure you want to delete this item?\');"><i class="fas fa-trash"></i></a>';
+                            if (data == "published") {
+                                return '<span class="badge badge-success">' + "Published" + '</span>';
+                            } else if (data == "archived") {
+                                return '<span class="badge badge-danger">' + "Archived" + '</span>';
+                            } else if (data == "draft") {
+                                return '<span class="badge badge-warning">' + "Draft" + '</span>';
+                            }
 
                         }
+                    },
+                    {
+                        // "data": "scheduled_at",
+                        "class": "text-center",
+                        "render": function(data, type, row) {
+                            if (row.status == "published") {
+                                return '-';
+                            } else if (row.status == "archived") {
+                                return '-';
+                            }else {
+                                return row.scheduled_at;
+                            }
+                        }
+                    },
+                    {
+                        "data": null,
+                        "class": "text-center",
+                        "render": function(data, type, row) {
+                            return `
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="edit.php?id=${row.id}">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </a>
+                                        <a class="dropdown-item" href="delete.php?id=${row.id}" onclick="return confirm('Apakah anda yakin untuk mengarsipkan artikel?');">
+                                            <i class="fas fa-archive"></i> Archive
+                                        </a>
+                                    </div>
+                                </div>
+                            `;
+                        }
                     }
+
                 ]
             });
         });

@@ -2,7 +2,7 @@
 include '../conn.php';
 
 try {
-    $stmt = $conn->prepare("SELECT id,title,content,created_at,status FROM posts");
+    $stmt = $conn->prepare("SELECT id,title,content,created_at,status,scheduled_at FROM posts");
     $stmt->execute();
     $resultSet = $stmt->get_result();
     $data = $resultSet->fetch_all(MYSQLI_ASSOC);

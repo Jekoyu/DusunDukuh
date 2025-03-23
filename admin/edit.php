@@ -10,7 +10,7 @@ function logError($message)
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $stmt = $conn->prepare("SELECT * FROM menu WHERE id = ?");
+    $stmt = $conn->prepare("SELECT * FROM posts WHERE id = ?");
     if ($stmt === false) {
         logError("Prepare failed: " . htmlspecialchars($conn->error));
         die("Prepare failed: " . htmlspecialchars($conn->error));
@@ -29,17 +29,14 @@ if (isset($_GET['id'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
-    $section_1 = $_POST['section_1'];
-    $section_2 = $_POST['section_2'];
-    $section_3 = $_POST['section_3'];
-    $section_4 = $_POST['section_4'];
-    $section_5 = $_POST['section_5'];
+    $content = $_POST['content'];
+
 
     date_default_timezone_set('Asia/Jakarta');
     $time = date('Y-m-d H:i:s', time());
 
     try {
-        $stmt = $conn->prepare("UPDATE menu SET title = ?, section_1 = ?, section_2 = ?, section_3 = ?, section_4 = ?, section_5 = ?, updated_at = ? WHERE id = ?");
+        $stmt = $conn->prepare("UPDATE Artikel SET title = ?, section_1 = ?, section_2 = ?, section_3 = ?, section_4 = ?, section_5 = ?, updated_at = ? WHERE id = ?");
         if ($stmt === false) {
             logError("Prepare failed: " . htmlspecialchars($conn->error));
             die("Prepare failed: " . htmlspecialchars($conn->error));
@@ -71,38 +68,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div id="content">
                 <?php include 'partials/navbar.php'; ?>
                 <div class="container-fluid">
-                    <h1 class="h3 mb-2 text-gray-800">Edit Menu</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Edit Artikel</h1>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
                             <h6 class="m-0 font-weight-bold text-primary">Form Edit</h6>
-                            <button type="submit" form="editForm" class="btn btn-primary">Update Menu</button>
+                            <button type="submit" form="editForm" class="btn btn-primary">Update</button>
                         </div>
                         <div class="card-body">
                             <?php if (isset($data)) : ?>
                                 <form id="editForm" action="" method="post">
                                     <div class="form-group">
-                                        <label for="title">Title</label>
+                                        <label for="title">Judul</label>
                                         <input type="text" class="form-control" id="title" name="title" value="<?php echo $data['title'] ?>" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="section_1">Section 1</label>
-                                        <textarea name="section_1" class="form-control" rows="15" placeholder="Section 1..."><?php echo htmlspecialchars($data['section_1'] ?? ''); ?></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="section_2">Section 2</label>
-                                        <textarea name="section_2" class="form-control" rows="15" placeholder="Section 2..."><?php echo htmlspecialchars($data['section_2'] ?? ''); ?></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="section_3">Section 3</label>
-                                        <textarea name="section_3" class="form-control" rows="15" placeholder="Section 3..."><?php echo htmlspecialchars($data['section_3'] ?? ''); ?></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="section_4">Section 4</label>
-                                        <textarea name="section_4" class="form-control" rows="15" placeholder="Section 4..."><?php echo htmlspecialchars($data['section_4'] ?? ''); ?></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="section_5">Section 5</label>
-                                        <textarea name="section_5" class="form-control" rows="15" placeholder="Section 5..."><?php echo htmlspecialchars($data['section_5'] ?? ''); ?></textarea>
+                                        <label for="section_1">Konten</label>
+                                        <textarea name="content" class="form-control" rows="15" placeholder="Section 1..."><?php echo htmlspecialchars($data['content'] ?? ''); ?></textarea>
                                     </div>
                                 </form>
                             <?php else : ?>
