@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
     try {
-        $stmt = $conn->prepare("INSERT INTO menu (title, section_1, section_2, section_3, section_4, section_5, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO Artikel (title, section_1, section_2, section_3, section_4, section_5, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         if ($stmt === false) {
             die("Prepare failed: " . htmlspecialchars($conn->error));
         }
@@ -60,12 +60,12 @@ include 'partials/head.php';
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tambah Menu</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Tambah Artikel</h1>
                     <!-- Form Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                            <h6 class="m-0 font-weight-bold text-primary">Form Tambah Menu</h6>
-                            <button type="submit" form="addForm" class="btn btn-primary">Tambah Menu</button>
+                            <h6 class="m-0 font-weight-bold text-primary">Tambah Artikel</h6>
+                            <button type="submit" form="addForm" class="btn btn-primary">Simpan</button>
                         </div>
                         <div class="card-body">
                             <form id="addForm" action="" method="post">
@@ -74,10 +74,11 @@ include 'partials/head.php';
                                     <input type="text" class="form-control" id="title" name="title" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="section_1">Section 1</label>
+                                    <label for="section_1">Content</label>
                                     <textarea name="section_1" class="form-control" rows="15" placeholder="Section 1"></textarea>
                                 </div>
-                                <div class="form-group">
+
+                                <!-- <div class="form-group">
                                     <label for="section_2">Section 2</label>
                                     <textarea name="section_2" class="form-control" rows="15" placeholder="Section 2...."></textarea>
                                 </div>
@@ -92,7 +93,7 @@ include 'partials/head.php';
                                 <div class="form-group">
                                     <label for="section_5">Section 5</label>
                                     <textarea name="section_5" class="form-control" rows="15" placeholder="Section 5...."></textarea>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>

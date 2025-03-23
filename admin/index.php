@@ -26,8 +26,8 @@ include 'partials/head.php';
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                            <h6 class="m-0 font-weight-bold text-primary">Menu</h6>
-                            <a href="tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah Menu</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Artikel</h6>
+                            <a href="tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -36,7 +36,7 @@ include 'partials/head.php';
                                         <tr>
                                             <th>#</th>
                                             <th>Title</th>
-                                            <th>Updated At</th>
+                                            <th>Text</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -86,7 +86,7 @@ include 'partials/head.php';
                         "data": "title"
                     },
                     {
-                        "data": "updated_at"
+                        "data": "content"
                     },
                     {
                         "data": null,

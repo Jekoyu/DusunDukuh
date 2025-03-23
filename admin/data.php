@@ -2,7 +2,7 @@
 include '../conn.php';
 
 try {
-    $stmt = $conn->prepare("SELECT id,title,updated_at,section_1 FROM menu");
+    $stmt = $conn->prepare("SELECT id,title,content,created_at,status FROM posts");
     $stmt->execute();
     $resultSet = $stmt->get_result();
     $data = $resultSet->fetch_all(MYSQLI_ASSOC);
