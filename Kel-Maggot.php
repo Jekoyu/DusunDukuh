@@ -24,7 +24,7 @@
     />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
@@ -41,10 +41,10 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="about.php" class="active">About</a></li>
+            <li><a href="about.php" >About</a></li>
             <li><a href="berita.php">Berita</a></li>
             <li class="dropdown">
-              <a href="#"
+              <a href="#" class="active"
                 ><span>Pejabat</span>
                 <i class="bi bi-chevron-down toggle-dropdown"></i
               ></a>

@@ -22,7 +22,7 @@
             <li><a href="LPMKAL.php">LPMKAL</a></li>
           </ul>
         </li>
-        <li><a href="geografis.php">Geografis</a></li>
+        <li><a href="grografis.php">Geografis</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>

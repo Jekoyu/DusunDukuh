@@ -82,7 +82,7 @@
           saat mencari tempat baru untuk bermukim. Terkesan dengan kesuburan
           tanah dan sumber daya alam yang melimpah, mereka memutuskan untuk
           menetap dan membuka lahan pertanian...
-          <a href="#" class="text-link">Selengkapnya</a>
+          <a href="berita-detail.php" class="text-link">Selengkapnya</a>
         </p>
       </div>
     </section>

@@ -73,7 +73,7 @@
       <video class="video-slide" src="vidio/v2.mp4" autoplay muted loop></video>
 
       <div class="content active">
-        <h1>Selamat Datang <br /><span>Di Desa Sindoharjo</span></h1>
+        <h1>Selamat Datang <br /><span>di padukan dukuh kalurahan Sinduharjo </span></h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
