@@ -27,6 +27,59 @@
 
 <!-- Add CSS for list view -->
 <style>
+  :root {
+    --font-primary: "Poppins", sans-serif;
+    --font-secondary: "Montserrat", sans-serif;
+    --heading-font: "Raleway", sans-serif;
+
+    /* Color Global */
+    --color-primary: #018577;
+    --color-secondary: #eaf8ef;
+    --color-font-primary1: #f8a23d;
+    --color-font-primary2: #272727;
+    --color-font-primary3: #fff;
+    --color-font-secondary: #777777;
+  }
+
+  .page-header {
+    background-color: var(--color-primary);
+    padding: 120px 0 60px;
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-font-primary3);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+    /* Ensure it doesn't stretch too wide on large screens */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+
   .list-view .umkm-item {
     width: 100%;
     max-width: 100%;
@@ -56,6 +109,13 @@
   }
 
   @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+      /* Decrease font size on mobile */
+      max-width: 95%;
+      /* Ensure the title fits on mobile */
+    }
+
     .list-view .card-body {
       flex-direction: column;
     }
@@ -107,14 +167,13 @@
     </div>
   </header>
 
-  <!-- Foster ke Anggotaan -->
-  <section class="img-struktur text-center">
-    <h2>STRUKTUR KEL. TANI</h2>
-    <p class="fw-semibold">
-      Informasi event dan kegiatan yang diadakan masyarakat Dusun Dukuh
-    </p>
-    <img src="assets/Staff/image.png" alt="Event Masyarakat" />
+  <section class="page-header text-center">
+    <div class="container">
+      <h1>KELOMPOK PKK DUSUN DUKUH</h1>
+      <p>Mewujudkan keluarga yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, berakhlak mulia dan berbudi luhur, sehat sejahtera, maju dan mandiri, kesetaraan dan keadilan gender serta kesadaran hukum dan lingkungan</p>
+    </div>
   </section>
+
   <!-- PKK Information Section -->
   <section class="pkk-section py-5" style="background-color: var(--color-secondary);">
     <div class="container">
