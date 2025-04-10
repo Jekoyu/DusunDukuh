@@ -82,15 +82,6 @@
               background-image: url('assets/potensi/Keseniann.webp');
             "></div>
                 <div class="gallery-item" style="
-              background-image: url('assets/potensi/Keseniann.webp');
-            "></div>
-                <div class="gallery-item" style="
-              background-image: url('assets/potensi/Keseniann.webp');
-            "></div>
-                <div class="gallery-item" style="
-              background-image: url('assets/potensi/Keseniann.webp');
-            "></div>
-                <div class="gallery-item" style="
               background-image: url('assets/potensi/Pertanian.webp');
             "></div>
                 <div class="gallery-item" style="
