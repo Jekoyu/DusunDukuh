@@ -22,7 +22,7 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
-                <h1 class="sitename">Dusun Dukuh</h1>
+                <h1 class="sitename">Padusunan Dukuh</h1>
                 <span>.</span>
             </a>
 
