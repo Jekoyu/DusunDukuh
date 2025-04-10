@@ -79,13 +79,22 @@
         <div class="gallery-wrapper">
             <div class="gallery-container" id="gallery">
                 <div class="gallery-item" style="
-              background-image: url('assets/potensi/Kesenian.png');
+              background-image: url('assets/potensi/Keseniann.webp');
             "></div>
                 <div class="gallery-item" style="
-              background-image: url('assets/potensi/Pertanian.png');
+              background-image: url('assets/potensi/Keseniann.webp');
             "></div>
                 <div class="gallery-item" style="
-              background-image: url('assets/potensi/Magot.png');
+              background-image: url('assets/potensi/Keseniann.webp');
+            "></div>
+                <div class="gallery-item" style="
+              background-image: url('assets/potensi/Keseniann.webp');
+            "></div>
+                <div class="gallery-item" style="
+              background-image: url('assets/potensi/Pertanian.webp');
+            "></div>
+                <div class="gallery-item" style="
+              background-image: url('assets/potensi/Magot.webp');
             "></div>
             </div>
         </div>
@@ -197,27 +206,27 @@
 
             <div class="gallery">
                 <div class="item design">
-                    <img src="assets/Galeri/website3.jpg" />
+                    <img src="assets/Galeri/17_1.webp" />
                 </div>
 
                 <div class="item design">
-                    <img src="assets/Galeri/website2.jpg" />
+                    <img src="assets/Galeri/17_2.webp" />
                 </div>
 
                 <div class="item development">
-                    <img src="assets/Galeri/website3.jpg" />
+                    <img src="assets/Galeri/H_1.webp" />
                 </div>
 
                 <div class="item development">
-                    <img src="assets/Galeri/design2.jpg" />
+                    <img src="assets/Galeri/H_2.webp" />
                 </div>
 
                 <div class="item development">
-                    <img src="assets/Galeri/design1.jpg" />
+                    <img src="assets/Galeri/R_1.webp" />
                 </div>
 
                 <div class="item logo">
-                    <img src="assets/Galeri/logo1.jpg" />
+                    <img src="assets/Galeri/R_2.webp" />
                 </div>
             </div>
         </main>
