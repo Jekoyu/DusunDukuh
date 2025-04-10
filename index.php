@@ -52,18 +52,9 @@
     <section class="home">
         <video class="video-slide active" src="vidio/sawah.mp4" autoplay muted loop></video>
         <video class="video-slide" src="vidio/v2.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="vidio/v1.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="vidio/v2.mp4" autoplay muted loop></video>
 
         <div class="content active">
             <h1>Selamat Datang<br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            </p>
-        </div>
-        <div class="content">
-            <h1>Selamat Datang<br /><span>di Padusunan Dukuh kalurahan Sinduharjo</span></h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -80,8 +71,6 @@
         <!-- Slider nav btn -->
         <div class="slider-navigation">
             <div class="nav-btn active"></div>
-            <div class="nav-btn"></div>
-            <div class="nav-btn"></div>
             <div class="nav-btn"></div>
         </div>
     </section>
