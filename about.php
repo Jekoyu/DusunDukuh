@@ -33,8 +33,7 @@
                     <li><a href="about.php" class="active">Tentang</a></li>
                     <li><a href="berita.php">Berita</a></li>
                     <li class="dropdown">
-                        <a href="#"><span>Pejabat</span>
-                            <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a href="Kel-Tani.php">Kel. Tani</a></li>
                             <li><a href="#">Kel. Maggot</a></li>

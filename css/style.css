@@ -1326,9 +1326,8 @@ div.gallery .item:hover img {
 
 /* Kelompok Tani */
 .img-struktur {
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   padding: 4rem 0;
-  text-align: center;
 }
 .img-struktur h2 {
   font-size: 30px;
