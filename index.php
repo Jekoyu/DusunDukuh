@@ -54,17 +54,17 @@
         <video class="video-slide" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
 
         <div class="content active">
-            <h1>Selamat Datang<br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
+            <h1>Sugeng rawuh <br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                Tempat di mana kearifan lokal, semangat gotong royong, dan keindahan
+                alam bersatu. Temukan informasi seputar kegiatan warga, potensi dusun, dan layanan masyarakat di sini.
             </p>
         </div>
         <div class="content">
-            <h1>Selamat Datang<br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
+            <h1>Sugeng rawuh <br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                Tempat di mana kearifan lokal, semangat gotong royong, dan keindahan
+                alam bersatu. Temukan informasi seputar kegiatan warga, potensi dusun, dan layanan masyarakat di sini.
             </p>
         </div>
 

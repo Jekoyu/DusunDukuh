@@ -52,7 +52,7 @@
     <!-- Intro Kades -->
     <section class="about">
         <div class="about-img">
-            <img src="assets/Staff/Kades.png" alt="Kades" class="fade-in-image touch-animate-img" />
+            <img src="assets/Logodesa.png" alt="Kades" class="fade-in-image touch-animate-img" />
         </div>
         <div class="about-content">
             <h2 class="heading">SEJARAH DUSUN</h2>

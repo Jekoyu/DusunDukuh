@@ -65,30 +65,33 @@
                 <div class="carousel-item active">
                     <img src="assets/program/Ruwuhan.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                        <h5>First slide label</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam eaque est eius magni,
-                            distinctio quae?Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button type="button" class="btn btn-brt">Selengkapnya</button>
+                        <h2>Berita Warga, Cerita Kita.</h2>
+                        <p>Temukan berita dan informasi terkini seputar Padusunan Dukuh di sini. Kami menyajikan kabar
+                            terbaru mengenai kegiatan desa, pengumuman resmi, dan perkembangan wilayah secara aktual dan
+                            terpercaya.</p>
+                        <!-- <button type="button" class="btn btn-brt">Selengkapnya</button> -->
                     </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="assets/program/Ruwuhan.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam eaque est eius magni,
-                            distinctio quae?Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button type="button" class="btn btn-brt">Selengkapnya</button>
+                        <h2>Berita Warga, Cerita Kita.</h2>
+                        <p>Temukan berita dan informasi terkini seputar Padusunan Dukuh di sini. Kami menyajikan kabar
+                            terbaru mengenai kegiatan desa, pengumuman resmi, dan perkembangan wilayah secara aktual dan
+                            terpercaya.</p>
+                        <!-- <button type="button" class="btn btn-brt">Selengkapnya</button> -->
                     </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="assets/program/Ruwuhan.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
-                        <h5>Third slide label</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam eaque est eius magni,
-                            distinctio quae?Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button type="button" class="btn btn-brt">Selengkapnya</button>
+                        <h2>Berita Warga, Cerita Kita.</h2>
+                        <p>Temukan berita dan informasi terkini seputar Padusunan Dukuh di sini. Kami menyajikan kabar
+                            terbaru mengenai kegiatan desa, pengumuman resmi, dan perkembangan wilayah secara aktual dan
+                            terpercaya.</p>
+                        <!-- <button type="button" class="btn btn-brt">Selengkapnya</button> -->
                     </div>
                 </div>
             </div>
