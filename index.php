@@ -60,7 +60,7 @@
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             </p>
         </div>
-        <div class="content active">
+        <div class="content">
             <h1>Selamat Datang<br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
