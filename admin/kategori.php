@@ -98,8 +98,8 @@ include 'partials/head.php';
                                 <a class="dropdown-item" href="editKategori.php?id=${row.id}">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
-                                <a class="dropdown-item" href="deleteKategori.php?id=${row.id}" onclick="return confirm('Apakah anda yakin untuk menghapus Kategori?');">
-                                    <i class="fas fa-archive"></i> Archive
+                                <a class="dropdown-item" href="deleteKategori.php?id=${row.id}" onclick="return confirm('Apakah anda yakin untuk menghapus Kategori Maka semua postingan akan terhapus?');">
+                                    <i class="fas fa-trash"></i> Delete
                                 </a>
                             </div>
                         </div>
