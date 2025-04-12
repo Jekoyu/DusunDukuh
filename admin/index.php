@@ -26,7 +26,7 @@ include 'partials/head.php';
                     <div class="card shadow  mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
                             <h6 class="m-0 font-weight-bold text-primary">Artikel</h6>
-                            <a href="tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
+                            <a href="post/tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -47,6 +47,7 @@ include 'partials/head.php';
                                         <tr class="text-center">
                                             <th>#</th>
                                             <th>Judul</th>
+                                            <th>Kategori</th>
                                             <th>Konten</th>
                                             <th>Status</th>
                                             <th>Jadwal</th>
@@ -88,7 +89,7 @@ include 'partials/head.php';
     <script>
         $(document).ready(function() {
             var table = $('#dataTable').DataTable({
-                "ajax": "data.php",
+                "ajax": "post/data.php",
                 "columns": [{
                         "data": null,
                         "render": function(data, type, row, meta) {
@@ -99,6 +100,10 @@ include 'partials/head.php';
                         "data": "title"
                     },
                     {
+                        "data": "name",
+                       
+                    },
+                    {
                         "data": "content",
                         "render": function(data, type, row) {
                             var words = data.split(' ');
@@ -106,6 +111,7 @@ include 'partials/head.php';
                             return truncatedContent;
                         }
                     },
+                   
                     {
                         "data": "status",
                         "class": "text-center",

@@ -1,10 +1,6 @@
 <?php
 
-include '../conn.php';
-$sql = "SELECT * FROM profile where id='1'";
-$result = $conn->query($sql);
-                                                $profile = $result->fetch_assoc();
-                                                $nama = $profile['nama'];
+
 
 ?>
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -12,16 +8,22 @@ $result = $conn->query($sql);
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
-        <div class="sidebar-brand-text mx-3"><?php echo strtoupper($nama) ?></div>
+        <div class="sidebar-brand-text mx-3">Dusun Dukuh</div>
     </a>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Tables -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="kategori.php">
             <i class="fas fa-fw fa-table"></i>
-            <span>Menu</span></a>
+            <span>Kategori</span></a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="index.php">
+            <i class="fas fa-edit"></i>
+            <span>Postingan</span></a>
+    </li>
+
     <li class="nav-item active">
         <a class="nav-link" href="profile.php">
             <i class="fas fa-fw fa-user"></i>
