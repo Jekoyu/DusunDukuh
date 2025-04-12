@@ -3,15 +3,10 @@ include 'partials/head.php';
 ?>
 
 <body id="page-top">
-    <!-- Page Wrapper -->
     <div id="wrapper">
-        <!-- Sidebar -->
         <?php
         include 'partials/sidebar.php';
         ?>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
@@ -19,14 +14,11 @@ include 'partials/head.php';
                 <?php
                 include 'partials/navbar.php';
                 ?>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="card shadow  mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
                             <h6 class="m-0 font-weight-bold text-primary">Artikel</h6>
-                            <a href="post/tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
+                            <a href="tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -59,11 +51,9 @@ include 'partials/head.php';
                         </div>
                     </div>
                 </div>
-                <!-- /.container-fluid -->
+                
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
+       
             <?php
             include 'partials/footer.php';
             ?>
@@ -71,9 +61,7 @@ include 'partials/head.php';
         </div>
         <!-- End of Content Wrapper -->
     </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
+  
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
@@ -89,7 +77,7 @@ include 'partials/head.php';
     <script>
         $(document).ready(function() {
             var table = $('#dataTable').DataTable({
-                "ajax": "post/data.php",
+                "ajax": "data.php",
                 "columns": [{
                         "data": null,
                         "render": function(data, type, row, meta) {

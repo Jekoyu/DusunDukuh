@@ -5,9 +5,10 @@ date_default_timezone_set('Asia/Jakarta');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $status = $_POST['status'];  
+    $status = $_POST['status'];
+    $category_id = $_POST['category_id'];
     $time = date('Y-m-d H:i:s', time());
-
+    $slug = $_POST['slug'];
     $scheduled_at = null;
     if ($status === 'draft' && isset($_POST['scheduled_at'])) {
         $scheduled_at = $_POST['scheduled_at'];
@@ -15,18 +16,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $conn->begin_transaction();
     try {
-        $stmt = $conn->prepare("INSERT INTO posts (title, content, status, scheduled_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO posts (slug, title, content, status, category_id, scheduled_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         if ($stmt === false) {
             die("Prepare failed: " . htmlspecialchars($conn->error));
         }
-        $stmt->bind_param('ssssss', $title, $content, $status, $scheduled_at, $time, $time);
+        $stmt->bind_param('ssssssss', $slug, $title, $content, $status, $category_id, $scheduled_at, $time, $time);
 
         if (!$stmt->execute()) {
             throw new Exception("Error inserting post: " . htmlspecialchars($stmt->error));
         }
         $post_id = $stmt->insert_id;
 
-        if (isset($_FILES['images'])) {
+        // Handle image upload (optional)
+        if (isset($_FILES['images']) && $_FILES['images']['error'][0] != 4) { // Check if images are uploaded
             $total_files = count($_FILES['images']['name']);
             for ($i = 0; $i < $total_files; $i++) {
                 $file_name = $_FILES['images']['name'][$i];
@@ -34,11 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $target_dir = "assets/uploads/";
                 $target_file = $target_dir . basename($file_name);
 
+                // Check if the uploaded file is an image
                 if (getimagesize($file_tmp) === false) {
                     echo "File {$file_name} is not an image.<br>";
                     continue;
                 }
 
+                // Move the uploaded file to the target directory
                 if (move_uploaded_file($file_tmp, $target_file)) {
                     $image_url = __dir__ . $target_file;
                     $image_stmt = $conn->prepare("INSERT INTO images (post_id, image_url) VALUES (?, ?)");
@@ -61,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn = null;
 }
 ?>
+
 
 <?php
 include 'partials/head.php';
@@ -98,11 +103,25 @@ include 'partials/head.php';
                         <div class="card-body">
                             <form id="addForm" action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label for="title">Title</label>
+                                    <label for="title">Judul</label>
                                     <input type="text" class="form-control" id="title" name="title" required>
+                                    <input type="text" class="form-control" id="slug" name="slug" hidden required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="content">Content</label>
+                                    <label for="category">Kategori</label>
+                                    <select name="category_id" id="category" class="form-control">
+                                        <option value="">-- Pilih Kategori --</option>
+                                        <?php
+                                        // Fetch categories from the database
+                                        $categories = $conn->query("SELECT id, name FROM categories");
+                                        while ($row = $categories->fetch_assoc()) {
+                                            echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="content">Konten</label>
                                     <textarea name="content" class="form-control" rows="15" placeholder="Content"></textarea>
                                 </div>
 
@@ -118,7 +137,7 @@ include 'partials/head.php';
 
                                 <!-- DateTime Picker (Hanya muncul saat status draft) -->
                                 <div class="form-group" id="datetime-container" style="display: none;">
-                                    <label for="datetime">Schedule Upload</label>
+                                    <label for="datetime">Jadwal Upload</label>
                                     <input type="datetime-local" name="scheduled_at" id="datetime" class="form-control">
                                 </div>
 
@@ -126,7 +145,7 @@ include 'partials/head.php';
                                 <div class="form-group">
                                     <label for="images">Upload Gambar</label>
                                     <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
-                                    <small class="form-text text-muted">Pilih beberapa gambar untuk diunggah.</small>
+                                    <small class="form-text text-muted">Pilih gambar untuk diunggah.</small>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Simpan</button>
@@ -185,6 +204,20 @@ include 'partials/head.php';
         window.onload = function() {
             toggleDateTimePicker();
         }
+    </script>
+    <script>
+        document.getElementById('title').addEventListener('input', function() {
+            var title = this.value;
+            var slug = title
+                .toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w\-]+/g, '') // Menghapus karakter selain huruf, angka, dan tanda -
+                .replace(/\-\-+/g, '-') // Menghapus tanda - berulang
+                .replace(/^-+/, '') // Menghapus tanda - di awal
+                .replace(/-+$/, ''); // Menghapus tanda - di akhir
+
+            document.getElementById('slug').value = slug; // Menetapkan slug yang sudah dibentuk ke input slug
+        });
     </script>
 
     <?php
