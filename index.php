@@ -51,7 +51,6 @@
     <!-- Conten Home -->
     <section class="home">
         <video class="video-slide active" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
 
         <div class="content active">
             <h1>Sugeng rawuh <br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
@@ -59,19 +58,6 @@
                 Tempat di mana kearifan lokal, semangat gotong royong, dan keindahan
                 alam bersatu. Temukan informasi seputar kegiatan warga, potensi dusun, dan layanan masyarakat di sini.
             </p>
-        </div>
-        <div class="content">
-            <h1>Sugeng rawuh <br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
-            <p>
-                Tempat di mana kearifan lokal, semangat gotong royong, dan keindahan
-                alam bersatu. Temukan informasi seputar kegiatan warga, potensi dusun, dan layanan masyarakat di sini.
-            </p>
-        </div>
-
-        <!-- Slider nav btn -->
-        <div class="slider-navigation">
-            <div class="nav-btn active"></div>
-            <div class="nav-btn"></div>
         </div>
     </section>
 
@@ -325,7 +311,7 @@
     <!-- Bootstrap JS (bundle includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
