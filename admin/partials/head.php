@@ -23,4 +23,14 @@ if (!isset($_SESSION['username'])) {
 
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+        .table-responsive {
+            overflow-x: hidden !important;
+        }
+
+        .dataTables_wrapper {
+            width: 100% !important;
+            overflow-x: hidden;
+        }
+    </style>
 </head>

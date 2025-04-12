@@ -1,49 +1,59 @@
 <?php
 include 'partials/head.php';
 ?>
-
 <body id="page-top">
     <div id="wrapper">
-        <?php
-        include 'partials/sidebar.php';
-        ?>
+        <?php include 'partials/sidebar.php'; ?>
+        
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
-                <!-- Topbar -->
-                <?php
-                include 'partials/navbar.php';
-                ?>
+                <?php include 'partials/navbar.php'; ?>
+                
                 <div class="container-fluid">
-                    <div class="card shadow  mb-4">
+                    <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
                             <h6 class="m-0 font-weight-bold text-primary">Artikel</h6>
                             <a href="tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
                         </div>
+                        
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <div class="form-group row">
-                                    <label for="statusFilter" class="col-sm-2 col-form-label">Filter Status</label>
-                                    <div class="col-sm-2">
+                            <!-- Filter Section - Improved Layout -->
+                            <div class="row mb-3">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="statusFilter">Status</label>
                                         <select id="statusFilter" class="form-control form-control-sm">
-                                            <option value="">All</option>
+                                            <option value="">Semua Status</option>
                                             <option value="published">Published</option>
                                             <option value="draft">Draft</option>
                                             <option value="archived">Archived</option>
                                         </select>
                                     </div>
                                 </div>
-
-                                <table class="table table-bordered table-stiped" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="categoryFilter">Kategori</label>
+                                        <select id="categoryFilter" class="form-control form-control-sm">
+                                            <option value="">Semua Kategori</option>
+                                            <!-- Kategori akan dimuat via AJAX -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="thead-light">
                                         <tr class="text-center">
-                                            <th>#</th>
-                                            <th>Judul</th>
-                                            <th>Kategori</th>
-                                            <th>Konten</th>
-                                            <th>Status</th>
-                                            <th>Jadwal</th>
-                                            <th>Aksi</th>
+                                            <th width="5%">#</th>
+                                            <th width="20%">Judul</th>
+                                            <th width="15%">Kategori</th>
+                                            <th width="25%">Konten</th>
+                                            <th width="10%">Status</th>
+                                            <th width="15%">Jadwal</th>
+                                            <th width="10%">Aksi</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -51,31 +61,50 @@ include 'partials/head.php';
                         </div>
                     </div>
                 </div>
-                
             </div>
-       
-            <?php
-            include 'partials/footer.php';
-            ?>
-            <!-- End of Footer -->
+
+            <?php include 'partials/footer.php'; ?>
         </div>
-        <!-- End of Content Wrapper -->
     </div>
-  
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
 
-    <!-- Logout Modal-->
-    <?php
-    include 'partials/modal.php';
-    ?>
-
-    <?php
-    include 'partials/script.php';
-    ?>
+    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    
+    <?php include 'partials/modal.php'; ?>
+    <?php include 'partials/script.php'; ?>
     <script>
         $(document).ready(function() {
+            $(document).ready(function() {
+    $.ajax({
+        url: 'dataKategori.php',
+        method: 'GET',
+        dataType: 'json', // <-- PASTIKAN INI ADA
+        success: function(response) {
+            console.log("Response Data (Parsed):", response);
+
+            // Pastikan response adalah objek dan memiliki properti 'data'
+            if (response && response.data && Array.isArray(response.data)) {
+                var categoryFilter = $('#categoryFilter');
+                categoryFilter.empty();
+                categoryFilter.append('<option value="">All</option>');
+
+                // Loop melalui kategori
+                response.data.forEach(function(category) {
+                    categoryFilter.append('<option value="' + category.name + '">' + category.name + '</option>');
+                });
+            } else {
+                console.error('Format data tidak valid:', response);
+                $('#categoryFilter').append('<option value="">Error: Invalid data format</option>');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX Error:', error);
+            $('#categoryFilter').append('<option value="">Error: Failed to load</option>');
+        }
+    });
+});
+
+
+
             var table = $('#dataTable').DataTable({
                 "ajax": "data.php",
                 "columns": [{
@@ -89,7 +118,7 @@ include 'partials/head.php';
                     },
                     {
                         "data": "name",
-                       
+
                     },
                     {
                         "data": "content",
@@ -99,7 +128,7 @@ include 'partials/head.php';
                             return truncatedContent;
                         }
                     },
-                   
+
                     {
                         "data": "status",
                         "class": "text-center",
@@ -165,9 +194,17 @@ include 'partials/head.php';
             $('#statusFilter').on('change', function() {
                 var statusFilter = $(this).val();
                 if (statusFilter) {
-                    table.column(3).search(statusFilter).draw(); 
+                    table.column(3).search(statusFilter).draw();
                 } else {
                     table.column(3).search('').draw();
+                }
+            });
+            $('#categoryFilter').on('change', function() {
+                var categoryFilter = $(this).val();
+                if (categoryFilter) {
+                    table.column(2).search(categoryFilter).draw();
+                } else {
+                    table.column(2).search('').draw();
                 }
             });
         });
