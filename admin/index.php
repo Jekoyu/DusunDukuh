@@ -1,22 +1,23 @@
 <?php
 include 'partials/head.php';
 ?>
+
 <body id="page-top">
     <div id="wrapper">
         <?php include 'partials/sidebar.php'; ?>
-        
+
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
                 <?php include 'partials/navbar.php'; ?>
-                
+
                 <div class="container-fluid">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between align-items-center">
                             <h6 class="m-0 font-weight-bold text-primary">Artikel</h6>
                             <a href="tambah.php" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
                         </div>
-                        
+
                         <div class="card-body">
                             <!-- Filter Section - Improved Layout -->
                             <div class="row mb-3">
@@ -31,7 +32,7 @@ include 'partials/head.php';
                                         </select>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="categoryFilter">Kategori</label>
@@ -42,7 +43,7 @@ include 'partials/head.php';
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="thead-light">
@@ -68,40 +69,40 @@ include 'partials/head.php';
     </div>
 
     <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-    
+
     <?php include 'partials/modal.php'; ?>
     <?php include 'partials/script.php'; ?>
     <script>
         $(document).ready(function() {
             $(document).ready(function() {
-    $.ajax({
-        url: 'dataKategori.php',
-        method: 'GET',
-        dataType: 'json', // <-- PASTIKAN INI ADA
-        success: function(response) {
-            console.log("Response Data (Parsed):", response);
+                $.ajax({
+                    url: 'dataKategori.php',
+                    method: 'GET',
+                    dataType: 'json', // <-- PASTIKAN INI ADA
+                    success: function(response) {
+                        console.log("Response Data (Parsed):", response);
 
-            // Pastikan response adalah objek dan memiliki properti 'data'
-            if (response && response.data && Array.isArray(response.data)) {
-                var categoryFilter = $('#categoryFilter');
-                categoryFilter.empty();
-                categoryFilter.append('<option value="">All</option>');
+                        // Pastikan response adalah objek dan memiliki properti 'data'
+                        if (response && response.data && Array.isArray(response.data)) {
+                            var categoryFilter = $('#categoryFilter');
+                            categoryFilter.empty();
+                            categoryFilter.append('<option value="">All</option>');
 
-                // Loop melalui kategori
-                response.data.forEach(function(category) {
-                    categoryFilter.append('<option value="' + category.name + '">' + category.name + '</option>');
+                            // Loop melalui kategori
+                            response.data.forEach(function(category) {
+                                categoryFilter.append('<option value="' + category.name + '">' + category.name + '</option>');
+                            });
+                        } else {
+                            console.error('Format data tidak valid:', response);
+                            $('#categoryFilter').append('<option value="">Error: Invalid data format</option>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error:', error);
+                        $('#categoryFilter').append('<option value="">Error: Failed to load</option>');
+                    }
                 });
-            } else {
-                console.error('Format data tidak valid:', response);
-                $('#categoryFilter').append('<option value="">Error: Invalid data format</option>');
-            }
-        },
-        error: function(xhr, status, error) {
-            console.error('AJAX Error:', error);
-            $('#categoryFilter').append('<option value="">Error: Failed to load</option>');
-        }
-    });
-});
+            });
 
 
 
@@ -194,9 +195,9 @@ include 'partials/head.php';
             $('#statusFilter').on('change', function() {
                 var statusFilter = $(this).val();
                 if (statusFilter) {
-                    table.column(3).search(statusFilter).draw();
+                    table.column(4).search(statusFilter).draw();
                 } else {
-                    table.column(3).search('').draw();
+                    table.column(4).search('').draw();
                 }
             });
             $('#categoryFilter').on('change', function() {

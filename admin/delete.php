@@ -5,7 +5,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     try {
-        $stmt = $conn->prepare("update posts set status='archived', scheduled_at='' WHERE id = ?");
+        $stmt = $conn->prepare("update posts set status='archived' WHERE id = ?");
         if ($stmt === false) {
             die("Prepare failed: " . htmlspecialchars($conn->error));
         }

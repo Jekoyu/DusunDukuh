@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $target_dir = "assets/uploads/";
                 $target_file = $target_dir . basename($file_name);
 
-                // Check if the uploaded file is an image
+               
                 if (getimagesize($file_tmp) === false) {
                     echo "File {$file_name} is not an image.<br>";
                     continue;
