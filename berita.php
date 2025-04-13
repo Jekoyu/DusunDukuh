@@ -1,7 +1,7 @@
 <?php
 include 'conn.php';
 
-$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where status = 'published' ORDER BY created_at DESC"; 
+$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita Dusun' ORDER BY created_at DESC"; 
 $result = $conn->query($query);
 // var_dump($result->num_rows);
 ?>
@@ -155,7 +155,7 @@ $result = $conn->query($query);
                 <?php
                     }
                 } else {
-                    echo 'Tidak ada berita yang ditemukan.';
+                    echo 'Mohon maaf Belum ada berita saat ini.';
                 }
                 ?>
             </div>
