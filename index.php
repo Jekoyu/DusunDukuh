@@ -50,7 +50,7 @@
 
     <!-- Conten Home -->
     <section class="home">
-        <video class="video-slide active" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
+        <video class="video-slide active" src="https://asset.cloudinary.com/du4f8hmcs/b284d939dbd542aa1b8fa985b3596df9" autoplay muted loop></video>
         <video class="video-slide" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
 
         <div class="content active">
