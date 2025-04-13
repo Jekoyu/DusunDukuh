@@ -1,2 +1,4 @@
 RewriteEngine On
 RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)$ post.php?category=$1&slug=$2 [L,QSA]
+# Cegah pengaruh aturan rewrite pada file asset
+RewriteCond %{REQUEST_URI} !\.(jpg|jpeg|png|gif|css|js|ico)$ [NC]

@@ -1,38 +1,3 @@
-<?php
-include 'conn.php';
-
-$category = isset($_GET['category']) ? $_GET['category'] : '';
-$slug = isset($_GET['slug']) ? $_GET['slug'] : '';
-
-if ($category != '' && $slug != '') {
-  try {
-
-    $stmt = $conn->prepare("SELECT posts.*, categories.name 
-                                FROM posts
-                                JOIN categories ON posts.category_id = categories.id
-                                WHERE categories.slug = ? AND posts.slug = ?");
-    $stmt->bind_param("ss", $category, $slug);
-    $stmt->execute();
-    $resultSet = $stmt->get_result();
-
-    // if ($resultSet->num_rows > 0) {
-    //   // $post = $resultSet->fetch_assoc();
-    //   // echo "<h1>" . htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8') . "</h1>";
-    //   // echo "<p><strong>Category:</strong> " . htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8') . "</p>";
-    //   // echo "<div>" . nl2br(htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8')) . "</div>";
-    // } else {
-    //   echo "<p>Post not found!</p>";
-    // }
-  } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-  }
-} else {
-  echo "<p>Invalid URL parameters!</p>";
-}
-
-$conn = null;
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 
@@ -215,22 +180,18 @@ $conn = null;
           <img src="https://via.placeholder.com/600x400" alt="Pelatihan Linmas Desa Kersik" class="news-image">
 
           <!-- News Content -->
+          <div class="news-content">
+            <p>Kersik – Pemerintah Desa Kersik baru-baru ini menyelenggarakan pelatihan intensif bagi anggota Perlindungan Masyarakat (Linmas). Kegiatan yang berlangsung selama dua hari ini bertujuan untuk meningkatkan kapasitas dan keterampilan anggota Linmas dalam menjaga keamanan dan ketertiban di lingkungan desa.</p>
 
-          <?php
-          if ($resultSet->num_rows > 0) {
-            $post = $resultSet->fetch_assoc();
-            // $post = $resultSet->fetch_assoc();
-            // echo "<h1>" . htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8') . "</h1>";
-            // echo "<p><strong>Category:</strong> " . htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8') . "</p>";
-            // echo "<div>" . nl2br(htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8')) . "</div>";
-          ?>
-            <div class="news-content">
-              <?= $post['content'] ?>
-            </div>
-          <?php
-          } else {
-            echo "<p>Post not found!</p>";
-          } ?>
+            <p>Pelatihan dibuka secara resmi oleh Kepala Desa Kersik, Bapak Suryanto, yang dalam sambutannya menekankan pentingnya peran Linmas sebagai garda terdepan dalam menjaga keamanan desa. "Anggota Linmas adalah mitra penting pemerintah desa dalam menciptakan lingkungan yang aman dan tertib bagi seluruh warga," ujarnya.</p>
+
+            <p>Materi pelatihan mencakup berbagai aspek penting, termasuk teknik patroli, penanganan situasi darurat, pertolongan pertama pada kecelakaan (P3K), dan koordinasi dengan aparat keamanan lainnya. Para peserta juga dibekali pengetahuan tentang regulasi terbaru terkait keamanan dan ketertiban masyarakat.</p>
+
+            <p>Salah satu peserta, Hendra Wijaya (42), mengungkapkan apresiasinya terhadap pelatihan tersebut. "Pelatihan ini sangat bermanfaat bagi kami. Sekarang kami lebih percaya diri dalam menjalankan tugas sebagai anggota Linmas," katanya.</p>
+
+            <p>Di akhir pelatihan, seluruh peserta menerima sertifikat dan perlengkapan pendukung tugas Linmas. Pemerintah Desa Kersik berkomitmen untuk terus meningkatkan kapasitas anggota Linmas melalui berbagai program pelatihan serupa di masa mendatang.</p>
+          </div>
+
           <!-- Social Share Buttons -->
           <div class="mt-4 pt-3 border-top">
             <h5 class="mb-3">Bagikan Berita:</h5>
@@ -338,7 +299,7 @@ $conn = null;
       <div class="footer-brand">
         <div class="logo-image-container">
           <img
-            src="/assets/Logodesa.png"
+            src="assets/Logodesa.png"
             alt="Logo Desa Sinduharjo"
             class="footer-logo" />
         </div>
@@ -443,135 +404,9 @@ $conn = null;
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <!-- Js main -->
-  <script src="/js/main.js"></script>
 
-  <script>
-    // ---------- Corasel slider Berita ------------ //
-    document.addEventListener("DOMContentLoaded", function() {
-      const captions = document.querySelectorAll(".carousel-caption");
+  <script src="js/main.js"></script>
 
-      captions.forEach((caption) => {
-        gsap.set(caption, {
-          opacity: 0,
-          y: 50
-        });
-      });
-
-      function animateCaption(slideIndex) {
-        const activeCaption = document.querySelector(
-          `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-        );
-
-        if (activeCaption) {
-          gsap.to(activeCaption, {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-          });
-        }
-      }
-      const carousel = document.querySelector("#carouselExampleCaptions");
-      carousel.addEventListener("slid.bs.carousel", function(event) {
-        const newIndex = event.to;
-        gsap.set(captions, {
-          opacity: 0,
-          y: 50
-        });
-
-        animateCaption(newIndex);
-      });
-      animateCaption(0);
-    });
-
-    // ------------------ Navbar JS ---------------- //
-    (function() {
-      "use strict";
-
-      // Apply .scrolled class to the body as the page is scrolled down
-      const toggleScrolled = () => {
-        const body = document.querySelector("body");
-        const header = document.querySelector("#header");
-
-        if (
-          !header.classList.contains("scroll-up-sticky") &&
-          !header.classList.contains("sticky-top") &&
-          !header.classList.contains("fixed-top")
-        )
-          return;
-
-        window.scrollY > 100 ?
-          body.classList.add("scrolled") :
-          body.classList.remove("scrolled");
-      };
-
-      // Event listeners for scroll and load
-      document.addEventListener("scroll", toggleScrolled);
-      window.addEventListener("load", toggleScrolled);
-
-      // Mobile navigation toggle
-      const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-      const mobileNavToogle = () => {
-        document.querySelector("body").classList.toggle("mobile-nav-active");
-        mobileNavToggleBtn.classList.toggle("bi-list");
-        mobileNavToggleBtn.classList.toggle("bi-x");
-      };
-      mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
-
-      // Hide mobile nav on same-page/hash links
-      document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-        navmenu.addEventListener("click", () => {
-          if (document.querySelector(".mobile-nav-active")) {
-            mobileNavToogle();
-          }
-        });
-      });
-
-      // Toggle mobile nav dropdowns
-      document
-        .querySelectorAll(".navmenu .toggle-dropdown")
-        .forEach((navmenu) => {
-          navmenu.addEventListener("click", function(e) {
-            e.preventDefault();
-            const parent = this.parentNode;
-            parent.classList.toggle("active");
-            parent.nextElementSibling.classList.toggle("dropdown-active");
-            e.stopImmediatePropagation();
-          });
-        });
-
-      // Preloader
-      const preloader = document.querySelector("#preloader");
-      if (preloader) {
-        window.addEventListener("load", () => preloader.remove());
-      }
-
-      //  Scroll top button
-      const scrollTop = document.querySelector(".scroll-top");
-
-      const toggleScrollTop = () => {
-        if (scrollTop) {
-          window.scrollY > 100 ?
-            scrollTop.classList.add("active") :
-            scrollTop.classList.remove("active");
-        }
-      };
-
-      scrollTop?.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      });
-
-      window.addEventListener("load", toggleScrollTop);
-      document.addEventListener("scroll", toggleScrollTop);
-
-      new PureCounter();
-    })();
-  </script>
 </body>
 
 </html>
