@@ -50,8 +50,8 @@
 
     <!-- Conten Home -->
     <section class="home">
-        <video class="video-slide active" src="https://asset.cloudinary.com/du4f8hmcs/b284d939dbd542aa1b8fa985b3596df9" autoplay muted loop></video>
-        <video class="video-slide" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
+        <video class="video-slide active" src="https://res.cloudinary.com/du4f8hmcs/video/upload/v1744536078/HMSI_Impac_17_agustus_efqcrd.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="https://res.cloudinary.com/du4f8hmcs/video/upload/v1744536078/HMSI_Impac_17_agustus_efqcrd.mp4" autoplay muted loop></video>
 
         <div class="content active">
             <h1>Sugeng rawuh <br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
