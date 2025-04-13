@@ -218,6 +218,7 @@ $conn = null;
 
           <?php
           if ($resultSet->num_rows > 0) {
+            $post = $resultSet->fetch_assoc();
             // $post = $resultSet->fetch_assoc();
             // echo "<h1>" . htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8') . "</h1>";
             // echo "<p><strong>Category:</strong> " . htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8') . "</p>";
