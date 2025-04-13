@@ -1,3 +1,10 @@
+<?php
+include 'conn.php';
+
+$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where status = 'published' ORDER BY created_at DESC"; 
+$result = $conn->query($query);
+// var_dump($result->num_rows);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,95 +126,38 @@
         </div>
         <div class="container p-5 pt-4 pb-5">
             <div class="row g-4">
-                <!-- Card 1 -->
-                <a href="detail-berita.php" class="col-lg-4 col-md-6 text-decoration-none text-dark">
-                    <div class="card news-card">
-                        <div class="position-relative">
-                            <img src="assets/berita/B_1.webp" alt="Pelatihan Linmas">
-                            <div class="date-badge">05 Sep 2024</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="fw-semibold">Pelatihan Anggota Linmas</h5>
-                            <p class="text-muted">Kersik – Pemerintah Desa Kersik baru-baru ini menyelenggarakan
-                                pelatihan...</p>
-                            <div class="admin-info">
-                                <span>👤 Administrator</span> | <span>👁️ Dilihat 633 kali</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
 
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card news-card">
-                        <div class="position-relative">
-                            <img src="assets/berita/B_1.webp" alt="Rapat Desa">
-                            <div class="date-badge">10 Sep 2024</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="fw-semibold">Rapat Koordinasi Desa</h5>
-                            <p class="text-muted">Rapat rutin pemerintah desa membahas berbagai program pembangunan...
-                            </p>
-                            <div class="admin-info">
-                                <span>👤 Administrator</span> | <span>👁️ Dilihat 450 kali</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card news-card">
-                        <div class="position-relative">
-                            <img src="assets/berita/B_1.webp" alt="Pendidikan">
-                            <div class="date-badge">15 Sep 2024</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="fw-semibold">Pelatihan Guru Honorer</h5>
-                            <p class="text-muted">Guru honorer di desa mendapatkan pelatihan untuk meningkatkan
-                                kualitas...</p>
-                            <div class="admin-info">
-                                <span>👤 Administrator</span> | <span>👁️ Dilihat 378 kali</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card news-card">
-                        <div class="position-relative">
-                            <img src="assets/berita/B_1.webp" alt="Layanan Kesehatan">
-                            <div class="date-badge">20 Sep 2024</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="fw-semibold">Layanan Kesehatan Gratis</h5>
-                            <p class="text-muted">Masyarakat desa mendapatkan layanan kesehatan gratis di puskesmas...
-                            </p>
-                            <div class="admin-info">
-                                <span>👤 Administrator</span> | <span>👁️ Dilihat 520 kali</span>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $content = $row['content'];
+                        $date = date('d M Y', strtotime($row['created_at']));
+                ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card news-card">
+                                <div class="position-relative">
+                                    <img src="assets/berita/B_1.webp" alt="Kerja Bakti">
+                                    <div class="date-badge"><?= $date ?></div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="fw-semibold"><?= substr($title, 0, 50) ?></h5>
+                                   
+                                    <div class="admin-info">
+                                        <span>👤 Administrator</span> | <span>👁️ Dilihat <?=rand(500,1000) ?> kali</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card news-card">
-                        <div class="position-relative">
-                            <img src="assets/berita/B_1.webp" alt="Kerja Bakti">
-                            <div class="date-badge">25 Sep 2024</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="fw-semibold">Kerja Bakti Lingkungan</h5>
-                            <p class="text-muted">Warga desa bersama-sama Gotong royong desa untuk menjaga kebersihan...
-                            </p>
-                            <div class="admin-info">
-                                <span>👤 Administrator</span> | <span>👁️ Dilihat 290 kali</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    }
+                } else {
+                    echo 'Tidak ada berita yang ditemukan.';
+                }
+                ?>
             </div>
         </div>
     </section>
@@ -352,130 +302,130 @@
     <script src="/js/main.js"></script>
 
     <script>
-    // ---------- Corasel slider Berita ------------ //
-    document.addEventListener("DOMContentLoaded", function() {
-        const captions = document.querySelectorAll(".carousel-caption");
+        // ---------- Corasel slider Berita ------------ //
+        document.addEventListener("DOMContentLoaded", function() {
+            const captions = document.querySelectorAll(".carousel-caption");
 
-        captions.forEach((caption) => {
-            gsap.set(caption, {
-                opacity: 0,
-                y: 50
-            });
-        });
-
-        function animateCaption(slideIndex) {
-            const activeCaption = document.querySelector(
-                `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-            );
-
-            if (activeCaption) {
-                gsap.to(activeCaption, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power3.out",
+            captions.forEach((caption) => {
+                gsap.set(caption, {
+                    opacity: 0,
+                    y: 50
                 });
-            }
-        }
-        const carousel = document.querySelector("#carouselExampleCaptions");
-        carousel.addEventListener("slid.bs.carousel", function(event) {
-            const newIndex = event.to;
-            gsap.set(captions, {
-                opacity: 0,
-                y: 50
             });
 
-            animateCaption(newIndex);
-        });
-        animateCaption(0);
-    });
+            function animateCaption(slideIndex) {
+                const activeCaption = document.querySelector(
+                    `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
+                );
 
-    // ------------------ Navbar JS ---------------- //
-    (function() {
-        "use strict";
-
-        // Apply .scrolled class to the body as the page is scrolled down
-        const toggleScrolled = () => {
-            const body = document.querySelector("body");
-            const header = document.querySelector("#header");
-
-            if (
-                !header.classList.contains("scroll-up-sticky") &&
-                !header.classList.contains("sticky-top") &&
-                !header.classList.contains("fixed-top")
-            )
-                return;
-
-            window.scrollY > 100 ?
-                body.classList.add("scrolled") :
-                body.classList.remove("scrolled");
-        };
-
-        // Event listeners for scroll and load
-        document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
-
-        // Mobile navigation toggle
-        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        const mobileNavToogle = () => {
-            document.querySelector("body").classList.toggle("mobile-nav-active");
-            mobileNavToggleBtn.classList.toggle("bi-list");
-            mobileNavToggleBtn.classList.toggle("bi-x");
-        };
-        mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
-
-        // Hide mobile nav on same-page/hash links
-        document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-            navmenu.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
+                if (activeCaption) {
+                    gsap.to(activeCaption, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        ease: "power3.out",
+                    });
                 }
+            }
+            const carousel = document.querySelector("#carouselExampleCaptions");
+            carousel.addEventListener("slid.bs.carousel", function(event) {
+                const newIndex = event.to;
+                gsap.set(captions, {
+                    opacity: 0,
+                    y: 50
+                });
+
+                animateCaption(newIndex);
             });
+            animateCaption(0);
         });
 
-        // Toggle mobile nav dropdowns
-        document
-            .querySelectorAll(".navmenu .toggle-dropdown")
-            .forEach((navmenu) => {
-                navmenu.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    const parent = this.parentNode;
-                    parent.classList.toggle("active");
-                    parent.nextElementSibling.classList.toggle("dropdown-active");
-                    e.stopImmediatePropagation();
+        // ------------------ Navbar JS ---------------- //
+        (function() {
+            "use strict";
+
+            // Apply .scrolled class to the body as the page is scrolled down
+            const toggleScrolled = () => {
+                const body = document.querySelector("body");
+                const header = document.querySelector("#header");
+
+                if (
+                    !header.classList.contains("scroll-up-sticky") &&
+                    !header.classList.contains("sticky-top") &&
+                    !header.classList.contains("fixed-top")
+                )
+                    return;
+
+                window.scrollY > 100 ?
+                    body.classList.add("scrolled") :
+                    body.classList.remove("scrolled");
+            };
+
+            // Event listeners for scroll and load
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
+
+            // Mobile navigation toggle
+            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+            const mobileNavToogle = () => {
+                document.querySelector("body").classList.toggle("mobile-nav-active");
+                mobileNavToggleBtn.classList.toggle("bi-list");
+                mobileNavToggleBtn.classList.toggle("bi-x");
+            };
+            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
+
+            // Hide mobile nav on same-page/hash links
+            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
+                navmenu.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
                 });
             });
 
-        // Preloader
-        const preloader = document.querySelector("#preloader");
-        if (preloader) {
-            window.addEventListener("load", () => preloader.remove());
-        }
+            // Toggle mobile nav dropdowns
+            document
+                .querySelectorAll(".navmenu .toggle-dropdown")
+                .forEach((navmenu) => {
+                    navmenu.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle("active");
+                        parent.nextElementSibling.classList.toggle("dropdown-active");
+                        e.stopImmediatePropagation();
+                    });
+                });
 
-        //  Scroll top button
-        const scrollTop = document.querySelector(".scroll-top");
-
-        const toggleScrollTop = () => {
-            if (scrollTop) {
-                window.scrollY > 100 ?
-                    scrollTop.classList.add("active") :
-                    scrollTop.classList.remove("active");
+            // Preloader
+            const preloader = document.querySelector("#preloader");
+            if (preloader) {
+                window.addEventListener("load", () => preloader.remove());
             }
-        };
 
-        scrollTop?.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+            //  Scroll top button
+            const scrollTop = document.querySelector(".scroll-top");
+
+            const toggleScrollTop = () => {
+                if (scrollTop) {
+                    window.scrollY > 100 ?
+                        scrollTop.classList.add("active") :
+                        scrollTop.classList.remove("active");
+                }
+            };
+
+            scrollTop?.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             });
-        });
 
-        window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
 
-        new PureCounter();
-    })();
+            new PureCounter();
+        })();
     </script>
 </body>
 
