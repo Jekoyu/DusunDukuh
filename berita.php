@@ -1,9 +1,12 @@
 <?php
 include 'conn.php';
 
-$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita Dusun' ORDER BY created_at DESC"; 
+$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita Dusun' ORDER BY created_at DESC";
 $result = $conn->query($query);
 // var_dump($result->num_rows);
+
+$query_2 = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita Dusun' ORDER BY created_at DESC";
+$event = $conn->query($query_2);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +25,45 @@ $result = $conn->query($query);
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        /* Card Berita */
+        .news-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .date-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .admin-info {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+   
+
+    </style>
 </head>
 
 <body>
@@ -138,17 +180,20 @@ $result = $conn->query($query);
                         $date = date('d M Y', strtotime($row['created_at']));
                 ?>
                         <div class="col-lg-4 col-md-6">
-                            <div class="card news-card">
+                            <div class="card news-card h-100"> <!-- Tambahkan h-100 untuk tinggi seragam -->
                                 <div class="position-relative">
-                                    <img src="assets/berita/B_1.webp" alt="Kerja Bakti">
+                                    <!-- Gunakan gambar dari database jika ada -->
+                                    <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
                                     <div class="date-badge"><?= $date ?></div>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="fw-semibold"><?= substr($title, 0, 50) ?></h5>
-                                   
-                                    <div class="admin-info">
-                                        <span>👤 Administrator</span> | <span>👁️ Dilihat <?=rand(500,1000) ?> kali</span>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
+                                    <p class="card-text flex-grow-1"><?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...</p>
+                                    <div class="admin-info mt-auto">
+                                        <span>👤 Administrator</span> |
+                                        <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
                                     </div>
+                                    <a href="berita_detail.php?id=<?= $id ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
