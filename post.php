@@ -224,7 +224,7 @@ $conn = null;
             // echo "<div>" . nl2br(htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8')) . "</div>";
           ?>
             <div class="news-content">
-              <?= $content ?>
+              <?= $post['content'] ?>
             </div>
           <?php
           } else {
