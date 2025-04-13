@@ -1,3 +1,39 @@
+<?php
+include 'conn.php';
+
+$category = isset($_GET['category']) ? $_GET['category'] : '';
+$slug = isset($_GET['slug']) ? $_GET['slug'] : '';
+
+if ($category != '' && $slug != '') {
+    try {
+       
+        $stmt = $conn->prepare("SELECT posts.*, categories.name 
+                                FROM posts
+                                JOIN categories ON posts.category_id = categories.id
+                                WHERE categories.slug = ? AND posts.slug = ?");
+        $stmt->bind_param("ss", $category, $slug);
+        $stmt->execute();
+        $resultSet = $stmt->get_result();
+
+        if ($resultSet->num_rows > 0) {
+            $post = $resultSet->fetch_assoc();
+            echo "<h1>" . htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8') . "</h1>";
+            echo "<p><strong>Category:</strong> " . htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "<div>" . nl2br(htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8')) . "</div>";
+        } else {
+            echo "<p>Post not found!</p>";
+        }
+
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+} else {
+    echo "<p>Invalid URL parameters!</p>";
+}
+
+$conn = null;
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 

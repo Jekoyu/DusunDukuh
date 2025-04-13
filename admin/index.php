@@ -125,7 +125,7 @@ include 'partials/head.php';
                         "data": "content",
                         "render": function(data, type, row) {
                             var words = data.split(' ');
-                            var truncatedContent = words.slice(0, 5).join(' ') + (words.length > 5 ? '...' : '');
+                            var truncatedContent = words.slice(0, 20).join(' ') + (words.length > 5 ? '...' : '');
                             return truncatedContent;
                         }
                     },

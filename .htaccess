@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)$ post.php?category=$1&slug=$2 [L,QSA]

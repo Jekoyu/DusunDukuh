@@ -1,11 +1,11 @@
 <?php
 include 'conn.php';
 
-$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita Dusun' ORDER BY created_at DESC";
+$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC";
 $result = $conn->query($query);
 // var_dump($result->num_rows);
 
-$query_2 = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita Dusun' ORDER BY created_at DESC";
+$query_2 = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Event' ORDER BY created_at DESC";
 $event = $conn->query($query_2);
 ?>
 <!DOCTYPE html>
