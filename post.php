@@ -5,30 +5,29 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
 $slug = isset($_GET['slug']) ? $_GET['slug'] : '';
 
 if ($category != '' && $slug != '') {
-    try {
-       
-        $stmt = $conn->prepare("SELECT posts.*, categories.name 
+  try {
+
+    $stmt = $conn->prepare("SELECT posts.*, categories.name 
                                 FROM posts
                                 JOIN categories ON posts.category_id = categories.id
                                 WHERE categories.slug = ? AND posts.slug = ?");
-        $stmt->bind_param("ss", $category, $slug);
-        $stmt->execute();
-        $resultSet = $stmt->get_result();
+    $stmt->bind_param("ss", $category, $slug);
+    $stmt->execute();
+    $resultSet = $stmt->get_result();
 
-        if ($resultSet->num_rows > 0) {
-            $post = $resultSet->fetch_assoc();
-            echo "<h1>" . htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8') . "</h1>";
-            echo "<p><strong>Category:</strong> " . htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8') . "</p>";
-            echo "<div>" . nl2br(htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8')) . "</div>";
-        } else {
-            echo "<p>Post not found!</p>";
-        }
-
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+    if ($resultSet->num_rows > 0) {
+      // $post = $resultSet->fetch_assoc();
+      // echo "<h1>" . htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8') . "</h1>";
+      // echo "<p><strong>Category:</strong> " . htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8') . "</p>";
+      // echo "<div>" . nl2br(htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8')) . "</div>";
+    } else {
+      echo "<p>Post not found!</p>";
     }
+  } catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+  }
 } else {
-    echo "<p>Invalid URL parameters!</p>";
+  echo "<p>Invalid URL parameters!</p>";
 }
 
 $conn = null;
@@ -216,18 +215,21 @@ $conn = null;
           <img src="https://via.placeholder.com/600x400" alt="Pelatihan Linmas Desa Kersik" class="news-image">
 
           <!-- News Content -->
-          <div class="news-content">
-            <p>Kersik – Pemerintah Desa Kersik baru-baru ini menyelenggarakan pelatihan intensif bagi anggota Perlindungan Masyarakat (Linmas). Kegiatan yang berlangsung selama dua hari ini bertujuan untuk meningkatkan kapasitas dan keterampilan anggota Linmas dalam menjaga keamanan dan ketertiban di lingkungan desa.</p>
 
-            <p>Pelatihan dibuka secara resmi oleh Kepala Desa Kersik, Bapak Suryanto, yang dalam sambutannya menekankan pentingnya peran Linmas sebagai garda terdepan dalam menjaga keamanan desa. "Anggota Linmas adalah mitra penting pemerintah desa dalam menciptakan lingkungan yang aman dan tertib bagi seluruh warga," ujarnya.</p>
-
-            <p>Materi pelatihan mencakup berbagai aspek penting, termasuk teknik patroli, penanganan situasi darurat, pertolongan pertama pada kecelakaan (P3K), dan koordinasi dengan aparat keamanan lainnya. Para peserta juga dibekali pengetahuan tentang regulasi terbaru terkait keamanan dan ketertiban masyarakat.</p>
-
-            <p>Salah satu peserta, Hendra Wijaya (42), mengungkapkan apresiasinya terhadap pelatihan tersebut. "Pelatihan ini sangat bermanfaat bagi kami. Sekarang kami lebih percaya diri dalam menjalankan tugas sebagai anggota Linmas," katanya.</p>
-
-            <p>Di akhir pelatihan, seluruh peserta menerima sertifikat dan perlengkapan pendukung tugas Linmas. Pemerintah Desa Kersik berkomitmen untuk terus meningkatkan kapasitas anggota Linmas melalui berbagai program pelatihan serupa di masa mendatang.</p>
-          </div>
-
+          <?php
+          if ($resultSet->num_rows > 0) {
+            // $post = $resultSet->fetch_assoc();
+            // echo "<h1>" . htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8') . "</h1>";
+            // echo "<p><strong>Category:</strong> " . htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8') . "</p>";
+            // echo "<div>" . nl2br(htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8')) . "</div>";
+          ?>
+            <div class="news-content">
+              <?= $content?>
+             </div>
+          <?php
+          } else {
+            echo "<p>Post not found!</p>";
+          } ?>
           <!-- Social Share Buttons -->
           <div class="mt-4 pt-3 border-top">
             <h5 class="mb-3">Bagikan Berita:</h5>
