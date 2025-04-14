@@ -93,75 +93,51 @@
     <!-- Program Desa -->
     <section id="category-program">
         <div class="container-program">
-            <div class="align-items-center">
-                <div class="text-center">
-                    <h2 class="text-program display-6">PROGRAM DUSUN</h2>
-                    <p class="fw-semibold">Program Dusun Dukuh untuk masyarakat</p>
-                </div>
-            </div>
-            <div class="row g-md-3 mt-2">
-                <div class="col-md-4">
-                    <div class="primary rounded-3 p-4 my-3">
-                        <div class="d-flex align-items-center">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="ps-4">
-                                <p class="category-paragraph fw-bold text-uppercase mb-1">
-                                    Graphic Design
-                                </p>
-                                <p class="category-paragraph m-0">39 courses</p>
+            <h2 class="text-center text-program display-6">PETA LOKASI DESA</h2>
+            <!-- Perbatasan desa -->
+            <!-- <div class="align-items-center">
+                <div>
+                    <div class="d-flex row">
+                        <div class="border border-dark rounded-4 px-4 mb-3 col-md-6 h-25">
+                            <div class="line-bottom">
+                                <h5>Batas Dusun</h5>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Utara</h6>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>Selatan</h6>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>Timur</h6>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>Barat</h6>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-bottom">
+                                <h3>Luas Dusun</h3>
+                                <p>400.000 ㎡</p>
+                            </div>
+                            <div>
+                                <h3>Jumlah Penduduk</h3>
+                                <p>1.000 Jiwa</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="tertiary rounded-3 p-4 my-3">
-                        <div class="d-flex align-items-center">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="ps-4">
-                                <p class="category-paragraph fw-bold text-uppercase mb-1">
-                                    SEO & Marketing
-                                </p>
-                                <p class="category-paragraph m-0">24 courses</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="primary rounded-3 p-4 my-3">
-                        <div class="d-flex align-items-center">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="ps-4">
-                                <p class="category-paragraph fw-bold text-uppercase mb-1">
-                                    Video & Photography
-                                </p>
-                                <p class="category-paragraph m-0">39 courses</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="secondary rounded-3 p-4 my-3">
-                        <div class="d-flex align-items-center">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="ps-4">
-                                <p class="category-paragraph fw-bold text-uppercase mb-1">
-                                    Computer Science
-                                </p>
-                                <p class="category-paragraph m-0">16 courses</p>
-                            </div>
+                        <div class="col-md-6">
+                            <iframe class=" maps"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31628.4426481496!2d110.3801232653408!3d-7.73076298033092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a593f72c5303b%3A0x5027a76e3569670!2sSinduharjo%2C%20Kec.%20Ngaglik%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1739797475162!5m2!1sid!2sid"
+                                width="100%" height="420" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="tertiary rounded-3 p-4 my-3">
-                        <div class="d-flex align-items-center">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="ps-4">
-                                <p class="category-paragraph fw-bold text-uppercase mb-1">
-                                    SEO & Marketing
-                                </p>
-                                <p class="category-paragraph m-0">24 courses</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
 
             <!-- Poster dan yt -->
             <div class="row mt-4">
