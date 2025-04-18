@@ -167,8 +167,59 @@
         </div>
     </section>
 
+    <!-- Admistrasi -->
+    <section id="stats" class="stats section dark-background">
+        <img src="" alt="" data-aos="fade-in" />
+        <div class="container-fluid position-relative" data-aos="fade-up" data-aos-delay="100">
+            <!-- Subheading Section -->
+            <div class="subheading">
+                <h2>INFORMASI KEPENDUDUKAN</h2>
+                <p>Informasi jumlah kependudukan masyarakat Dusun Dukuh</p>
+            </div>
+
+            <!-- Stats Items -->
+            <div class="row gy-4">
+                <!-- Penduduk -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Penduduk</p>
+                    </div>
+                </div>
+
+                <!-- Keluarga -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Keluarga</p>
+                    </div>
+                </div>
+
+                <!-- Perempuan -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="550" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Perempuan</p>
+                    </div>
+                </div>
+
+                <!-- Laki-laki -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Laki-laki</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Berita terkini -->
-    <section class="card-berita section-berita pb-4">
+    <section class="card-berita section-berita pb-3">
         <div class="d-flex flex-column align-items-center text-center text-berita">
             <h2 class="display-6">BERITA TERKINI</h2>
             <p class="fw-semibold">Menyajikan informasi terbaru tentang peristiwa, berita terkini, dan event-event di
@@ -176,7 +227,7 @@
         </div>
 
         <!-- Mobile Carousel -->
-        <div class="container d-block d-md-none pt-4">
+        <div class="container d-block d-md-none">
             <div class="swiper berita-swiper">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
@@ -227,7 +278,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-pagination mt-3"></div>
+                <div class="swiper-pagination mt-2"></div>
             </div>
         </div>
 
@@ -286,60 +337,150 @@
 
         <!-- Tombol lihat berita -->
         <div class="d-flex justify-content-end container">
-            <a href=" berita.php" class="more"><i class="fa-solid fa-clipboard-list mx-2"></i>LIHAT BERITA LEBIH BANYAK
+            <a href="berita.php" class="more"><i class="fa-solid fa-clipboard-list mx-2"></i>LIHAT BERITA LEBIH BANYAK
                 BERITA</a>
         </div>
     </section>
 
+    <!-- Produk UMK -->
+    <section class="card-berita section-berita pb-3">
+        <div class="d-flex flex-column align-items-center text-center text-berita">
+            <h2 class="display-6">PRODUK UMK</h2>
+            <p class="fw-semibold">Menyajikan informasi produk UMK Dusun Dukuh</p>
+        </div>
 
-    <!-- Admistrasi -->
-    <section id="stats" class="stats section dark-background">
-        <img src="" alt="" data-aos="fade-in" />
-        <div class="container-fluid position-relative" data-aos="fade-up" data-aos-delay="100">
-            <!-- Subheading Section -->
-            <div class="subheading">
-                <h2>INFORMASI KEPENDUDUKAN</h2>
-                <p>Informasi jumlah kependudukan masyarakat Dusun Dukuh</p>
+        <!-- Mobile Carousel -->
+        <div class="container d-block d-md-none">
+            <div class="swiper berita-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="card produk-card">
+                            <div class="position-relative">
+                                <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                                <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                    rapi...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-danger fw-bold">Rp 25.000</span>
+                                    <button class="btn-produk btn-sm">Beli</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="card produk-card">
+                            <div class="position-relative">
+                                <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                                <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                    rapi...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-danger fw-bold">Rp 25.000</span>
+                                    <button class="btn-produk btn-sm">Beli</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="card produk-card">
+                            <div class="position-relative">
+                                <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                                <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                    rapi...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-danger fw-bold">Rp 25.000</span>
+                                    <button class="btn-produk btn-sm">Beli</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-2"></div>
             </div>
+        </div>
 
-            <!-- Stats Items -->
-            <div class="row gy-4">
-                <!-- Penduduk -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Penduduk</p>
+        <!-- Desktop Grid -->
+        <div class="container pt-4 d-none d-md-block">
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card produk-card">
+                        <div class="position-relative">
+                            <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                            <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                rapi...</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-danger fw-bold">Rp 25.000</span>
+                                <button class="btn-produk btn-sm">Beli</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Keluarga -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Keluarga</p>
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card produk-card">
+                        <div class="position-relative">
+                            <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                            <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                rapi...</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-danger fw-bold">Rp 25.000</span>
+                                <button class="btn-produk btn-sm">Beli</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Perempuan -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="550" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Perempuan</p>
-                    </div>
-                </div>
-
-                <!-- Laki-laki -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Laki-laki</p>
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card produk-card">
+                        <div class="position-relative">
+                            <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                            <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                rapi...</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-danger fw-bold">Rp 25.000</span>
+                                <button class="btn-produk btn-sm">Beli</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Tombol lihat produk -->
+        <div class="d-flex justify-content-end container">
+            <a href="PKK.php#umkm-container" class="more"><i class="fa-solid fa-clipboard-list mx-2"></i>LIHAT PRODUK
+                UMK LEBIH
+                BANYAK</a>
         </div>
     </section>
 
@@ -437,21 +578,21 @@
     <!-- Bootstrap JS (bundle includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
 
     <!-- Swiper Inisialisasi -->
     <script>
-    const swiper = new Swiper('.berita-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
+        const swiper = new Swiper('.berita-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 15,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
     </script>
 </body>
 

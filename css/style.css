@@ -402,36 +402,36 @@ p {
 }
 
 /* ------ Bagian Slider ------ */
-.slider-navigation {
-  z-index: 888;
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-.slider-navigation .nav-btn {
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 50%;
-  border: 2px solid;
-  cursor: pointer;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
-  transition: 0.3s ease;
-}
-.slider-navigation .nav-btn.active {
-  background: #018577;
-}
-.slider-navigation .nav-btn:not(:last-child) {
-  margin-right: 20px;
-}
-.slider-navigation .nav-btn:hover {
-  transform: scale(1.2);
-}
+  .slider-navigation {
+    z-index: 888;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .slider-navigation .nav-btn {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+  }
+  .slider-navigation .nav-btn.active {
+    background: #018577;
+  }
+  .slider-navigation .nav-btn:not(:last-child) {
+    margin-right: 20px;
+  }
+  .slider-navigation .nav-btn:hover {
+    transform: scale(1.2);
+  }
 
 @media (max-width: 768px) {
   .home {
@@ -649,7 +649,6 @@ p {
     padding-right: 20px;
     margin: 0 auto;
   }
-
   .date-badge {
     position: absolute;
     bottom: 15px;
@@ -665,17 +664,38 @@ p {
     font-size: 14px;
     color: #666;
   }
-
   .swiper-slide {
     padding: 10px;
   }
-  
   .more {
     text-decoration: none;
     margin-right: 10px;
     color: var(--color-font-primary1);
     font-weight: 600;
     padding-top: 15px;
+  }
+
+  /* Produk UMK */
+  .produk-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .produk-card img {
+      object-fit: cover;
+      height: 180px;
+      width: 100%;
+  }
+  .btn-produk {
+    background-color: var(--color-primary);
+    color: var(--color-font-primary3);
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 6px 25px;
+  }
+  .btn-produk:hover {
+    background-color: var(--color-program);
+    color: var(--color-font-primary2);
   }
 
   @media (max-width: 768px) {
@@ -702,7 +722,6 @@ p {
 .stats {
   position: relative;
   background-color: var(--color-secondary);
-  border-radius: 50px 50px 0 0;
 }
 .stats .container {
   position: relative;
@@ -744,7 +763,7 @@ p {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 .section {
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 50px 200px;
 }
 
