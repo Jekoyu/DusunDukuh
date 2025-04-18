@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HMSI Home</title>
+    <title>Padusunan Dukuh</title>
 
     <!-- Boostrep -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -15,6 +15,9 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -51,7 +54,6 @@
     <!-- Conten Home -->
     <section class="home">
         <video class="video-slide active" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
-        <video class="video-slide" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
 
         <div class="content active">
             <h1>Sugeng rawuh <br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
@@ -59,19 +61,6 @@
                 Tempat di mana kearifan lokal, semangat gotong royong, dan keindahan
                 alam bersatu. Temukan informasi seputar kegiatan warga, potensi dusun, dan layanan masyarakat di sini.
             </p>
-        </div>
-        <div class="content">
-            <h1>Sugeng rawuh <br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
-            <p>
-                Tempat di mana kearifan lokal, semangat gotong royong, dan keindahan
-                alam bersatu. Temukan informasi seputar kegiatan warga, potensi dusun, dan layanan masyarakat di sini.
-            </p>
-        </div>
-
-        <!-- Slider nav btn -->
-        <div class="slider-navigation">
-            <div class="nav-btn active"></div>
-            <div class="nav-btn"></div>
         </div>
     </section>
 
@@ -228,6 +217,272 @@
         </div>
     </section>
 
+    <!-- Berita terkini -->
+    <section class="card-berita section-berita pb-3">
+        <div class="d-flex flex-column align-items-center text-center text-berita">
+            <h2 class="display-6">BERITA TERKINI</h2>
+            <p class="fw-semibold">Menyajikan informasi terbaru tentang peristiwa, berita terkini, dan event-event di
+                Dusun Dukuh</p>
+        </div>
+
+        <!-- Mobile Carousel -->
+        <div class="container d-block d-md-none">
+            <div class="swiper berita-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="card berita-card">
+                            <div class="position-relative">
+                                <img src="assets/berita/B_1.webp" alt="Pelatihan Linmas">
+                                <div class="date-badge">05 Sep 2024</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold">Pelatihan Anggota Linmas</h5>
+                                <p class="text-muted">Kersik – Pemerintah Desa Kersik baru-baru ini menyelenggarakan
+                                    pelatihan...</p>
+                                <div class="admin-info">👤 Administrator | 👁️ Dilihat 633 kali</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="card berita-card">
+                            <div class="position-relative">
+                                <img src="assets/berita/B_1.webp" alt="Rapat Desa">
+                                <div class="date-badge">10 Sep 2024</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold">Rapat Koordinasi Desa</h5>
+                                <p class="text-muted">Rapat rutin pemerintah desa membahas berbagai program
+                                    pembangunan...</p>
+                                <div class="admin-info">👤 Administrator | 👁️ Dilihat 450 kali</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="card berita-card">
+                            <div class="position-relative">
+                                <img src="assets/berita/B_1.webp" alt="Pendidikan">
+                                <div class="date-badge">15 Sep 2024</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold">Pelatihan Guru Honorer</h5>
+                                <p class="text-muted">Guru honorer di desa mendapatkan pelatihan untuk meningkatkan
+                                    kualitas...</p>
+                                <div class="admin-info">👤 Administrator | 👁️ Dilihat 378 kali</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-2"></div>
+            </div>
+        </div>
+
+        <!-- Desktop Grid -->
+        <div class="container pt-4 d-none d-md-block">
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card berita-card">
+                        <div class="position-relative">
+                            <img src="assets/berita/B_1.webp" alt="Pelatihan Linmas">
+                            <div class="date-badge">05 Sep 2024</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold">Pelatihan Anggota Linmas</h5>
+                            <p class="text-muted">Kersik – Pemerintah Desa Kersik baru-baru ini menyelenggarakan
+                                pelatihan...</p>
+                            <div class="admin-info">👤 Administrator | 👁️ Dilihat 633 kali</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card berita-card">
+                        <div class="position-relative">
+                            <img src="assets/berita/B_1.webp" alt="Rapat Desa">
+                            <div class="date-badge">10 Sep 2024</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold">Rapat Koordinasi Desa</h5>
+                            <p class="text-muted">Rapat rutin pemerintah desa membahas berbagai program pembangunan...
+                            </p>
+                            <div class="admin-info">👤 Administrator | 👁️ Dilihat 450 kali</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card berita-card">
+                        <div class="position-relative">
+                            <img src="assets/berita/B_1.webp" alt="Pendidikan">
+                            <div class="date-badge">15 Sep 2024</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold">Pelatihan Guru Honorer</h5>
+                            <p class="text-muted">Guru honorer di desa mendapatkan pelatihan untuk meningkatkan
+                                kualitas...</p>
+                            <div class="admin-info">👤 Administrator | 👁️ Dilihat 378 kali</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol lihat berita -->
+        <div class="d-flex justify-content-end container">
+            <a href="berita.php" class="more"><i class="fa-solid fa-clipboard-list mx-2"></i>LIHAT BERITA LEBIH BANYAK
+                BERITA</a>
+        </div>
+    </section>
+
+    <!-- Produk UMK -->
+    <section class="card-berita section-berita pb-3">
+        <div class="d-flex flex-column align-items-center text-center text-berita">
+            <h2 class="display-6">PRODUK UMK</h2>
+            <p class="fw-semibold">Menyajikan informasi produk UMK Dusun Dukuh</p>
+        </div>
+
+        <!-- Mobile Carousel -->
+        <div class="container d-block d-md-none">
+            <div class="swiper berita-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="card produk-card">
+                            <div class="position-relative">
+                                <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                                <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                    rapi...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-danger fw-bold">Rp 25.000</span>
+                                    <button class="btn-produk btn-sm">Beli</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="card produk-card">
+                            <div class="position-relative">
+                                <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                                <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                    rapi...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-danger fw-bold">Rp 25.000</span>
+                                    <button class="btn-produk btn-sm">Beli</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="card produk-card">
+                            <div class="position-relative">
+                                <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                                <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                                <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                    rapi...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-danger fw-bold">Rp 25.000</span>
+                                    <button class="btn-produk btn-sm">Beli</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-2"></div>
+            </div>
+        </div>
+
+        <!-- Desktop Grid -->
+        <div class="container pt-4 d-none d-md-block">
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card produk-card">
+                        <div class="position-relative">
+                            <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                            <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                rapi...</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-danger fw-bold">Rp 25.000</span>
+                                <button class="btn-produk btn-sm">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card produk-card">
+                        <div class="position-relative">
+                            <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                            <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                rapi...</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-danger fw-bold">Rp 25.000</span>
+                                <button class="btn-produk btn-sm">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card produk-card">
+                        <div class="position-relative">
+                            <img src="assets/produk/P_1.jpg" alt="Nama Produk" class="img-fluid rounded-top">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">Baru</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-semibold mb-1">Nama Produk</h5>
+                            <p class="text-muted small mb-2">Deskripsi singkat produk, maksimal 2 baris agar tetap
+                                rapi...</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-danger fw-bold">Rp 25.000</span>
+                                <button class="btn-produk btn-sm">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol lihat produk -->
+        <div class="d-flex justify-content-end container">
+            <a href="PKK.php#umkm-container" class="more"><i class="fa-solid fa-clipboard-list mx-2"></i>LIHAT PRODUK
+                UMK LEBIH
+                BANYAK</a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -313,11 +568,8 @@
         </div>
     </section>
 
-    <!-- Bootstrap CSS (recommended to load before JS) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
+    <!-- Swiper JS (di akhir body) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- PureCounter.js -->
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
@@ -325,10 +577,22 @@
     <!-- Bootstrap JS (bundle includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- Swiper Inisialisasi -->
+    <script>
+        const swiper = new Swiper('.berita-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 15,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
 </body>
 
 </html>

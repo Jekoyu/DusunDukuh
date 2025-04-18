@@ -402,36 +402,36 @@ p {
 }
 
 /* ------ Bagian Slider ------ */
-.slider-navigation {
-  z-index: 888;
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-.slider-navigation .nav-btn {
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 50%;
-  border: 2px solid;
-  cursor: pointer;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
-  transition: 0.3s ease;
-}
-.slider-navigation .nav-btn.active {
-  background: #018577;
-}
-.slider-navigation .nav-btn:not(:last-child) {
-  margin-right: 20px;
-}
-.slider-navigation .nav-btn:hover {
-  transform: scale(1.2);
-}
+  .slider-navigation {
+    z-index: 888;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .slider-navigation .nav-btn {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+  }
+  .slider-navigation .nav-btn.active {
+    background: #018577;
+  }
+  .slider-navigation .nav-btn:not(:last-child) {
+    margin-right: 20px;
+  }
+  .slider-navigation .nav-btn:hover {
+    transform: scale(1.2);
+  }
 
 @media (max-width: 768px) {
   .home {
@@ -617,11 +617,111 @@ p {
   }
 }
 
+/* Berita terkini */
+  .section-berita h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+  }
+  .section-berita .text-berita {
+    margin-top: 70px;
+  }
+  .berita-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  .berita-card:hover {
+    transform: scale(1.02);
+  }
+  .berita-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .berita-card .card-body {
+    padding: 20px;
+  }
+  .card-berita .container {
+    max-width: 1050px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+  .date-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #E53935;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  .admin-info {
+    font-size: 14px;
+    color: #666;
+  }
+  .swiper-slide {
+    padding: 10px;
+  }
+  .more {
+    text-decoration: none;
+    margin-right: 10px;
+    color: var(--color-font-primary1);
+    font-weight: 600;
+    padding-top: 15px;
+  }
+
+  /* Produk UMK */
+  .produk-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .produk-card img {
+      object-fit: cover;
+      height: 180px;
+      width: 100%;
+  }
+  .btn-produk {
+    background-color: var(--color-primary);
+    color: var(--color-font-primary3);
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 6px 25px;
+  }
+  .btn-produk:hover {
+    background-color: var(--color-program);
+    color: var(--color-font-primary2);
+  }
+
+  @media (max-width: 768px) {
+    .section-berita h2 {
+      font-size: 20px;
+    }
+    .berita-card img {
+      height: 200px;
+    }
+    .date-badge {
+      font-size: 12px;
+      padding: 8px;
+    }
+    .more {
+      text-decoration: none;
+      margin-right: 1px;
+      color: var(--color-font-primary1);
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
 /*  Bagian Info Administrasi */
 .stats {
   position: relative;
   background-color: var(--color-secondary);
-  border-radius: 50px 50px 0 0;
 }
 .stats .container {
   position: relative;
@@ -663,7 +763,7 @@ p {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 .section {
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 50px 200px;
 }
 
@@ -961,27 +1061,6 @@ footer {
 .container-program {
   padding: 0 50px 20px;
 }
-.category-paragraph {
-  transition: color 0.3s ease-in;
-}
-.primary, .secondary, .tertiary {
-  background: var(--color-program);
-  transition: background 0.3s ease-in;
-}
-.primary:hover, .secondary:hover, .tertiary:hover {
-  background: var(--color-hvr-program);
-}
-.primary:hover .category-paragraph,
-.secondary:hover .category-paragraph,
-.tertiary:hover .category-paragraph {
-  color: var(--light-color);
-}
-
-@media (max-width: 768px) {
-  .text-program {
-    font-size: 20px;
-  }
-}
 
 /* ----- Bagian Galeri ----- */
 .portfolio {
@@ -1038,7 +1117,7 @@ div.gallery .item {
   cursor: pointer;
 }
 .item img {
-  padding: 7px;
+  padding: 8px;
   width: 350px;
   height: 250px;
   background-size: cover;
@@ -1096,7 +1175,7 @@ div.gallery .item:hover img {
 }
 @media (max-width: 480px) {
   div.gallery .item {
-    width: 100%; /* 1 kolom */
+    width: 100%; 
   }
   .gallery-title {
     font-size: 20px;
@@ -1552,5 +1631,12 @@ textarea {
     font-weight: 600;
     color: var(--color-font-primary1);  
   }
+}
+
+.line-bottom{
+  border-bottom: 2px solid #feba0096;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
