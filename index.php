@@ -344,7 +344,7 @@
     <!-- Produk UMK -->
     <section class="card-berita section-berita pb-3">
         <div class="d-flex flex-column align-items-center text-center text-berita">
-            <h2 class="display-6">PRODUK UMK</h2>
+            <h2 class="display-6">PRODUK UMKM</h2>
             <p class="fw-semibold">Menyajikan informasi produk UMK Dusun Dukuh</p>
         </div>
 
