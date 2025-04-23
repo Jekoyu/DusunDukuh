@@ -25,6 +25,7 @@ $event = $conn->query($query_2);
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="./css/style.css" />
+
     <style>
         /* Card Berita */
         .news-card {
@@ -60,9 +61,6 @@ $event = $conn->query($query_2);
             font-size: 0.8rem;
             color: #6c757d;
         }
-
-   
-
     </style>
 </head>
 
@@ -178,9 +176,10 @@ $event = $conn->query($query_2);
                         $title = $row['title'];
                         $content = $row['content'];
                         $date = date('d M Y', strtotime($row['created_at']));
-                ?>
+                        ?>
                         <div class="col-lg-4 col-md-6">
-                            <div class="card news-card h-100"> <!-- Tambahkan h-100 untuk tinggi seragam -->
+                            <div class="card news-card h-100">
+                                <!-- Tambahkan h-100 untuk tinggi seragam -->
                                 <div class="position-relative">
                                     <!-- Gunakan gambar dari database jika ada -->
                                     <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
@@ -188,7 +187,9 @@ $event = $conn->query($query_2);
                                 </div>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
-                                    <p class="card-text flex-grow-1"><?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...</p>
+                                    <p class="card-text flex-grow-1">
+                                        <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
+                                    </p>
                                     <div class="admin-info mt-auto">
                                         <span>👤 Administrator</span> |
                                         <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
@@ -197,7 +198,7 @@ $event = $conn->query($query_2);
                                 </div>
                             </div>
                         </div>
-                <?php
+                        <?php
                     }
                 } else {
                     echo 'Mohon maaf Belum ada berita saat ini.';
@@ -295,40 +296,6 @@ $event = $conn->query($query_2);
         </div>
     </footer>
 
-    <!-- Pengduan -->
-    <section>
-        <button class="pengaduan-btn" onclick="toggleForm()">📝 Pengaduan</button>
-
-        <div class="form-container" id="formPengaduan">
-            <form>
-                <h2>Form Pengaduan</h2>
-                <label for="nama">Nama <span>*</span></label>
-                <input type="text" id="nama" placeholder="Masukkan nama Anda" required />
-
-                <label for="telepon">Nomor Telepon/WA <span>*</span></label>
-                <input type="tel" id="telepon" placeholder="Masukkan nomor HP/WhatsApp" required />
-
-                <label for="kategori">Kategori Pengaduan <span>*</span></label>
-                <select id="kategori" required>
-                    <option value="">Pilih kategori pengaduan</option>
-                    <option value="pelayanan">Pelayanan</option>
-                    <option value="infrastruktur">Infrastruktur</option>
-                    <option value="administrasi">Administrasi</option>
-                </select>
-
-                <label for="pengaduan">Pengaduan <span>*</span></label>
-                <textarea id="pengaduan" placeholder="Masukkan kesan, informasi, atau detail aduan Anda"
-                    required></textarea>
-
-                <label for="lampiran">Lampiran</label>
-                <input type="file" id="lampiran" />
-
-                <button type="submit" class="kirim-btn">📩 Kirim</button>
-            </form>
-        </div>
-    </section>
-
-
     <!--   *****   JQuery Link   *****   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
@@ -341,14 +308,14 @@ $event = $conn->query($query_2);
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="/js/main.js"></script>
 
     <script>
         // ---------- Corasel slider Berita ------------ //
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const captions = document.querySelectorAll(".carousel-caption");
 
             captions.forEach((caption) => {
@@ -373,7 +340,7 @@ $event = $conn->query($query_2);
                 }
             }
             const carousel = document.querySelector("#carouselExampleCaptions");
-            carousel.addEventListener("slid.bs.carousel", function(event) {
+            carousel.addEventListener("slid.bs.carousel", function (event) {
                 const newIndex = event.to;
                 gsap.set(captions, {
                     opacity: 0,
@@ -386,7 +353,7 @@ $event = $conn->query($query_2);
         });
 
         // ------------------ Navbar JS ---------------- //
-        (function() {
+        (function () {
             "use strict";
 
             // Apply .scrolled class to the body as the page is scrolled down
@@ -432,7 +399,7 @@ $event = $conn->query($query_2);
             document
                 .querySelectorAll(".navmenu .toggle-dropdown")
                 .forEach((navmenu) => {
-                    navmenu.addEventListener("click", function(e) {
+                    navmenu.addEventListener("click", function (e) {
                         e.preventDefault();
                         const parent = this.parentNode;
                         parent.classList.toggle("active");

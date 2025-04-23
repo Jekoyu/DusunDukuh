@@ -16,262 +16,6 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="./css/style.css" />
-
-    <style>
-    :root {
-        --font-primary: "Poppins", sans-serif;
-        --font-secondary: "Montserrat", sans-serif;
-        --heading-font: "Raleway", sans-serif;
-
-        /* Color Global */
-        --color-primary: #018577;
-        --color-secondary: #eaf8ef;
-        --color-font-primary1: #f8a23d;
-        --color-font-primary2: #272727;
-        --color-font-primary3: #fff;
-        --color-font-secondary: #777777;
-    }
-
-    /* Custom styles for Kelompok Pemuda page */
-    .page-header {
-        background-color: var(--color-primary);
-        padding: 120px 0 60px;
-        margin-bottom: 60px;
-        position: relative;
-    }
-
-    .page-header::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z'%3E%3C/path%3E%3C/svg%3E");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .page-header h1 {
-        color: var(--color-font-primary3);
-        font-family: var(--heading-font);
-        font-weight: 700;
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-        text-align: center;
-        /* Ensure it doesn't stretch too wide on large screens */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .page-header p {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1.1rem;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    .intro-section {
-        background-color: var(--color-secondary);
-        border-radius: 15px;
-        padding: 40px;
-        margin-bottom: 60px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .intro-icon {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background-color: var(--color-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .intro-icon i {
-        font-size: 36px;
-        color: white;
-    }
-
-    .section-title {
-        color: var(--color-font-primary1);
-        font-family: var(--heading-font);
-        font-weight: 700;
-        position: relative;
-        padding-bottom: 15px;
-        margin-bottom: 30px;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60px;
-        height: 3px;
-        background-color: var(--color-primary);
-    }
-
-    .profile-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 15px;
-        overflow: hidden;
-        border: none;
-        margin-bottom: 30px;
-    }
-
-    .profile-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .profile-footer {
-        padding: 15px;
-        background-color: var(--color-primary);
-        color: white;
-    }
-
-    .profile-name {
-        font-weight: 600;
-        font-size: 1.1rem;
-        margin-bottom: 5px;
-    }
-
-    .profile-role {
-        font-size: 0.9rem;
-        opacity: 0.9;
-    }
-
-    .activity-card {
-        transition: all 0.3s ease;
-        border-radius: 15px;
-        overflow: hidden;
-        border: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        margin-bottom: 30px;
-    }
-
-    .activity-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .activity-card img {
-        transition: transform 0.5s ease;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .activity-card:hover img {
-        transform: scale(1.05);
-    }
-
-    .activity-category {
-        background-color: var(--color-secondary);
-        padding: 25px;
-        border-radius: 15px;
-        margin-bottom: 30px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .activity-category h3 {
-        color: var(--color-primary);
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-        font-weight: 600;
-    }
-
-    .feature-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-color: var(--color-secondary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 20px;
-        flex-shrink: 0;
-    }
-
-    .feature-icon i {
-        font-size: 24px;
-        color: var(--color-primary);
-    }
-
-    .timeline {
-        position: relative;
-        padding-left: 30px;
-    }
-
-    .timeline::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 2px;
-        background-color: var(--color-primary);
-    }
-
-    .timeline-item {
-        position: relative;
-        padding-bottom: 30px;
-    }
-
-    .timeline-item:last-child {
-        padding-bottom: 0;
-    }
-
-    .timeline-item::before {
-        content: '';
-        position: absolute;
-        left: -34px;
-        top: 0;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background-color: var(--color-font-primary1);
-        border: 3px solid var(--color-primary);
-    }
-
-    .timeline-date {
-        font-weight: 600;
-        color: var(--color-primary);
-        margin-bottom: 5px;
-    }
-
-    .timeline-content {
-        background-color: var(--color-secondary);
-        padding: 15px;
-        border-radius: 8px;
-    }
-
-    .alert {
-        border-radius: 10px;
-        margin: 25px 0;
-    }
-
-    @media (max-width: 768px) {
-        .page-header {
-            padding: 100px 0 50px;
-        }
-
-        .page-header h1 {
-            font-size: 2rem;
-        }
-
-        .intro-section {
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-
-        .section-spacing {
-            padding: 40px 0;
-        }
-    }
-    </style>
 </head>
 
 <body>
@@ -309,7 +53,7 @@
     <!-- Page Header -->
     <section class="page-header text-center">
         <div class="container">
-            <h1>KELOMPOK PEMUDA DUSUN DUKUH</h1>
+            <h1>Kelompok Pemuda Dusun Dukuh</h1>
             <p>Membangun generasi muda yang aktif, kreatif, dan berkontribusi positif untuk kemajuan desa</p>
         </div>
     </section>
@@ -630,45 +374,29 @@
             </div>
         </section>
 
-        <!-- Hubungi Kami -->
-        <section class="section-spacing">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card border-0 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        <div class="card-header text-center bg-primary text-white py-3">
-                            <h4 class="mb-0">Hubungi Kelompok Pemuda</h4>
-                        </div>
-                        <div class="card-body text-center p-4">
-                            <p class="mb-4">Untuk informasi lebih lanjut tentang Kelompok Pemuda Dusun Dukuh atau ingin
-                                bergabung dengan kami, silakan hubungi:</p>
 
-                            <div class="d-flex justify-content-center mb-4">
-                                <div class="feature-icon me-3">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                                <div class="text-start">
-                                    <h5 class="fw-bold">Mohamad Danang Santoso</h5>
-                                    <p class="text-muted mb-0">Ketua Kelompok Pemuda</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex flex-wrap justify-content-center gap-3">
-                                <a href="tel:+6281234567890" class="btn btn-primary">
-                                    <i class="fas fa-phone me-2"></i> Telepon
-                                </a>
-                                <a href="https://wa.me/+6281234567890" class="btn btn-success">
-                                    <i class="fab fa-whatsapp me-2"></i> WhatsApp
-                                </a>
-                                <a href="mailto:pemuda.dusundukuh@gmail.com" class="btn btn-info text-white">
-                                    <i class="fas fa-envelope me-2"></i> Email
-                                </a>
-                            </div>
-                        </div>
+    </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h2 class="mb-3" style="color: var(--color-primary);">Hubungi Kelompok Pemuda</h2>
+                    <p class="mb-4">Untuk informasi lebih lanjut tentang Kelompok Pemuda Dusun Dukuh atau ingin
+                        bergabung dengan kami, silakan hubungi:</p>
+                    <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-calendar-alt me-2"></i> Jadwalkan Kunjungan
+                        </a>
+                        <a href="https://wa.me/+6281234567890" class="btn btn-success">
+                            <i class="fab fa-whatsapp me-2"></i> Hubungi via WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer>
@@ -731,96 +459,96 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="/js/main.js"></script>
 
     <script>
-    // Navbar JS
-    (function() {
-        "use strict";
+        // Navbar JS
+        (function () {
+            "use strict";
 
-        // Apply .scrolled class to the body as the page is scrolled down
-        const toggleScrolled = () => {
-            const body = document.querySelector("body");
-            const header = document.querySelector("#header");
+            // Apply .scrolled class to the body as the page is scrolled down
+            const toggleScrolled = () => {
+                const body = document.querySelector("body");
+                const header = document.querySelector("#header");
 
-            if (
-                !header.classList.contains("scroll-up-sticky") &&
-                !header.classList.contains("sticky-top") &&
-                !header.classList.contains("fixed-top")
-            )
-                return;
+                if (
+                    !header.classList.contains("scroll-up-sticky") &&
+                    !header.classList.contains("sticky-top") &&
+                    !header.classList.contains("fixed-top")
+                )
+                    return;
 
-            window.scrollY > 100 ?
-                body.classList.add("scrolled") :
-                body.classList.remove("scrolled");
-        };
+                window.scrollY > 100 ?
+                    body.classList.add("scrolled") :
+                    body.classList.remove("scrolled");
+            };
 
-        // Event listeners for scroll and load
-        document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
+            // Event listeners for scroll and load
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
 
-        // Mobile navigation toggle
-        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        const mobileNavToogle = () => {
-            document.querySelector("body").classList.toggle("mobile-nav-active");
-            mobileNavToggleBtn.classList.toggle("bi-list");
-            mobileNavToggleBtn.classList.toggle("bi-x");
-        };
-        mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
+            // Mobile navigation toggle
+            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+            const mobileNavToogle = () => {
+                document.querySelector("body").classList.toggle("mobile-nav-active");
+                mobileNavToggleBtn.classList.toggle("bi-list");
+                mobileNavToggleBtn.classList.toggle("bi-x");
+            };
+            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
 
-        // Hide mobile nav on same-page/hash links
-        document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-            navmenu.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
-                }
-            });
-        });
-
-        // Toggle mobile nav dropdowns
-        document
-            .querySelectorAll(".navmenu .toggle-dropdown")
-            .forEach((navmenu) => {
-                navmenu.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    const parent = this.parentNode;
-                    parent.classList.toggle("active");
-                    parent.nextElementSibling.classList.toggle("dropdown-active");
-                    e.stopImmediatePropagation();
+            // Hide mobile nav on same-page/hash links
+            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
+                navmenu.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
                 });
             });
 
-        // Preloader
-        const preloader = document.querySelector("#preloader");
-        if (preloader) {
-            window.addEventListener("load", () => preloader.remove());
-        }
+            // Toggle mobile nav dropdowns
+            document
+                .querySelectorAll(".navmenu .toggle-dropdown")
+                .forEach((navmenu) => {
+                    navmenu.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle("active");
+                        parent.nextElementSibling.classList.toggle("dropdown-active");
+                        e.stopImmediatePropagation();
+                    });
+                });
 
-        //  Scroll top button
-        const scrollTop = document.querySelector(".scroll-top");
-
-        const toggleScrollTop = () => {
-            if (scrollTop) {
-                window.scrollY > 100 ?
-                    scrollTop.classList.add("active") :
-                    scrollTop.classList.remove("active");
+            // Preloader
+            const preloader = document.querySelector("#preloader");
+            if (preloader) {
+                window.addEventListener("load", () => preloader.remove());
             }
-        };
 
-        scrollTop?.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+            //  Scroll top button
+            const scrollTop = document.querySelector(".scroll-top");
+
+            const toggleScrollTop = () => {
+                if (scrollTop) {
+                    window.scrollY > 100 ?
+                        scrollTop.classList.add("active") :
+                        scrollTop.classList.remove("active");
+                }
+            };
+
+            scrollTop?.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             });
-        });
 
-        window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
-    })();
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
+        })();
     </script>
 </body>
 

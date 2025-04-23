@@ -20,110 +20,110 @@
 
 <!-- Add CSS for list view -->
 <style>
-:root {
-    --font-primary: "Poppins", sans-serif;
-    --font-secondary: "Montserrat", sans-serif;
-    --heading-font: "Raleway", sans-serif;
+    :root {
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Montserrat", sans-serif;
+        --heading-font: "Raleway", sans-serif;
 
-    /* Color Global */
-    --color-primary: #018577;
-    --color-secondary: #eaf8ef;
-    --color-font-primary1: #f8a23d;
-    --color-font-primary2: #272727;
-    --color-font-primary3: #fff;
-    --color-font-secondary: #777777;
-}
+        /* Color Global */
+        --color-primary: #018577;
+        --color-secondary: #eaf8ef;
+        --color-font-primary1: #f8a23d;
+        --color-font-primary2: #272727;
+        --color-font-primary3: #fff;
+        --color-font-secondary: #777777;
+    }
 
-.page-header {
-    background-color: var(--color-primary);
-    padding: 120px 0 60px;
-    margin-bottom: 60px;
-    position: relative;
-}
+    .page-header {
+        background-color: var(--color-primary);
+        padding: 120px 0 60px;
+        margin-bottom: 60px;
+        position: relative;
+    }
 
-.page-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: cover;
-    background-position: center;
-}
+    .page-header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z'%3E%3C/path%3E%3C/svg%3E");
+        background-size: cover;
+        background-position: center;
+    }
 
-.page-header h1 {
-    color: var(--color-font-primary3);
-    font-family: var(--heading-font);
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    text-align: center;
-    /* Ensure it doesn't stretch too wide on large screens */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.page-header p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.list-view .umkm-item {
-    width: 100%;
-    max-width: 100%;
-    flex: 0 0 100%;
-}
-
-.list-view .card-body {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.list-view .d-flex.align-items-center {
-    width: 30%;
-    margin-bottom: 0 !important;
-}
-
-.list-view .mb-3[style="padding-left: 65px;"] {
-    width: 40%;
-    margin-bottom: 0 !important;
-    padding-left: 0 !important;
-}
-
-.list-view div[style="padding-left: 65px;"] {
-    width: 20%;
-    padding-left: 0 !important;
-}
-
-@media (max-width: 768px) {
     .page-header h1 {
-        font-size: 2rem;
-        /* Decrease font size on mobile */
-        max-width: 95%;
-        /* Ensure the title fits on mobile */
+        color: var(--color-font-primary3);
+        font-family: var(--heading-font);
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        text-align: center;
+        /* Ensure it doesn't stretch too wide on large screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-header p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .list-view .umkm-item {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
     }
 
     .list-view .card-body {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
-    .list-view .d-flex.align-items-center,
-    .list-view .mb-3[style="padding-left: 65px;"],
+    .list-view .d-flex.align-items-center {
+        width: 30%;
+        margin-bottom: 0 !important;
+    }
+
+    .list-view .mb-3[style="padding-left: 65px;"] {
+        width: 40%;
+        margin-bottom: 0 !important;
+        padding-left: 0 !important;
+    }
+
     .list-view div[style="padding-left: 65px;"] {
-        width: 100%;
-        margin-bottom: 15px !important;
+        width: 20%;
+        padding-left: 0 !important;
     }
-}
 
-/* Animation for cards */
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 2rem;
+            /* Decrease font size on mobile */
+            max-width: 95%;
+            /* Ensure the title fits on mobile */
+        }
+
+        .list-view .card-body {
+            flex-direction: column;
+        }
+
+        .list-view .d-flex.align-items-center,
+        .list-view .mb-3[style="padding-left: 65px;"],
+        .list-view div[style="padding-left: 65px;"] {
+            width: 100%;
+            margin-bottom: 15px !important;
+        }
+    }
+
+    /* Animation for cards */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 </style>
 
 <body>
@@ -131,24 +131,22 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
-                <h1 class="sitename">Dusun Dukuh</h1>
+                <h1 class="sitename">Padusunan Dukuh</h1>
                 <span>.</span>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="about.php" class="active">Tentang</a></li>
                     <li><a href="berita.php">Berita</a></li>
                     <li class="dropdown">
-                        <a href="#" class="active"><span>Organisasi Desa</span>
-                            <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a href="Kel-Tani.php">Kel. Tani</a></li>
                             <li><a href="Kel-Maggot.php">Kel. Maggot</a></li>
                             <li><a href="Kel-Pemuda.php">Kel. Pemuda</a></li>
                             <li><a href="PKK.php">PKK</a></li>
-                            <li><a href="LPMKAL.php" class="active">LPMKAL</a></li>
+                            <li><a href="LPMKAL.php">LPMKAL</a></li>
                         </ul>
                     </li>
                     <li><a href="grografis.php">Geografis</a></li>
@@ -160,7 +158,7 @@
 
     <section class="page-header text-center">
         <div class="container">
-            <h1>KELOMPOK PKK DUSUN DUKUH</h1>
+            <h1>Kelompok PKK Dusun Dukuh</h1>
             <p>Mewujudkan keluarga yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, berakhlak mulia dan berbudi
                 luhur, sehat sejahtera, maju dan mandiri, kesetaraan dan keadilan gender serta kesadaran hukum dan
                 lingkungan</p>
@@ -612,10 +610,10 @@
     <!--   *****   Isotope Filter Link   *****  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 
-    <!-- Bootstrep JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <!--   *****   Bootstrap JS Link   *****   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
 
     <!-- Js main -->
     <script src="/js/main.js"></script>
@@ -624,169 +622,168 @@
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        "use strict";
+        document.addEventListener('DOMContentLoaded', function () {
+            "use strict";
 
-        const body = document.querySelector("body");
-        const header = document.querySelector("#header");
+            const body = document.querySelector("body");
+            const header = document.querySelector("#header");
 
-        // SCROLL HANDLING
-        const toggleScrolled = () => {
-            if (
-                header &&
-                (header.classList.contains("scroll-up-sticky") ||
-                    header.classList.contains("sticky-top") ||
-                    header.classList.contains("fixed-top"))
-            ) {
-                window.scrollY > 100 ?
-                    body.classList.add("scrolled") :
-                    body.classList.remove("scrolled");
+            // SCROLL HANDLING
+            const toggleScrolled = () => {
+                if (
+                    header &&
+                    (header.classList.contains("scroll-up-sticky") ||
+                        header.classList.contains("sticky-top") ||
+                        header.classList.contains("fixed-top"))
+                ) {
+                    window.scrollY > 100 ?
+                        body.classList.add("scrolled") :
+                        body.classList.remove("scrolled");
+                }
+            };
+
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
+
+            // TOGGLE MOBILE NAV
+            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+            const mobileNavToogle = () => {
+                body.classList.toggle("mobile-nav-active");
+                mobileNavToggleBtn.classList.toggle("bi-list");
+                mobileNavToggleBtn.classList.toggle("bi-x");
+            };
+
+            if (mobileNavToggleBtn) {
+                mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
             }
-        };
 
-        document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
-
-        // TOGGLE MOBILE NAV
-        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        const mobileNavToogle = () => {
-            body.classList.toggle("mobile-nav-active");
-            mobileNavToggleBtn.classList.toggle("bi-list");
-            mobileNavToggleBtn.classList.toggle("bi-x");
-        };
-
-        if (mobileNavToggleBtn) {
-            mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
-        }
-
-        // CLOSE NAV ON LINK CLICK
-        document.querySelectorAll("#navmenu a").forEach((navLink) => {
-            navLink.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
-                }
+            // CLOSE NAV ON LINK CLICK
+            document.querySelectorAll("#navmenu a").forEach((navLink) => {
+                navLink.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
+                });
             });
-        });
 
-        // DROPDOWN MENU FIX
-        document.querySelectorAll(".navmenu .toggle-dropdown").forEach((dropdownToggle) => {
-            dropdownToggle.addEventListener("click", function(e) {
-                e.preventDefault();
-                const parent = this.parentNode;
-                const dropdownMenu = parent.querySelector("ul");
-                parent.classList.toggle("active");
-                if (dropdownMenu) {
-                    dropdownMenu.classList.toggle("dropdown-active");
+            // Toggle mobile nav dropdowns
+            document
+                .querySelectorAll(".navmenu .toggle-dropdown")
+                .forEach((navmenu) => {
+                    navmenu.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle("active");
+                        parent.nextElementSibling.classList.toggle("dropdown-active");
+                        e.stopImmediatePropagation();
+                    });
+                });
+
+            // SCROLL TO TOP
+            const scrollTop = document.querySelector(".scroll-top");
+            const toggleScrollTop = () => {
+                if (scrollTop) {
+                    window.scrollY > 100 ?
+                        scrollTop.classList.add("active") :
+                        scrollTop.classList.remove("active");
                 }
-                e.stopImmediatePropagation();
-            });
-        });
-
-        // SCROLL TO TOP
-        const scrollTop = document.querySelector(".scroll-top");
-        const toggleScrollTop = () => {
+            };
             if (scrollTop) {
-                window.scrollY > 100 ?
-                    scrollTop.classList.add("active") :
-                    scrollTop.classList.remove("active");
+                scrollTop.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
             }
-        };
-        if (scrollTop) {
-            scrollTop.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
+
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
+
+            // PURECOUNTER
+            if (typeof PureCounter === "function") {
+                new PureCounter();
+            }
+
+            // UMKM SECTION
+            const viewGridBtn = document.getElementById('view-grid');
+            const viewListBtn = document.getElementById('view-list');
+            const umkmContainer = document.getElementById('umkm-container');
+
+            if (viewGridBtn && viewListBtn && umkmContainer) {
+                viewGridBtn.addEventListener('click', function () {
+                    viewGridBtn.style.backgroundColor = 'white';
+                    viewGridBtn.style.color = 'var(--color-primary)';
+                    viewListBtn.style.backgroundColor = 'transparent';
+                    viewListBtn.style.color = 'white';
+                    umkmContainer.classList.remove('list-view');
                 });
-            });
-        }
 
-        window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
-
-        // PURECOUNTER
-        if (typeof PureCounter === "function") {
-            new PureCounter();
-        }
-
-        // UMKM SECTION
-        const viewGridBtn = document.getElementById('view-grid');
-        const viewListBtn = document.getElementById('view-list');
-        const umkmContainer = document.getElementById('umkm-container');
-
-        if (viewGridBtn && viewListBtn && umkmContainer) {
-            viewGridBtn.addEventListener('click', function() {
-                viewGridBtn.style.backgroundColor = 'white';
-                viewGridBtn.style.color = 'var(--color-primary)';
-                viewListBtn.style.backgroundColor = 'transparent';
-                viewListBtn.style.color = 'white';
-                umkmContainer.classList.remove('list-view');
-            });
-
-            viewListBtn.addEventListener('click', function() {
-                viewListBtn.style.backgroundColor = 'white';
-                viewListBtn.style.color = 'var(--color-primary)';
-                viewGridBtn.style.backgroundColor = 'transparent';
-                viewGridBtn.style.color = 'white';
-                umkmContainer.classList.add('list-view');
-            });
-        }
-
-        const searchInput = document.getElementById('search-umkm');
-        const filterCategory = document.getElementById('filter-category');
-        const umkmItems = document.querySelectorAll('.umkm-item');
-
-        const filterUMKM = () => {
-            const searchTerm = searchInput?.value.toLowerCase() || "";
-            const category = filterCategory?.value.toLowerCase() || "";
-
-            umkmItems.forEach(item => {
-                const title = item.querySelector('h5')?.textContent.toLowerCase() || "";
-                const product = item.querySelector('p:nth-of-type(2)')?.textContent.toLowerCase() ||
-                    "";
-                const itemCategory = item.dataset.category?.toLowerCase() || "";
-
-                const matchesSearch = title.includes(searchTerm) || product.includes(searchTerm);
-                const matchesCategory = category === '' || itemCategory === category;
-
-                item.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
-            });
-        };
-
-        searchInput?.addEventListener('input', filterUMKM);
-        filterCategory?.addEventListener('change', filterUMKM);
-
-        // Show more / less UMKM
-        const showMoreBtn = document.getElementById('show-more-umkm');
-        const hiddenItems = document.querySelectorAll('.umkm-item:nth-child(n+7)');
-
-        if (showMoreBtn) {
-            hiddenItems.forEach(item => item.style.display = 'none');
-
-            showMoreBtn.addEventListener('click', function() {
-                let isHidden = [...hiddenItems].some(item => item.style.display === 'none');
-                hiddenItems.forEach(item => {
-                    item.style.display = isHidden ? 'block' : 'none';
+                viewListBtn.addEventListener('click', function () {
+                    viewListBtn.style.backgroundColor = 'white';
+                    viewListBtn.style.color = 'var(--color-primary)';
+                    viewGridBtn.style.backgroundColor = 'transparent';
+                    viewGridBtn.style.color = 'white';
+                    umkmContainer.classList.add('list-view');
                 });
-                showMoreBtn.innerHTML = isHidden ?
-                    'Tampilkan Lebih Sedikit <i class="fas fa-chevron-up ms-2"></i>' :
-                    'Lihat Semua UMKM <i class="fas fa-chevron-down ms-2"></i>';
-            });
-        }
+            }
 
-        // Card hover effect
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)';
+            const searchInput = document.getElementById('search-umkm');
+            const filterCategory = document.getElementById('filter-category');
+            const umkmItems = document.querySelectorAll('.umkm-item');
+
+            const filterUMKM = () => {
+                const searchTerm = searchInput?.value.toLowerCase() || "";
+                const category = filterCategory?.value.toLowerCase() || "";
+
+                umkmItems.forEach(item => {
+                    const title = item.querySelector('h5')?.textContent.toLowerCase() || "";
+                    const product = item.querySelector('p:nth-of-type(2)')?.textContent.toLowerCase() ||
+                        "";
+                    const itemCategory = item.dataset.category?.toLowerCase() || "";
+
+                    const matchesSearch = title.includes(searchTerm) || product.includes(searchTerm);
+                    const matchesCategory = category === '' || itemCategory === category;
+
+                    item.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
+                });
+            };
+
+            searchInput?.addEventListener('input', filterUMKM);
+            filterCategory?.addEventListener('change', filterUMKM);
+
+            // Show more / less UMKM
+            const showMoreBtn = document.getElementById('show-more-umkm');
+            const hiddenItems = document.querySelectorAll('.umkm-item:nth-child(n+7)');
+
+            if (showMoreBtn) {
+                hiddenItems.forEach(item => item.style.display = 'none');
+
+                showMoreBtn.addEventListener('click', function () {
+                    let isHidden = [...hiddenItems].some(item => item.style.display === 'none');
+                    hiddenItems.forEach(item => {
+                        item.style.display = isHidden ? 'block' : 'none';
+                    });
+                    showMoreBtn.innerHTML = isHidden ?
+                        'Tampilkan Lebih Sedikit <i class="fas fa-chevron-up ms-2"></i>' :
+                        'Lihat Semua UMKM <i class="fas fa-chevron-down ms-2"></i>';
+                });
+            }
+
+            // Card hover effect
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                });
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)';
+                });
             });
         });
-    });
     </script>
 
 </body>

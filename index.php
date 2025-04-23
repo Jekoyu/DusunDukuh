@@ -11,13 +11,15 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
     <!-- Icon CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -28,11 +30,10 @@
                 <h1 class="sitename">Padusunan Dukuh</h1>
                 <span>.</span>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="index.php" class="active">Home</a></li>
-                    <li><a href="about.php">Tentang</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php" class="active">Tentang</a></li>
                     <li><a href="berita.php">Berita</a></li>
                     <li class="dropdown">
                         <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -221,8 +222,7 @@
     <section class="card-berita section-berita pb-3">
         <div class="d-flex flex-column align-items-center text-center text-berita">
             <h2 class="display-6">BERITA TERKINI</h2>
-            <p class="fw-semibold">Menyajikan informasi terbaru tentang peristiwa, berita terkini, dan event-event di
-                Dusun Dukuh</p>
+            <p class="fw-semibold">Menyajikan informasi berita terkini di Dusun Dukuh</p>
         </div>
 
         <!-- Mobile Carousel -->
@@ -342,7 +342,7 @@
     </section>
 
     <!-- Produk UMK -->
-    <section class="card-berita section-berita pb-3">
+    <section class="card-berita pb-3">
         <div class="d-flex flex-column align-items-center text-center text-berita">
             <h2 class="display-6">PRODUK UMKM</h2>
             <p class="fw-semibold">Menyajikan informasi produk UMK Dusun Dukuh</p>
@@ -534,39 +534,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Pengduan -->
-    <section>
-        <button class="pengaduan-btn" onclick="toggleForm()">📝 Pengaduan</button>
-
-        <div class="form-container" id="formPengaduan">
-            <form>
-                <h2>Form Pengaduan</h2>
-                <label for="nama">Nama <span>*</span></label>
-                <input type="text" id="nama" placeholder="Masukkan nama Anda" required />
-
-                <label for="telepon">Nomor Telepon/WA <span>*</span></label>
-                <input type="tel" id="telepon" placeholder="Masukkan nomor HP/WhatsApp" required />
-
-                <label for="kategori">Kategori Pengaduan <span>*</span></label>
-                <select id="kategori" required>
-                    <option value="">Pilih kategori pengaduan</option>
-                    <option value="pelayanan">Pelayanan</option>
-                    <option value="infrastruktur">Infrastruktur</option>
-                    <option value="administrasi">Administrasi</option>
-                </select>
-
-                <label for="pengaduan">Pengaduan <span>*</span></label>
-                <textarea id="pengaduan" placeholder="Masukkan kesan, informasi, atau detail aduan Anda"
-                    required></textarea>
-
-                <label for="lampiran">Lampiran</label>
-                <input type="file" id="lampiran" />
-
-                <button type="submit" class="kirim-btn">📩 Kirim</button>
-            </form>
-        </div>
-    </section>
 
     <!-- Swiper JS (di akhir body) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

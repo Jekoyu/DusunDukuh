@@ -7,15 +7,20 @@
     <title>Tentang</title>
 
     <!-- Boostrep -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Icon CSS -->
     <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
+    <!-- Font question -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
 </head>
 
 <body>
@@ -26,7 +31,6 @@
                 <h1 class="sitename">Padusunan Dukuh</h1>
                 <span>.</span>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="index.php">Home</a></li>
@@ -49,12 +53,12 @@
         </div>
     </header>
 
-    <!-- Intro Kades -->
+    <!-- Sejarah Desa -->
     <section class="about">
-        <div class="about-img">
-            <img src="assets/Logodesa.png" alt="Kades" class="fade-in-image touch-animate-img" />
+        <div class="about-img mt-5">
+            <img src="assets/Sejarah-dusun/Logodesa1.png" alt="Kades" class="fade-in-image touch-animate-img" />
         </div>
-        <div class="about-content">
+        <div class="about-content mt-5">
             <h2 class="heading">SEJARAH DUSUN</h2>
             <p class="fw-medium">
                 Dusun Sindoharjo, terletak di wilayah pedesaan Indonesia, memiliki
@@ -64,92 +68,81 @@
                 saat mencari tempat baru untuk bermukim. Terkesan dengan kesuburan
                 tanah dan sumber daya alam yang melimpah, mereka memutuskan untuk
                 menetap dan membuka lahan pertanian...
-                <a href="berita-detail.php" class="text-link">Selengkapnya</a>
             </p>
         </div>
     </section>
 
-    <!-- Potensi Desa -->
-    <section class="potensi m-5">
-        <div class="d-flex flex-column align-items-center text-center">
-            <h2 class="display-6 fw-semibold">POTENSI DUSUN</h2>
-            <p class="fw-semibold">Potensi Dusun Dukuh yang menjadi keunggulan</p>
-        </div>
-        <div class="gallery-wrapper">
-            <div class="gallery-container" id="gallery">
-                <div class="gallery-item" style="
-              background-image: url('assets/potensi/Keseniann.webp');
-            "></div>
-                <div class="gallery-item" style="
-              background-image: url('assets/potensi/Pertanian.webp');
-            "></div>
-                <div class="gallery-item" style="
-              background-image: url('assets/potensi/Magot.webp');
-            "></div>
+    <!-- Question dusun -->
+    <section class="my-5 question">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="h-100 d-flex flex-column rounded">
+                    <h2 class="display-6 ">Sekilas <span class="fw-bold">Dusun Dukuh</span></h2>
+                    <p class="fw-semibold">Kenali lebih dekat dusun kami yang penuh kekayaan budaya. </p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Program Desa -->
-    <section id="category-program">
-        <div class="container-program">
-            <h2 class="text-center text-program display-6">PETA LOKASI DESA</h2>
-            <!-- Perbatasan desa -->
-            <!-- <div class="align-items-center">
-                <div>
-                    <div class="d-flex row">
-                        <div class="border border-dark rounded-4 px-4 mb-3 col-md-6 h-25">
-                            <div class="line-bottom">
-                                <h5>Batas Dusun</h5>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h6>Utara</h6>
-                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <h6>Selatan</h6>
-                                        <p>Lorem ipsum dolor sit amet.</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <h6>Timur</h6>
-                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <h6>Barat</h6>
-                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
+            <div class="col-md-8">
+                <div class="accordion-wrapper shadow rounded" id="accordionPanelsStayOpenExample">
+                    <div class="accordion accordion-flush" id="accordionPanels">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fas fa-globe-asia" style="padding-right: 8px;"></i> Profil Dusun
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                                <div class="accordion-body" style="text-align: justify;">
+                                    <strong>Dusun Dukuh dalam Sekilas Pandang.</strong>
+                                    Dusun Dukuh merupakan salah
+                                    satu
+                                    dusun yang berada di Desa Sinduharjo, Kecamatan Ngaglik, Kabupaten Sleman,
+                                    Provinsi
+                                    Daerah Istimewa Yogyakarta. Terletak di kawasan yang strategis namun tetap
+                                    menjaga
+                                    nuansa pedesaan yang asri, Dusun Dukuh dikenal sebagai lingkungan yang harmonis,
+                                    aman, dan ramah penduduk.
                                 </div>
                             </div>
-                            <div class="line-bottom">
-                                <h3>Luas Dusun</h3>
-                                <p>400.000 ㎡</p>
-                            </div>
-                            <div>
-                                <h3>Jumlah Penduduk</h3>
-                                <p>1.000 Jiwa</p>
-                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <iframe class=" maps"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31628.4426481496!2d110.3801232653408!3d-7.73076298033092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a593f72c5303b%3A0x5027a76e3569670!2sSinduharjo%2C%20Kec.%20Ngaglik%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1739797475162!5m2!1sid!2sid"
-                                width="100%" height="420" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
 
-            <!-- Poster dan yt -->
-            <div class="row mt-4">
-                <!-- Poster Image -->
-                <div class="col-md-4">
-                    <img class="img-fluid mt-2 rounded-4" src="assets/program/image.png" alt="Poster" width="100%"
-                        height="100%" />
-                </div>
-                <!-- YouTube Video -->
-                <div class="col-md-8">
-                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden mt-2">
-                        <iframe src="https://www.youtube.com/embed/DtjQ3R-_dGE" allowfullscreen></iframe>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-seedling" style="padding-right: 8px;"></i> Sektor Unggulan
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                                <div class="accordion-body" style="text-align: justify;">
+                                    <strong>Pertanian Sebagai Sumber Penghidupan.</strong> Dusun Dukuh dikenal sebagai
+                                    daerah yang subur dan mendukung kegiatan pertanian. Komoditas utama yang
+                                    dibudidayakan antara lain padi, jagung, dan aneka sayuran. Sistem pertanian di dusun
+                                    ini masih mengandalkan metode tradisional namun mulai diarahkan menuju pertanian
+                                    berkelanjutan. Kehidupan petani menjadi bagian penting dalam menjaga ketahanan
+                                    pangan lokal
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="fas fa-people-group" style="padding-right: 8px;"></i>Kehidupan Sosial
+                                    Masyarakat
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                                <div class="accordion-body">
+                                    <strong>Gotong Royong dan Tradisi Lokal.</strong> Masyarakat Dusun Dukuh dikenal
+                                    ramah dan menjunjung tinggi nilai-nilai kekeluargaan. Berbagai kegiatan sosial
+                                    seperti kerja bakti, pengajian, hingga arisan rutin menjadi bagian dari kehidupan
+                                    sehari-hari warga.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -196,6 +189,88 @@
                 </div>
             </div>
         </main>
+    </section>
+
+    <!-- Potensi Desa -->
+    <section class="potensi m-5">
+        <div class="d-flex flex-column align-items-center text-center">
+            <h2 class="display-6 fw-semibold">POTENSI DUSUN</h2>
+            <p class="fw-semibold">Potensi Dusun Dukuh yang menjadi keunggulan</p>
+        </div>
+        <div class="gallery-wrapper">
+            <div class="gallery-container" id="gallery">
+                <div class="gallery-item" style="
+              background-image: url('assets/potensi/Keseniann.webp');
+            "></div>
+                <div class="gallery-item" style="
+              background-image: url('assets/potensi/Pertanian.webp');
+            "></div>
+                <div class="gallery-item" style="
+              background-image: url('assets/potensi/Magot.webp');
+            "></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ulasan -->
+    <section class="ulasan mb-5">
+        <div id="reviewCarousel" class="carousel slide text-center" data-bs-ride="carousel">
+            <!-- Titik indikator -->
+            <div class="carousel-indicators mb-0">
+                <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Isi carousel -->
+            <div class="carousel-inner pt-4">
+
+                <div class="carousel-item active">
+                    <div class="card mx-auto" style="max-width: 600px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Dewi Lestari</h5>
+                            <p class="card-text">Tempatnya sangat asri dan pelayanannya ramah. Cocok untuk liburan
+                                keluarga.</p>
+                            <small class="text-muted">20 April 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card mx-auto" style="max-width: 600px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Ahmad Fauzi</h5>
+                            <p class="card-text">Pengalaman menyenangkan! Banyak spot foto yang keren.</p>
+                            <small class="text-muted">18 April 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card mx-auto" style="max-width: 600px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sinta Amelia</h5>
+                            <p class="card-text">Harga terjangkau, suasana kampung wisata bikin betah.</p>
+                            <small class="text-muted">15 April 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tombol navigasi -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -250,198 +325,170 @@
         </div>
     </footer>
 
-    <!-- Pengduan -->
-    <section>
-        <button class="pengaduan-btn" onclick="toggleForm()">📝 Pengaduan</button>
-
-        <div class="form-container" id="formPengaduan">
-            <form>
-                <h2>Form Pengaduan</h2>
-                <label for="nama">Nama <span>*</span></label>
-                <input type="text" id="nama" placeholder="Masukkan nama Anda" required />
-
-                <label for="telepon">Nomor Telepon/WA <span>*</span></label>
-                <input type="tel" id="telepon" placeholder="Masukkan nomor HP/WhatsApp" required />
-
-                <label for="kategori">Kategori Pengaduan <span>*</span></label>
-                <select id="kategori" required>
-                    <option value="">Pilih kategori pengaduan</option>
-                    <option value="pelayanan">Pelayanan</option>
-                    <option value="infrastruktur">Infrastruktur</option>
-                    <option value="administrasi">Administrasi</option>
-                </select>
-
-                <label for="pengaduan">Pengaduan <span>*</span></label>
-                <textarea id="pengaduan" placeholder="Masukkan kesan, informasi, atau detail aduan Anda"
-                    required></textarea>
-
-                <label for="lampiran">Lampiran</label>
-                <input type="file" id="lampiran" />
-
-                <button type="submit" class="kirim-btn">📩 Kirim</button>
-            </form>
-        </div>
-    </section>
-
     <!--   *****   JQuery Link   *****   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!--   *****   Isotope Filter Link   *****  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 
+    <!--   *****   Bootstrap JS Link   *****   -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
     <!-- Js main -->
     <script src="js/main.js"></script>
 
     <script>
-    // Galeri Filtering
-    $(document).ready(function() {
-        var $galleryContainer = $(".gallery").isotope({
-            itemSelector: ".item",
-            layoutMode: "fitRows",
-        });
-
-        $(".button-group .button").on("click", function() {
-            $(".button-group .button").removeClass("active");
-
-            $(this).addClass("active");
-
-            var value = $(this).attr("data-filter");
-
-            $galleryContainer.isotope({
-                filter: value,
+        // Galeri Filtering
+        $(document).ready(function () {
+            var $galleryContainer = $(".gallery").isotope({
+                itemSelector: ".item",
+                layoutMode: "fitRows",
             });
-        });
-    });
 
-    // Navbar & Header
-    (function() {
-        "use strict";
+            $(".button-group .button").on("click", function () {
+                $(".button-group .button").removeClass("active");
 
-        // Apply .scrolled class to the body as the page is scrolled down
-        const toggleScrolled = () => {
-            const body = document.querySelector("body");
-            const header = document.querySelector("#header");
+                $(this).addClass("active");
 
-            if (
-                !header.classList.contains("scroll-up-sticky") &&
-                !header.classList.contains("sticky-top") &&
-                !header.classList.contains("fixed-top")
-            )
-                return;
+                var value = $(this).attr("data-filter");
 
-            window.scrollY > 100 ?
-                body.classList.add("scrolled") :
-                body.classList.remove("scrolled");
-        };
-
-        // Event listeners for scroll and load
-        document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
-
-        // Mobile navigation toggle
-        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        const mobileNavToogle = () => {
-            document.querySelector("body").classList.toggle("mobile-nav-active");
-            mobileNavToggleBtn.classList.toggle("bi-list");
-            mobileNavToggleBtn.classList.toggle("bi-x");
-        };
-        mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
-
-        // Hide mobile nav on same-page/hash links
-        document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-            navmenu.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
-                }
-            });
-        });
-
-        // Toggle mobile nav dropdowns
-        document
-            .querySelectorAll(".navmenu .toggle-dropdown")
-            .forEach((navmenu) => {
-                navmenu.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    const parent = this.parentNode;
-                    parent.classList.toggle("active");
-                    parent.nextElementSibling.classList.toggle("dropdown-active");
-                    e.stopImmediatePropagation();
+                $galleryContainer.isotope({
+                    filter: value,
                 });
             });
+        });
 
-        // Preloader
-        const preloader = document.querySelector("#preloader");
-        if (preloader) {
-            window.addEventListener("load", () => preloader.remove());
-        }
+        // Navbar & Header
+        (function () {
+            "use strict";
 
-        //  Scroll top button
-        const scrollTop = document.querySelector(".scroll-top");
+            // Apply .scrolled class to the body as the page is scrolled down
+            const toggleScrolled = () => {
+                const body = document.querySelector("body");
+                const header = document.querySelector("#header");
 
-        const toggleScrollTop = () => {
-            if (scrollTop) {
+                if (
+                    !header.classList.contains("scroll-up-sticky") &&
+                    !header.classList.contains("sticky-top") &&
+                    !header.classList.contains("fixed-top")
+                )
+                    return;
+
                 window.scrollY > 100 ?
-                    scrollTop.classList.add("active") :
-                    scrollTop.classList.remove("active");
-            }
-        };
+                    body.classList.add("scrolled") :
+                    body.classList.remove("scrolled");
+            };
 
-        scrollTop?.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
+            // Event listeners for scroll and load
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
 
-        window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
+            // Mobile navigation toggle
+            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+            const mobileNavToogle = () => {
+                document.querySelector("body").classList.toggle("mobile-nav-active");
+                mobileNavToggleBtn.classList.toggle("bi-list");
+                mobileNavToggleBtn.classList.toggle("bi-x");
+            };
+            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
 
-        new PureCounter();
-    })();
-
-    // Scrolling Potensi Desa
-    let autoScrollInterval;
-
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(() => {
-            const gallery = document.getElementById("gallery");
-            const scrollAmount = gallery.offsetWidth / 3;
-
-            if (
-                gallery.scrollLeft + gallery.clientWidth >=
-                gallery.scrollWidth - 50
-            ) {
-                gallery.scrollTo({
-                    left: 0,
-                    behavior: "instant"
+            // Hide mobile nav on same-page/hash links
+            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
+                navmenu.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
                 });
-            } else {
-                gallery.scrollBy({
-                    left: scrollAmount,
+            });
+
+            // Toggle mobile nav dropdowns
+            document
+                .querySelectorAll(".navmenu .toggle-dropdown")
+                .forEach((navmenu) => {
+                    navmenu.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle("active");
+                        parent.nextElementSibling.classList.toggle("dropdown-active");
+                        e.stopImmediatePropagation();
+                    });
+                });
+
+            // Preloader
+            const preloader = document.querySelector("#preloader");
+            if (preloader) {
+                window.addEventListener("load", () => preloader.remove());
+            }
+
+            //  Scroll top button
+            const scrollTop = document.querySelector(".scroll-top");
+
+            const toggleScrollTop = () => {
+                if (scrollTop) {
+                    window.scrollY > 100 ?
+                        scrollTop.classList.add("active") :
+                        scrollTop.classList.remove("active");
+                }
+            };
+
+            scrollTop?.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
                     behavior: "smooth"
                 });
-            }
-        }, 1000);
-    }
+            });
 
-    document.getElementById("gallery").addEventListener("mouseenter", () => {
-        clearInterval(autoScrollInterval);
-    });
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
 
-    document.getElementById("gallery").addEventListener("mouseleave", () => {
-        startAutoScroll();
-    });
+            new PureCounter();
+        })();
 
-    function scrollGallery(scrollOffset) {
-        clearInterval(autoScrollInterval);
-        document.getElementById("gallery").scrollBy({
-            left: scrollOffset,
-            behavior: "smooth",
+        // Scrolling Potensi Desa
+        let autoScrollInterval;
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                const gallery = document.getElementById("gallery");
+                const scrollAmount = gallery.offsetWidth / 3;
+
+                if (
+                    gallery.scrollLeft + gallery.clientWidth >=
+                    gallery.scrollWidth - 50
+                ) {
+                    gallery.scrollTo({
+                        left: 0,
+                        behavior: "instant"
+                    });
+                } else {
+                    gallery.scrollBy({
+                        left: scrollAmount,
+                        behavior: "smooth"
+                    });
+                }
+            }, 1000);
+        }
+
+        document.getElementById("gallery").addEventListener("mouseenter", () => {
+            clearInterval(autoScrollInterval);
         });
+
+        document.getElementById("gallery").addEventListener("mouseleave", () => {
+            startAutoScroll();
+        });
+
+        function scrollGallery(scrollOffset) {
+            clearInterval(autoScrollInterval);
+            document.getElementById("gallery").scrollBy({
+                left: scrollOffset,
+                behavior: "smooth",
+            });
+            startAutoScroll();
+        }
         startAutoScroll();
-    }
-    startAutoScroll();
     </script>
 </body>
 

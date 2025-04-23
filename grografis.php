@@ -16,6 +16,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="./css/style.css" />
+
 </head>
 
 <body>
@@ -60,6 +61,72 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31628.4426481496!2d110.3801232653408!3d-7.73076298033092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a593f72c5303b%3A0x5027a76e3569670!2sSinduharjo%2C%20Kec.%20Ngaglik%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1739797475162!5m2!1sid!2sid"
                 width="100%" height="600" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Faq Section -->
+    <section>
+        <div class="container contact-section">
+            <div class="text-center mb-5">
+                <h2>Contact</h2>
+                <p class="bottom-contact-title"></p>
+                <p class="mt-3">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 contact-info-design">
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h5>Timur</h5>
+                            <p>A108 Adam Street, New York, NY 535022</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h5>Barat</h5>
+                            <p>+1 5589 55488 55</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h5>Selatan</h5>
+                            <p>info@example.com</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h5>Utara</h5>
+                            <p>Mon-Sat: 11AM - 23PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8 form-input">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                        </div>
+                        <div class="mb-3 mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="mb-3 mb-3">
+                            <textarea class="form-control" style="height: 180px;" placeholder="Message"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-send">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -114,39 +181,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Pengduan -->
-    <section>
-        <button class="pengaduan-btn" onclick="toggleForm()">📝 Pengaduan</button>
-
-        <div class="form-container" id="formPengaduan">
-            <form>
-                <h2>Form Pengaduan</h2>
-                <label for="nama">Nama <span>*</span></label>
-                <input type="text" id="nama" placeholder="Masukkan nama Anda" required />
-
-                <label for="telepon">Nomor Telepon/WA <span>*</span></label>
-                <input type="tel" id="telepon" placeholder="Masukkan nomor HP/WhatsApp" required />
-
-                <label for="kategori">Kategori Pengaduan <span>*</span></label>
-                <select id="kategori" required>
-                    <option value="">Pilih kategori pengaduan</option>
-                    <option value="pelayanan">Pelayanan</option>
-                    <option value="infrastruktur">Infrastruktur</option>
-                    <option value="administrasi">Administrasi</option>
-                </select>
-
-                <label for="pengaduan">Pengaduan <span>*</span></label>
-                <textarea id="pengaduan" placeholder="Masukkan kesan, informasi, atau detail aduan Anda"
-                    required></textarea>
-
-                <label for="lampiran">Lampiran</label>
-                <input type="file" id="lampiran" />
-
-                <button type="submit" class="kirim-btn">📩 Kirim</button>
-            </form>
-        </div>
-    </section>
 
     <!--   *****   JQuery Link   *****   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
