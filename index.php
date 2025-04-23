@@ -32,8 +32,8 @@
             </a>
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php" class="active">Tentang</a></li>
+                    <li><a href="index.php" class="active">Home</a></li>
+                    <li><a href="about.php">Tentang</a></li>
                     <li><a href="berita.php">Berita</a></li>
                     <li class="dropdown">
                         <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -544,21 +544,21 @@
     <!-- Bootstrap JS (bundle includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
 
     <!-- Swiper Inisialisasi -->
     <script>
-        const swiper = new Swiper('.berita-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 15,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
+    const swiper = new Swiper('.berita-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
     </script>
 </body>
 

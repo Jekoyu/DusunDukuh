@@ -50,6 +50,15 @@
         </div>
     </header>
 
+    <section class="page-header text-center">
+        <div class="container">
+            <h1 style="color: white;">Lembaga Pemberdayaan<br>Masyarakat Kalurahan (LPMKAL)</h1>
+            <p>Lembaga kemasyarakatan yang berperan dalam mendorong partisipasi warga untuk pembangunan dan pemberdayaan
+                di tingkat dusun.
+            </p>
+        </div>
+    </section>
+
     <!-- Foster ke Anggotaan -->
     <section class="img-struktur text-center" style="margin-top: 3rem;">
         <h2>STRUKTUR LPM KAL</h2>

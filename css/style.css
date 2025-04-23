@@ -1916,22 +1916,64 @@ div.gallery .item:hover img {
   .page-header {
       padding: 100px 0 50px;
   }
-
   .page-header h1 {
       font-size: 2rem;
   }
-
   .intro-section {
       padding: 30px;
       margin-bottom: 40px;
   }
-
   .section-spacing {
       padding: 40px 0;
   }
 }
 
 /* ------ Kelompok PKK ------- */
+.list-view .umkm-item {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+.list-view .card-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.list-view .d-flex.align-items-center {
+  width: 30%;
+  margin-bottom: 0 !important;
+}
+.list-view .mb-3[style="padding-left: 65px;"] {
+  width: 40%;
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+.list-view div[style="padding-left: 65px;"] {
+  width: 20%;
+  padding-left: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+      font-size: 2rem;
+      /* Decrease font size on mobile */
+      max-width: 95%;
+      /* Ensure the title fits on mobile */
+  }
+  .list-view .card-body {
+      flex-direction: column;
+  }
+  .list-view .d-flex.align-items-center,
+  .list-view .mb-3[style="padding-left: 65px;"],
+  .list-view div[style="padding-left: 65px;"] {
+      width: 100%;
+      margin-bottom: 15px !important;
+  }
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 /* ------ Kelompok LPKM ------- */
 
 /*--------------------------------------------------------------
