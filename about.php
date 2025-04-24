@@ -149,48 +149,38 @@
         </div>
     </section>
 
-    <!-- Galeri -->
-    <section class="portfolio">
-        <main class="mainContainer">
-            <h2 class="gallery-title">GALERI DUKUH</h2>
-            <p class="bottom-contact-title mb-2"></p>
-            <p class="fw-semibold">
-                Dokumentasi foto kegiatan-kegiatan yang berlangsung di Padukuhan Dukuh
-            </p>
-            <div class="button-group">
-                <button class="button active" data-filter="*">All</button>
-                <button class="button" data-filter=".masyarakat">Masyarakat</button>
-                <button class="button" data-filter=".kebudayaan">Kebudayaan</button>
-                <button class="button" data-filter=".umk">UMKM</button>
-            </div>
+    <!-- Galleri Section -->
+    <section class="gallery-section">
+        <h2 class="gallery-title">GALERI DUKUH</h2>
+        <p class="bottom-contact-title mb-2"></p>
+        <p class="gallery-desc fw-semibold">
+            Dokumentasi foto kegiatan-kegiatan yang berlangsung di Padukuhan Dukuh
+        </p>
 
-            <div class="gallery">
-                <div class="item masyarakat">
-                    <img src="assets/Galeri/17_1.webp" />
-                </div>
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+            <button class="filter-btn" onclick="filterGallery('masyarakat', this)">Masyarakat</button>
+            <button class="filter-btn" onclick="filterGallery('kebudayaan', this)">Kebudayaan</button>
+            <button class="filter-btn" onclick="filterGallery('umkm', this)">UMKM</button>
+        </div>
 
-                <div class="item masyarakat">
-                    <img src="assets/Galeri/17_2.webp" />
-                </div>
-
-                <div class="item masyarakat">
-                    <img src="assets/Galeri/H_1.webp" />
-                </div>
-
-                <div class="item masyarakat">
-                    <img src="assets/Galeri/H_2.webp" />
-                </div>
-
-                <div class="item masyarakat">
-                    <img src="assets/Galeri/R_1.webp" />
-                </div>
-
-                <div class="item masyarakat">
-                    <img src="assets/Galeri/R_2.webp" />
-                </div>
-            </div>
-        </main>
+        <!-- Gallery Images -->
+        <div class="gambah">
+            <img src="assets/Galeri/17_1.webp" alt="Gambar 1" data-kategori="all" onclick="openLightbox(this)">
+            <img src="assets/Galeri/17_1.webp" alt="Masyarakat" data-kategori="masyarakat" onclick="openLightbox(this)">
+            <img src="assets/Galeri/17_1.webp" alt="Kebudayaan" data-kategori="kebudayaan" onclick="openLightbox(this)">
+            <img src="assets/Galeri/17_1.webp" alt="Gambar 4" data-kategori="all" onclick="openLightbox(this)">
+            <img src="assets/Galeri/17_1.webp" alt="UMKM" data-kategori="umkm" onclick="openLightbox(this)">
+            <img src="assets/Galeri/17_1.webp" alt="Gambar 1" data-kategori="all" onclick="openLightbox(this)">
+        </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Preview">
+    </div>
 
     <!-- Potensi Desa -->
     <section class="potensi m-5">
@@ -341,159 +331,7 @@
         </script>
 
     <!-- Js main -->
-    <script src="js/main.js"></script>
-
-    <script>
-        // Galeri Filtering
-        $(document).ready(function () {
-            var $galleryContainer = $(".gallery").isotope({
-                itemSelector: ".item",
-                layoutMode: "fitRows",
-            });
-
-            $(".button-group .button").on("click", function () {
-                $(".button-group .button").removeClass("active");
-
-                $(this).addClass("active");
-
-                var value = $(this).attr("data-filter");
-
-                $galleryContainer.isotope({
-                    filter: value,
-                });
-            });
-        });
-
-        // Navbar & Header
-        (function () {
-            "use strict";
-
-            // Apply .scrolled class to the body as the page is scrolled down
-            const toggleScrolled = () => {
-                const body = document.querySelector("body");
-                const header = document.querySelector("#header");
-
-                if (
-                    !header.classList.contains("scroll-up-sticky") &&
-                    !header.classList.contains("sticky-top") &&
-                    !header.classList.contains("fixed-top")
-                )
-                    return;
-
-                window.scrollY > 100 ?
-                    body.classList.add("scrolled") :
-                    body.classList.remove("scrolled");
-            };
-
-            // Event listeners for scroll and load
-            document.addEventListener("scroll", toggleScrolled);
-            window.addEventListener("load", toggleScrolled);
-
-            // Mobile navigation toggle
-            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-            const mobileNavToogle = () => {
-                document.querySelector("body").classList.toggle("mobile-nav-active");
-                mobileNavToggleBtn.classList.toggle("bi-list");
-                mobileNavToggleBtn.classList.toggle("bi-x");
-            };
-            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
-
-            // Hide mobile nav on same-page/hash links
-            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-                navmenu.addEventListener("click", () => {
-                    if (document.querySelector(".mobile-nav-active")) {
-                        mobileNavToogle();
-                    }
-                });
-            });
-
-            // Toggle mobile nav dropdowns
-            document
-                .querySelectorAll(".navmenu .toggle-dropdown")
-                .forEach((navmenu) => {
-                    navmenu.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        const parent = this.parentNode;
-                        parent.classList.toggle("active");
-                        parent.nextElementSibling.classList.toggle("dropdown-active");
-                        e.stopImmediatePropagation();
-                    });
-                });
-
-            // Preloader
-            const preloader = document.querySelector("#preloader");
-            if (preloader) {
-                window.addEventListener("load", () => preloader.remove());
-            }
-
-            //  Scroll top button
-            const scrollTop = document.querySelector(".scroll-top");
-
-            const toggleScrollTop = () => {
-                if (scrollTop) {
-                    window.scrollY > 100 ?
-                        scrollTop.classList.add("active") :
-                        scrollTop.classList.remove("active");
-                }
-            };
-
-            scrollTop?.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
-
-            window.addEventListener("load", toggleScrollTop);
-            document.addEventListener("scroll", toggleScrollTop);
-
-            new PureCounter();
-        })();
-
-        // Scrolling Potensi Desa
-        let autoScrollInterval;
-
-        function startAutoScroll() {
-            autoScrollInterval = setInterval(() => {
-                const gallery = document.getElementById("gallery");
-                const scrollAmount = gallery.offsetWidth / 3;
-
-                if (
-                    gallery.scrollLeft + gallery.clientWidth >=
-                    gallery.scrollWidth - 50
-                ) {
-                    gallery.scrollTo({
-                        left: 0,
-                        behavior: "instant"
-                    });
-                } else {
-                    gallery.scrollBy({
-                        left: scrollAmount,
-                        behavior: "smooth"
-                    });
-                }
-            }, 1000);
-        }
-
-        document.getElementById("gallery").addEventListener("mouseenter", () => {
-            clearInterval(autoScrollInterval);
-        });
-
-        document.getElementById("gallery").addEventListener("mouseleave", () => {
-            startAutoScroll();
-        });
-
-        function scrollGallery(scrollOffset) {
-            clearInterval(autoScrollInterval);
-            document.getElementById("gallery").scrollBy({
-                left: scrollOffset,
-                behavior: "smooth",
-            });
-            startAutoScroll();
-        }
-        startAutoScroll();
-    </script>
+    <script src="js/about.js"></script>
 </body>
 
 </html>
