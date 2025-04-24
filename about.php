@@ -137,8 +137,7 @@
             cursor: pointer;
         }
 
-        /* Responsive: 2 columns on mobile */
-        @media (min-width: 760px) {
+        @media (max-width: 600px) {
             .gallery-section {
                 margin-bottom: 50px;
             }
@@ -151,11 +150,16 @@
             }
 
             .gambah {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* Menjadikan 2 kolom */
                 gap: 10px;
+                padding: 10px;
             }
 
             .gambah img {
-                width: 150px;
+                width: 100%;
+                /* Agar gambar mengisi kolom */
                 height: 100px;
                 object-fit: cover;
             }
