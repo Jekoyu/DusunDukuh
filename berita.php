@@ -27,40 +27,40 @@ $event = $conn->query($query_2);
     <link rel="stylesheet" href="./css/style.css" />
 
     <style>
-        /* Card Berita */
-        .news-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    /* Card Berita */
+    .news-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
+    .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
 
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
 
-        .date-badge {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-        }
+    .date-badge {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+    }
 
-        .admin-info {
-            font-size: 0.8rem;
-            color: #6c757d;
-        }
+    .admin-info {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
     </style>
 </head>
 
@@ -177,28 +177,28 @@ $event = $conn->query($query_2);
                         $content = $row['content'];
                         $date = date('d M Y', strtotime($row['created_at']));
                         ?>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card news-card h-100">
-                                <!-- Tambahkan h-100 untuk tinggi seragam -->
-                                <div class="position-relative">
-                                    <!-- Gunakan gambar dari database jika ada -->
-                                    <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
-                                    <div class="date-badge"><?= $date ?></div>
-                                </div>
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
-                                    <p class="card-text flex-grow-1">
-                                        <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
-                                    </p>
-                                    <div class="admin-info mt-auto">
-                                        <span>👤 Administrator</span> |
-                                        <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
-                                    </div>
-                                    <a href="berita_detail.php?id=<?= $id ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card news-card h-100">
+                        <!-- Tambahkan h-100 untuk tinggi seragam -->
+                        <div class="position-relative">
+                            <!-- Gunakan gambar dari database jika ada -->
+                            <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
+                            <div class="date-badge"><?= $date ?></div>
                         </div>
-                        <?php
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
+                            <p class="card-text flex-grow-1">
+                                <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
+                            </p>
+                            <div class="admin-info mt-auto">
+                                <span>👤 Administrator</span> |
+                                <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
+                            </div>
+                            <a href="berita_detail.php?id=<?= $id ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <?php
                     }
                 } else {
                     echo 'Mohon maaf Belum ada berita saat ini.';
@@ -222,8 +222,7 @@ $event = $conn->query($query_2);
                     <span class="text-event">
                         <p class="event-date"><i class="fas fa-calendar-alt"></i> 17 Agustus 2024</p>
                         <p>Padukuhan Dukuh meriahkan HUT RI ke-80 dengan berbagai lomba dan kegiatan kebersamaan yang
-                            melibatkan seluruh warga. Semangat nasionalisme dan gotong royong terasa kental di setiap
-                            momen perayaan.</p>
+                            melibatkan seluruh warga.</p>
                     </span>
                 </div>
                 <div class="event-item" style="
@@ -310,136 +309,136 @@ $event = $conn->query($query_2);
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Js main -->
     <script src="/js/main.js"></script>
 
     <script>
-        // ---------- Corasel slider Berita ------------ //
-        document.addEventListener("DOMContentLoaded", function () {
-            const captions = document.querySelectorAll(".carousel-caption");
+    // ---------- Corasel slider Berita ------------ //
+    document.addEventListener("DOMContentLoaded", function() {
+        const captions = document.querySelectorAll(".carousel-caption");
 
-            captions.forEach((caption) => {
-                gsap.set(caption, {
-                    opacity: 0,
-                    y: 50
-                });
+        captions.forEach((caption) => {
+            gsap.set(caption, {
+                opacity: 0,
+                y: 50
             });
-
-            function animateCaption(slideIndex) {
-                const activeCaption = document.querySelector(
-                    `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-                );
-
-                if (activeCaption) {
-                    gsap.to(activeCaption, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1,
-                        ease: "power3.out",
-                    });
-                }
-            }
-            const carousel = document.querySelector("#carouselExampleCaptions");
-            carousel.addEventListener("slid.bs.carousel", function (event) {
-                const newIndex = event.to;
-                gsap.set(captions, {
-                    opacity: 0,
-                    y: 50
-                });
-
-                animateCaption(newIndex);
-            });
-            animateCaption(0);
         });
 
-        // ------------------ Navbar JS ---------------- //
-        (function () {
-            "use strict";
+        function animateCaption(slideIndex) {
+            const activeCaption = document.querySelector(
+                `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
+            );
 
-            // Apply .scrolled class to the body as the page is scrolled down
-            const toggleScrolled = () => {
-                const body = document.querySelector("body");
-                const header = document.querySelector("#header");
-
-                if (
-                    !header.classList.contains("scroll-up-sticky") &&
-                    !header.classList.contains("sticky-top") &&
-                    !header.classList.contains("fixed-top")
-                )
-                    return;
-
-                window.scrollY > 100 ?
-                    body.classList.add("scrolled") :
-                    body.classList.remove("scrolled");
-            };
-
-            // Event listeners for scroll and load
-            document.addEventListener("scroll", toggleScrolled);
-            window.addEventListener("load", toggleScrolled);
-
-            // Mobile navigation toggle
-            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-            const mobileNavToogle = () => {
-                document.querySelector("body").classList.toggle("mobile-nav-active");
-                mobileNavToggleBtn.classList.toggle("bi-list");
-                mobileNavToggleBtn.classList.toggle("bi-x");
-            };
-            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
-
-            // Hide mobile nav on same-page/hash links
-            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-                navmenu.addEventListener("click", () => {
-                    if (document.querySelector(".mobile-nav-active")) {
-                        mobileNavToogle();
-                    }
+            if (activeCaption) {
+                gsap.to(activeCaption, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
                 });
-            });
-
-            // Toggle mobile nav dropdowns
-            document
-                .querySelectorAll(".navmenu .toggle-dropdown")
-                .forEach((navmenu) => {
-                    navmenu.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        const parent = this.parentNode;
-                        parent.classList.toggle("active");
-                        parent.nextElementSibling.classList.toggle("dropdown-active");
-                        e.stopImmediatePropagation();
-                    });
-                });
-
-            // Preloader
-            const preloader = document.querySelector("#preloader");
-            if (preloader) {
-                window.addEventListener("load", () => preloader.remove());
             }
+        }
+        const carousel = document.querySelector("#carouselExampleCaptions");
+        carousel.addEventListener("slid.bs.carousel", function(event) {
+            const newIndex = event.to;
+            gsap.set(captions, {
+                opacity: 0,
+                y: 50
+            });
 
-            //  Scroll top button
-            const scrollTop = document.querySelector(".scroll-top");
+            animateCaption(newIndex);
+        });
+        animateCaption(0);
+    });
 
-            const toggleScrollTop = () => {
-                if (scrollTop) {
-                    window.scrollY > 100 ?
-                        scrollTop.classList.add("active") :
-                        scrollTop.classList.remove("active");
+    // ------------------ Navbar JS ---------------- //
+    (function() {
+        "use strict";
+
+        // Apply .scrolled class to the body as the page is scrolled down
+        const toggleScrolled = () => {
+            const body = document.querySelector("body");
+            const header = document.querySelector("#header");
+
+            if (
+                !header.classList.contains("scroll-up-sticky") &&
+                !header.classList.contains("sticky-top") &&
+                !header.classList.contains("fixed-top")
+            )
+                return;
+
+            window.scrollY > 100 ?
+                body.classList.add("scrolled") :
+                body.classList.remove("scrolled");
+        };
+
+        // Event listeners for scroll and load
+        document.addEventListener("scroll", toggleScrolled);
+        window.addEventListener("load", toggleScrolled);
+
+        // Mobile navigation toggle
+        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+        const mobileNavToogle = () => {
+            document.querySelector("body").classList.toggle("mobile-nav-active");
+            mobileNavToggleBtn.classList.toggle("bi-list");
+            mobileNavToggleBtn.classList.toggle("bi-x");
+        };
+        mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
+
+        // Hide mobile nav on same-page/hash links
+        document.querySelectorAll("#navmenu a").forEach((navmenu) => {
+            navmenu.addEventListener("click", () => {
+                if (document.querySelector(".mobile-nav-active")) {
+                    mobileNavToogle();
                 }
-            };
+            });
+        });
 
-            scrollTop?.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
+        // Toggle mobile nav dropdowns
+        document
+            .querySelectorAll(".navmenu .toggle-dropdown")
+            .forEach((navmenu) => {
+                navmenu.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const parent = this.parentNode;
+                    parent.classList.toggle("active");
+                    parent.nextElementSibling.classList.toggle("dropdown-active");
+                    e.stopImmediatePropagation();
                 });
             });
 
-            window.addEventListener("load", toggleScrollTop);
-            document.addEventListener("scroll", toggleScrollTop);
+        // Preloader
+        const preloader = document.querySelector("#preloader");
+        if (preloader) {
+            window.addEventListener("load", () => preloader.remove());
+        }
 
-            new PureCounter();
-        })();
+        //  Scroll top button
+        const scrollTop = document.querySelector(".scroll-top");
+
+        const toggleScrollTop = () => {
+            if (scrollTop) {
+                window.scrollY > 100 ?
+                    scrollTop.classList.add("active") :
+                    scrollTop.classList.remove("active");
+            }
+        };
+
+        scrollTop?.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        window.addEventListener("load", toggleScrollTop);
+        document.addEventListener("scroll", toggleScrollTop);
+
+        new PureCounter();
+    })();
     </script>
 </body>
 
