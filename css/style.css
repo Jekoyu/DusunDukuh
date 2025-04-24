@@ -451,6 +451,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3em;
   padding: 6% 4%;
   background: var(--color-secondary);
   text-align: center;
@@ -519,6 +520,7 @@ p {
 @media (max-width: 760px) {
   .about {
     padding: 10% 5%;
+    gap: 2em;
   }
   .about-img img {
     max-width: 180px;
@@ -1480,6 +1482,11 @@ div.gallery .item:hover img {
   display: block;
   max-width: 1200px; 
 }
+.contact-section h2{
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--color-font-primary1);
+}
 .contact-info-design {
   background-color: #00796b;
   color: white;
@@ -1490,7 +1497,7 @@ div.gallery .item:hover img {
 }
 .bottom-contact-title {
   width: 60px;
-  border: 2px solid rgb(97, 199, 187);
+  border: 2px solid var(--accent-color);
   margin: auto;
 }
 .info-box {

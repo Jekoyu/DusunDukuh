@@ -20,7 +20,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
-
 </head>
 
 <body>
@@ -60,14 +59,14 @@
         </div>
         <div class="about-content mt-5">
             <h2 class="heading">SEJARAH DUSUN</h2>
-            <p class="fw-medium">
+            <p class="fw-semibold" style="font-weight: 500;">
                 Dusun Sindoharjo, terletak di wilayah pedesaan Indonesia, memiliki
                 sejarah yang kaya dan menarik. Konon, wilayah ini awalnya merupakan
                 hutan belantara yang belum tersentuh peradaban. Sekitar abad ke-18,
                 sekelompok pelancong dipimpin oleh Ki Ageng Sindo menemukan daerah ini
                 saat mencari tempat baru untuk bermukim. Terkesan dengan kesuburan
                 tanah dan sumber daya alam yang melimpah, mereka memutuskan untuk
-                menetap dan membuka lahan pertanian...
+                menetap dan membuka lahan pertanian...</p>
             </p>
         </div>
     </section>
@@ -153,38 +152,39 @@
     <section class="portfolio">
         <main class="mainContainer">
             <h2 class="gallery-title">GALERI DESA</h2>
+            <p class="bottom-contact-title mb-2"></p>
             <p class="fw-semibold">
                 Dokumentasi foto kegiatan-kegiatan yang berlangsung di Dusun Dukuh
             </p>
             <div class="button-group">
                 <button class="button active" data-filter="*">All</button>
-                <button class="button" data-filter=".design">Kebudayaan</button>
-                <button class="button" data-filter=".development">Masyarakat</button>
-                <button class="button" data-filter=".logo">UMKM</button>
+                <button class="button" data-filter=".masyarakat">Masyarakat</button>
+                <button class="button" data-filter=".kebudayaan">Kebudayaan</button>
+                <button class="button" data-filter=".umk">UMKM</button>
             </div>
 
             <div class="gallery">
-                <div class="item design">
+                <div class="item masyarakat">
                     <img src="assets/Galeri/17_1.webp" />
                 </div>
 
-                <div class="item design">
+                <div class="item masyarakat">
                     <img src="assets/Galeri/17_2.webp" />
                 </div>
 
-                <div class="item development">
+                <div class="item masyarakat">
                     <img src="assets/Galeri/H_1.webp" />
                 </div>
 
-                <div class="item development">
+                <div class="item masyarakat">
                     <img src="assets/Galeri/H_2.webp" />
                 </div>
 
-                <div class="item development">
+                <div class="item masyarakat">
                     <img src="assets/Galeri/R_1.webp" />
                 </div>
 
-                <div class="item logo">
+                <div class="item masyarakat">
                     <img src="assets/Galeri/R_2.webp" />
                 </div>
             </div>
@@ -195,6 +195,7 @@
     <section class="potensi m-5">
         <div class="d-flex flex-column align-items-center text-center">
             <h2 class="display-6 fw-semibold">POTENSI DUSUN</h2>
+            <p class="bottom-contact-title mb-2"></p>
             <p class="fw-semibold">Potensi Dusun Dukuh yang menjadi keunggulan</p>
         </div>
         <div class="gallery-wrapper">
