@@ -421,6 +421,7 @@
 
     <!-- Js main -->
     <script src="js/toggtext.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>
