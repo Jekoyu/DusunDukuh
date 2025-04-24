@@ -138,7 +138,7 @@
         }
 
         /* Responsive: 2 columns on mobile */
-        @media (max-width: 600px) {
+        @media (max-width: 760px) {
             .gallery-section {
                 margin-bottom: 50px;
             }
