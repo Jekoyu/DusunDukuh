@@ -20,19 +20,19 @@
 
 <!-- Add CSS for list view -->
 <style>
-:root {
-    --font-primary: "Poppins", sans-serif;
-    --font-secondary: "Montserrat", sans-serif;
-    --heading-font: "Raleway", sans-serif;
+    :root {
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Montserrat", sans-serif;
+        --heading-font: "Raleway", sans-serif;
 
-    /* Color Global */
-    --color-primary: #018577;
-    --color-secondary: #eaf8ef;
-    --color-font-primary1: #f8a23d;
-    --color-font-primary2: #272727;
-    --color-font-primary3: #fff;
-    --color-font-secondary: #777777;
-}
+        /* Color Global */
+        --color-primary: #018577;
+        --color-secondary: #eaf8ef;
+        --color-font-primary1: #f8a23d;
+        --color-font-primary2: #272727;
+        --color-font-primary3: #fff;
+        --color-font-secondary: #777777;
+    }
 </style>
 
 <body>
@@ -46,10 +46,11 @@
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php" class="active">Tentang</a></li>
+                    <li><a href="about.php">Tentang</a></li>
                     <li><a href="berita.php">Berita</a></li>
                     <li class="dropdown">
-                        <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <a href="#" class="active"><span>Organisasi Desa</span><i
+                                class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a href="Kel-Tani.php">Kel. Tani</a></li>
                             <li><a href="Kel-Maggot.php">Kel. Maggot</a></li>
@@ -454,7 +455,6 @@
     </section>
     <!-- Card Struktur -->
 
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -466,9 +466,10 @@
                 <div class="footer-brand-content">
                     <div class="footer-address">
                         <p class="address-text">
-                            <span class="address-line">Desa Sinduharjo</span>
-                            <span class="address-line">Kecamatan Ngaglik</span>
-                            <span class="address-line">Kabupaten Sleman</span>
+                            <span class="address-line">Padukuhan Dukuh, </span>
+                            <span class="address-line">Desa Sinduharjo, </span>
+                            <span class="address-line">Kecamatan Ngaglik, </span>
+                            <span class="address-line">Kabupaten Sleman, </span>
                             <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
                         </p>
                     </div>
@@ -488,21 +489,15 @@
             </div>
             <div class="footer-section contact">
                 <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> 088888888888</p>
-                <p><i class="fas fa-envelope"></i> sindoharjo.desa@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
                 <p>
                     <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
                     (08.00 - 11.00)
                 </p>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> Jalan Sindoharjo, Desa Sleman,
-                    Rt 004 / Rw 005 DIY.
-                </p>
             </div>
             <div class="footer-section emergency">
                 <h4>Nomer Telephone Penting</h4>
-                <p>Jumadi/Kades Kersik<br /><strong>08124368478</strong></p>
-                <p>Yayan/Ambulan Kersik<br /><strong>085392095123</strong></p>
+                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
             </div>
         </div>
     </footer>
@@ -516,7 +511,7 @@
     <!--   *****   Bootstrap JS Link   *****   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="/js/main.js"></script>
@@ -525,168 +520,168 @@
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        "use strict";
+        document.addEventListener('DOMContentLoaded', function () {
+            "use strict";
 
-        const body = document.querySelector("body");
-        const header = document.querySelector("#header");
+            const body = document.querySelector("body");
+            const header = document.querySelector("#header");
 
-        // SCROLL HANDLING
-        const toggleScrolled = () => {
-            if (
-                header &&
-                (header.classList.contains("scroll-up-sticky") ||
-                    header.classList.contains("sticky-top") ||
-                    header.classList.contains("fixed-top"))
-            ) {
-                window.scrollY > 100 ?
-                    body.classList.add("scrolled") :
-                    body.classList.remove("scrolled");
-            }
-        };
-
-        document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
-
-        // TOGGLE MOBILE NAV
-        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        const mobileNavToogle = () => {
-            body.classList.toggle("mobile-nav-active");
-            mobileNavToggleBtn.classList.toggle("bi-list");
-            mobileNavToggleBtn.classList.toggle("bi-x");
-        };
-
-        if (mobileNavToggleBtn) {
-            mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
-        }
-
-        // CLOSE NAV ON LINK CLICK
-        document.querySelectorAll("#navmenu a").forEach((navLink) => {
-            navLink.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
+            // SCROLL HANDLING
+            const toggleScrolled = () => {
+                if (
+                    header &&
+                    (header.classList.contains("scroll-up-sticky") ||
+                        header.classList.contains("sticky-top") ||
+                        header.classList.contains("fixed-top"))
+                ) {
+                    window.scrollY > 100 ?
+                        body.classList.add("scrolled") :
+                        body.classList.remove("scrolled");
                 }
-            });
-        });
+            };
 
-        // Toggle mobile nav dropdowns
-        document
-            .querySelectorAll(".navmenu .toggle-dropdown")
-            .forEach((navmenu) => {
-                navmenu.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    const parent = this.parentNode;
-                    parent.classList.toggle("active");
-                    parent.nextElementSibling.classList.toggle("dropdown-active");
-                    e.stopImmediatePropagation();
-                });
-            });
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
 
-        // SCROLL TO TOP
-        const scrollTop = document.querySelector(".scroll-top");
-        const toggleScrollTop = () => {
-            if (scrollTop) {
-                window.scrollY > 100 ?
-                    scrollTop.classList.add("active") :
-                    scrollTop.classList.remove("active");
+            // TOGGLE MOBILE NAV
+            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+            const mobileNavToogle = () => {
+                body.classList.toggle("mobile-nav-active");
+                mobileNavToggleBtn.classList.toggle("bi-list");
+                mobileNavToggleBtn.classList.toggle("bi-x");
+            };
+
+            if (mobileNavToggleBtn) {
+                mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
             }
-        };
-        if (scrollTop) {
-            scrollTop.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
+
+            // CLOSE NAV ON LINK CLICK
+            document.querySelectorAll("#navmenu a").forEach((navLink) => {
+                navLink.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
                 });
             });
-        }
 
-        window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
-
-        // PURECOUNTER
-        if (typeof PureCounter === "function") {
-            new PureCounter();
-        }
-
-        // UMKM SECTION
-        const viewGridBtn = document.getElementById('view-grid');
-        const viewListBtn = document.getElementById('view-list');
-        const umkmContainer = document.getElementById('umkm-container');
-
-        if (viewGridBtn && viewListBtn && umkmContainer) {
-            viewGridBtn.addEventListener('click', function() {
-                viewGridBtn.style.backgroundColor = 'white';
-                viewGridBtn.style.color = 'var(--color-primary)';
-                viewListBtn.style.backgroundColor = 'transparent';
-                viewListBtn.style.color = 'white';
-                umkmContainer.classList.remove('list-view');
-            });
-
-            viewListBtn.addEventListener('click', function() {
-                viewListBtn.style.backgroundColor = 'white';
-                viewListBtn.style.color = 'var(--color-primary)';
-                viewGridBtn.style.backgroundColor = 'transparent';
-                viewGridBtn.style.color = 'white';
-                umkmContainer.classList.add('list-view');
-            });
-        }
-
-        const searchInput = document.getElementById('search-umkm');
-        const filterCategory = document.getElementById('filter-category');
-        const umkmItems = document.querySelectorAll('.umkm-item');
-
-        const filterUMKM = () => {
-            const searchTerm = searchInput?.value.toLowerCase() || "";
-            const category = filterCategory?.value.toLowerCase() || "";
-
-            umkmItems.forEach(item => {
-                const title = item.querySelector('h5')?.textContent.toLowerCase() || "";
-                const product = item.querySelector('p:nth-of-type(2)')?.textContent.toLowerCase() ||
-                    "";
-                const itemCategory = item.dataset.category?.toLowerCase() || "";
-
-                const matchesSearch = title.includes(searchTerm) || product.includes(searchTerm);
-                const matchesCategory = category === '' || itemCategory === category;
-
-                item.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
-            });
-        };
-
-        searchInput?.addEventListener('input', filterUMKM);
-        filterCategory?.addEventListener('change', filterUMKM);
-
-        // Show more / less UMKM
-        const showMoreBtn = document.getElementById('show-more-umkm');
-        const hiddenItems = document.querySelectorAll('.umkm-item:nth-child(n+7)');
-
-        if (showMoreBtn) {
-            hiddenItems.forEach(item => item.style.display = 'none');
-
-            showMoreBtn.addEventListener('click', function() {
-                let isHidden = [...hiddenItems].some(item => item.style.display === 'none');
-                hiddenItems.forEach(item => {
-                    item.style.display = isHidden ? 'block' : 'none';
+            // Toggle mobile nav dropdowns
+            document
+                .querySelectorAll(".navmenu .toggle-dropdown")
+                .forEach((navmenu) => {
+                    navmenu.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle("active");
+                        parent.nextElementSibling.classList.toggle("dropdown-active");
+                        e.stopImmediatePropagation();
+                    });
                 });
-                showMoreBtn.innerHTML = isHidden ?
-                    'Tampilkan Lebih Sedikit <i class="fas fa-chevron-up ms-2"></i>' :
-                    'Lihat Semua UMKM <i class="fas fa-chevron-down ms-2"></i>';
-            });
-        }
 
-        // Card hover effect
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)';
+            // SCROLL TO TOP
+            const scrollTop = document.querySelector(".scroll-top");
+            const toggleScrollTop = () => {
+                if (scrollTop) {
+                    window.scrollY > 100 ?
+                        scrollTop.classList.add("active") :
+                        scrollTop.classList.remove("active");
+                }
+            };
+            if (scrollTop) {
+                scrollTop.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+            }
+
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
+
+            // PURECOUNTER
+            if (typeof PureCounter === "function") {
+                new PureCounter();
+            }
+
+            // UMKM SECTION
+            const viewGridBtn = document.getElementById('view-grid');
+            const viewListBtn = document.getElementById('view-list');
+            const umkmContainer = document.getElementById('umkm-container');
+
+            if (viewGridBtn && viewListBtn && umkmContainer) {
+                viewGridBtn.addEventListener('click', function () {
+                    viewGridBtn.style.backgroundColor = 'white';
+                    viewGridBtn.style.color = 'var(--color-primary)';
+                    viewListBtn.style.backgroundColor = 'transparent';
+                    viewListBtn.style.color = 'white';
+                    umkmContainer.classList.remove('list-view');
+                });
+
+                viewListBtn.addEventListener('click', function () {
+                    viewListBtn.style.backgroundColor = 'white';
+                    viewListBtn.style.color = 'var(--color-primary)';
+                    viewGridBtn.style.backgroundColor = 'transparent';
+                    viewGridBtn.style.color = 'white';
+                    umkmContainer.classList.add('list-view');
+                });
+            }
+
+            const searchInput = document.getElementById('search-umkm');
+            const filterCategory = document.getElementById('filter-category');
+            const umkmItems = document.querySelectorAll('.umkm-item');
+
+            const filterUMKM = () => {
+                const searchTerm = searchInput?.value.toLowerCase() || "";
+                const category = filterCategory?.value.toLowerCase() || "";
+
+                umkmItems.forEach(item => {
+                    const title = item.querySelector('h5')?.textContent.toLowerCase() || "";
+                    const product = item.querySelector('p:nth-of-type(2)')?.textContent.toLowerCase() ||
+                        "";
+                    const itemCategory = item.dataset.category?.toLowerCase() || "";
+
+                    const matchesSearch = title.includes(searchTerm) || product.includes(searchTerm);
+                    const matchesCategory = category === '' || itemCategory === category;
+
+                    item.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
+                });
+            };
+
+            searchInput?.addEventListener('input', filterUMKM);
+            filterCategory?.addEventListener('change', filterUMKM);
+
+            // Show more / less UMKM
+            const showMoreBtn = document.getElementById('show-more-umkm');
+            const hiddenItems = document.querySelectorAll('.umkm-item:nth-child(n+7)');
+
+            if (showMoreBtn) {
+                hiddenItems.forEach(item => item.style.display = 'none');
+
+                showMoreBtn.addEventListener('click', function () {
+                    let isHidden = [...hiddenItems].some(item => item.style.display === 'none');
+                    hiddenItems.forEach(item => {
+                        item.style.display = isHidden ? 'block' : 'none';
+                    });
+                    showMoreBtn.innerHTML = isHidden ?
+                        'Tampilkan Lebih Sedikit <i class="fas fa-chevron-up ms-2"></i>' :
+                        'Lihat Semua UMKM <i class="fas fa-chevron-down ms-2"></i>';
+                });
+            }
+
+            // Card hover effect
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                });
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)';
+                });
             });
         });
-    });
     </script>
 
 </body>

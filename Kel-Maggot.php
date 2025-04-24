@@ -316,9 +316,10 @@
                 <div class="footer-brand-content">
                     <div class="footer-address">
                         <p class="address-text">
-                            <span class="address-line">Desa Sinduharjo</span>
-                            <span class="address-line">Kecamatan Ngaglik</span>
-                            <span class="address-line">Kabupaten Sleman</span>
+                            <span class="address-line">Padukuhan Dukuh, </span>
+                            <span class="address-line">Desa Sinduharjo, </span>
+                            <span class="address-line">Kecamatan Ngaglik, </span>
+                            <span class="address-line">Kabupaten Sleman, </span>
                             <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
                         </p>
                     </div>
@@ -338,21 +339,15 @@
             </div>
             <div class="footer-section contact">
                 <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> 088888888888</p>
-                <p><i class="fas fa-envelope"></i> sindoharjo.desa@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
                 <p>
                     <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
                     (08.00 - 11.00)
                 </p>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> Jalan Sindoharjo, Desa Sleman,
-                    Rt 004 / Rw 005 DIY.
-                </p>
             </div>
             <div class="footer-section emergency">
                 <h4>Nomer Telephone Penting</h4>
-                <p>Jumadi/Kades Kersik<br /><strong>08124368478</strong></p>
-                <p>Yayan/Ambulan Kersik<br /><strong>085392095123</strong></p>
+                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
             </div>
         </div>
     </footer>

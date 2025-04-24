@@ -58,10 +58,12 @@
             <p class="fw-semibold text-center">
                 Informasi event dan kegiatan yang diadakan masyarakat Dusun Dukuh
             </p>
-            <iframe class="maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31628.4426481496!2d110.3801232653408!3d-7.73076298033092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a593f72c5303b%3A0x5027a76e3569670!2sSinduharjo%2C%20Kec.%20Ngaglik%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1739797475162!5m2!1sid!2sid"
-                width="100%" height="600" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.662730338572!2d110.41033689999999!3d-7.7192891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a594fc6dc9ffb%3A0x8aeec77f96233e35!2sJl.%20Dukuh%20Raya%2C%20Palgading%2C%20Sinduharjo%2C%20Kec.%20Ngaglik%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1745494987929!5m2!1sid!2sid"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
     </section>
 
@@ -143,9 +145,10 @@
                 <div class="footer-brand-content">
                     <div class="footer-address">
                         <p class="address-text">
-                            <span class="address-line">Desa Sinduharjo</span>
-                            <span class="address-line">Kecamatan Ngaglik</span>
-                            <span class="address-line">Kabupaten Sleman</span>
+                            <span class="address-line">Padukuhan Dukuh, </span>
+                            <span class="address-line">Desa Sinduharjo, </span>
+                            <span class="address-line">Kecamatan Ngaglik, </span>
+                            <span class="address-line">Kabupaten Sleman, </span>
                             <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
                         </p>
                     </div>
@@ -165,21 +168,15 @@
             </div>
             <div class="footer-section contact">
                 <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> 088888888888</p>
-                <p><i class="fas fa-envelope"></i> sindoharjo.desa@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
                 <p>
                     <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
                     (08.00 - 11.00)
                 </p>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> Jalan Sindoharjo, Desa Sleman,
-                    Rt 004 / Rw 005 DIY.
-                </p>
             </div>
             <div class="footer-section emergency">
                 <h4>Nomer Telephone Penting</h4>
-                <p>Jumadi/Kades Kersik<br /><strong>08124368478</strong></p>
-                <p>Yayan/Ambulan Kersik<br /><strong>085392095123</strong></p>
+                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
             </div>
         </div>
     </footer>

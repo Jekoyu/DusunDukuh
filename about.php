@@ -18,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -55,20 +57,34 @@
     <!-- Sejarah Desa -->
     <section class="about">
         <div class="about-img mt-5">
-            <img src="assets/Sejarah-dusun/Logodesa1.png" alt="Kades" class="fade-in-image touch-animate-img" />
+            <img src="assets/Padukuhan.png" alt="Kades" class="fade-in-image touch-animate-img" />
         </div>
         <div class="about-content mt-5">
-            <h2 class="heading">SEJARAH DUKUH</h2>
-            <p class="fw-semibold" style="font-weight: 500;">
-                Dusun Sindoharjo, terletak di wilayah pedesaan Indonesia, memiliki
-                sejarah yang kaya dan menarik. Konon, wilayah ini awalnya merupakan
-                hutan belantara yang belum tersentuh peradaban. Sekitar abad ke-18,
-                sekelompok pelancong dipimpin oleh Ki Ageng Sindo menemukan daerah ini
-                saat mencari tempat baru untuk bermukim. Terkesan dengan kesuburan
-                tanah dan sumber daya alam yang melimpah, mereka memutuskan untuk
-                menetap dan membuka lahan pertanian...</p>
+            <h2 class="sitename"
+                style="font-family: 'Dancing Script', cursive; font-size: 40px; font-weight: 700; letter-spacing: 1px; text-transform: capitalize;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                Padukuhan Dukuh
+            </h2>
+            <p class="fw-semibold" id="dukuhText" style="font-weight: 500;">
+                Padukuhan Dukuh merupakan salah satu padukuhan yang terletak di Desa Sinduharjo, Kecamatan Ngaglik,
+                Kabupaten Sleman. Dukuh ini dikenal sebagai wilayah yang masih asri dengan masyarakat yang ramah dan
+                menjunjung tinggi semangat gotong royong. Di bidang pertanian, warga aktif menanam padi, sayuran, dan
+                buah-buahan secara organik, menjadikan pertanian sebagai salah satu potensi unggulan.
+                <span id="dots">...</span><span id="more" style="display: none;">
+                    Selain itu, Padukuhan Dukuh juga mengembangkan pengelolaan sampah organik menggunakan magot atau
+                    larva Black Soldier Fly (BSF), yang mampu mengurangi limbah rumah tangga sekaligus menghasilkan
+                    pakan ternak yang bernilai ekonomi. Pengelolaan ini dilakukan secara kolektif oleh warga melalui
+                    bank sampah dan kelompok lingkungan. Padukuhan Dukuh berbatasan langsung dengan Padukuhan Genta di
+                    sebelah barat, Padukuhan Ngelingan di timur, Padukuhan Pedak di selatan, dan Padukuhan Nglaban di
+                    sebelah utara. Dengan dukungan dari berbagai kelompok masyarakat seperti kelompok tani, KWT, dan
+                    karang taruna, Padukuhan Dukuh terus berbenah menjadi wilayah yang mandiri, hijau, dan
+                    berkelanjutan..</span>
             </p>
+            <button onclick="toggleText()" id="readMoreBtn"
+                style="background: none; border: none; color: #333; font-size: 14px; cursor: pointer; padding: 0; margin-top: 10px; text-decoration: underline; text-underline-offset: 2px; transition: color 0.3s ease;">
+                Baca Selengkapnya
+            </button>
         </div>
+
     </section>
 
     <!-- Question dusun -->
@@ -206,67 +222,6 @@
         </div>
     </section>
 
-    <!-- Ulasan -->
-    <section class="ulasan mb-5">
-        <div id="reviewCarousel" class="carousel slide text-center" data-bs-ride="carousel">
-            <!-- Titik indikator -->
-            <div class="carousel-indicators mb-0">
-                <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-
-            <!-- Isi carousel -->
-            <div class="carousel-inner pt-4">
-
-                <div class="carousel-item active">
-                    <div class="card mx-auto" style="max-width: 600px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Dewi Lestari</h5>
-                            <p class="card-text">Tempatnya sangat asri dan pelayanannya ramah. Cocok untuk liburan
-                                keluarga.</p>
-                            <small class="text-muted">20 April 2025</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="card mx-auto" style="max-width: 600px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Ahmad Fauzi</h5>
-                            <p class="card-text">Pengalaman menyenangkan! Banyak spot foto yang keren.</p>
-                            <small class="text-muted">18 April 2025</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="card mx-auto" style="max-width: 600px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sinta Amelia</h5>
-                            <p class="card-text">Harga terjangkau, suasana kampung wisata bikin betah.</p>
-                            <small class="text-muted">15 April 2025</small>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Tombol navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -283,7 +238,6 @@
                             <span class="address-line">Kecamatan Ngaglik, </span>
                             <span class="address-line">Kabupaten Sleman, </span>
                             <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
-
                         </p>
                     </div>
 
@@ -302,21 +256,15 @@
             </div>
             <div class="footer-section contact">
                 <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> 088888888888</p>
-                <p><i class="fas fa-envelope"></i> sindoharjo.desa@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
                 <p>
                     <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
                     (08.00 - 11.00)
                 </p>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> Jalan Sindoharjo, Desa Sleman,
-                    Rt 004 / Rw 005 DIY.
-                </p>
             </div>
             <div class="footer-section emergency">
                 <h4>Nomer Telephone Penting</h4>
-                <p>Jumadi/Kades Kersik<br /><strong>08124368478</strong></p>
-                <p>Yayan/Ambulan Kersik<br /><strong>085392095123</strong></p>
+                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
             </div>
         </div>
     </footer>
@@ -333,7 +281,169 @@
         </script>
 
     <!-- Js main -->
-    <script src="js/about.js"></script>
+    <script src="js/toggtext.js"></script>
+
+    <script>
+        // Filter fungsi
+        function filterGallery(kategori, button) {
+            const images = document.querySelectorAll(".gambah img");
+            images.forEach((img) => {
+                const imgKategori = img.getAttribute("data-kategori");
+                if (kategori === "all" || imgKategori === kategori) {
+                    img.classList.remove("hidden");
+                } else {
+                    img.classList.add("hidden");
+                }
+            });
+
+            document
+                .querySelectorAll(".filter-btn")
+                .forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+        }
+
+        // Lightbox logic
+        document.querySelectorAll(".gambah img").forEach((img) => {
+            img.addEventListener("click", () => {
+                document.getElementById("lightbox-img").src = img.src;
+                document.getElementById("lightbox").style.display = "flex";
+            });
+        });
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        document.getElementById("lightbox").addEventListener("click", (e) => {
+            if (e.target.id === "lightbox") {
+                closeLightbox();
+            }
+        });
+
+        // Navbar & Header
+        (function () {
+            "use strict";
+
+            // Apply .scrolled class to the body as the page is scrolled down
+            const toggleScrolled = () => {
+                const body = document.querySelector("body");
+                const header = document.querySelector("#header");
+
+                if (
+                    !header.classList.contains("scroll-up-sticky") &&
+                    !header.classList.contains("sticky-top") &&
+                    !header.classList.contains("fixed-top")
+                )
+                    return;
+
+                window.scrollY > 100 ?
+                    body.classList.add("scrolled") :
+                    body.classList.remove("scrolled");
+            };
+
+            // Event listeners for scroll and load
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
+
+            // Mobile navigation toggle
+            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+            const mobileNavToogle = () => {
+                document.querySelector("body").classList.toggle("mobile-nav-active");
+                mobileNavToggleBtn.classList.toggle("bi-list");
+                mobileNavToggleBtn.classList.toggle("bi-x");
+            };
+            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
+
+            // Hide mobile nav on same-page/hash links
+            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
+                navmenu.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
+                });
+            });
+
+            // Toggle mobile nav dropdowns
+            document.querySelectorAll(".navmenu .toggle-dropdown").forEach((navmenu) => {
+                navmenu.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const parent = this.parentNode;
+                    parent.classList.toggle("active");
+                    parent.nextElementSibling.classList.toggle("dropdown-active");
+                    e.stopImmediatePropagation();
+                });
+            });
+
+            const preloader = document.querySelector("#preloader");
+            if (preloader) {
+                window.addEventListener("load", () => preloader.remove());
+            }
+
+            //  Scroll top button
+            const scrollTop = document.querySelector(".scroll-top");
+
+            const toggleScrollTop = () => {
+                if (scrollTop) {
+                    window.scrollY > 100 ?
+                        scrollTop.classList.add("active") :
+                        scrollTop.classList.remove("active");
+                }
+            };
+
+            scrollTop?.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
+
+            new PureCounter();
+        })();
+
+        // Scrolling Potensi Desa
+        let autoScrollInterval;
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                const gallery = document.getElementById("gallery");
+                const scrollAmount = gallery.offsetWidth / 3;
+
+                if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 50) {
+                    gallery.scrollTo({
+                        left: 0,
+                        behavior: "instant",
+                    });
+                } else {
+                    gallery.scrollBy({
+                        left: scrollAmount,
+                        behavior: "smooth",
+                    });
+                }
+            }, 1000);
+        }
+
+        document.getElementById("gallery").addEventListener("mouseenter", () => {
+            clearInterval(autoScrollInterval);
+        });
+
+        document.getElementById("gallery").addEventListener("mouseleave", () => {
+            startAutoScroll();
+        });
+
+        function scrollGallery(scrollOffset) {
+            clearInterval(autoScrollInterval);
+            document.getElementById("gallery").scrollBy({
+                left: scrollOffset,
+                behavior: "smooth",
+            });
+            startAutoScroll();
+        }
+        startAutoScroll();
+    </script>
 </body>
 
 </html>

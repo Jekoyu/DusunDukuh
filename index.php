@@ -218,136 +218,12 @@
         </div>
     </section>
 
-    <!-- Berita terkini -->
-    <section class="card-berita section-berita pb-3">
-        <div class="d-flex flex-column align-items-center text-center text-berita">
-            <h2 class="display-6">BERITA TERKINI</h2>
-            <p class="bottom-contact-title mb-2"></p>
-            <p class="fw-semibold">Menyajikan informasi berita terkini di Padukuhan Dukuh</p>
-        </div>
-
-        <!-- Mobile Carousel -->
-        <div class="container d-block d-md-none">
-            <div class="swiper berita-swiper">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <div class="card berita-card">
-                            <div class="position-relative">
-                                <img src="assets/berita/B_1.webp" alt="Pelatihan Linmas">
-                                <div class="date-badge">05 Sep 2024</div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="fw-semibold">Pelatihan Anggota Linmas</h5>
-                                <p class="text-muted">Kersik – Pemerintah Desa Kersik baru-baru ini menyelenggarakan
-                                    pelatihan...</p>
-                                <div class="admin-info">👤 Administrator | 👁️ Dilihat 633 kali</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <div class="card berita-card">
-                            <div class="position-relative">
-                                <img src="assets/berita/B_1.webp" alt="Rapat Desa">
-                                <div class="date-badge">10 Sep 2024</div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="fw-semibold">Rapat Koordinasi Desa</h5>
-                                <p class="text-muted">Rapat rutin pemerintah desa membahas berbagai program
-                                    pembangunan...</p>
-                                <div class="admin-info">👤 Administrator | 👁️ Dilihat 450 kali</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <div class="card berita-card">
-                            <div class="position-relative">
-                                <img src="assets/berita/B_1.webp" alt="Pendidikan">
-                                <div class="date-badge">15 Sep 2024</div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="fw-semibold">Pelatihan Guru Honorer</h5>
-                                <p class="text-muted">Guru honorer di desa mendapatkan pelatihan untuk meningkatkan
-                                    kualitas...</p>
-                                <div class="admin-info">👤 Administrator | 👁️ Dilihat 378 kali</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination mt-2"></div>
-            </div>
-        </div>
-
-        <!-- Desktop Grid -->
-        <div class="container pt-4 d-none d-md-block">
-            <div class="row g-4">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card berita-card">
-                        <div class="position-relative">
-                            <img src="assets/berita/B_1.webp" alt="Pelatihan Linmas">
-                            <div class="date-badge">05 Sep 2024</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="fw-semibold">Pelatihan Anggota Linmas</h5>
-                            <p class="text-muted">Kersik – Pemerintah Desa Kersik baru-baru ini menyelenggarakan
-                                pelatihan...</p>
-                            <div class="admin-info">👤 Administrator | 👁️ Dilihat 633 kali</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card berita-card">
-                        <div class="position-relative">
-                            <img src="assets/berita/B_1.webp" alt="Rapat Desa">
-                            <div class="date-badge">10 Sep 2024</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="fw-semibold">Rapat Koordinasi Desa</h5>
-                            <p class="text-muted">Rapat rutin pemerintah desa membahas berbagai program pembangunan...
-                            </p>
-                            <div class="admin-info">👤 Administrator | 👁️ Dilihat 450 kali</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card berita-card">
-                        <div class="position-relative">
-                            <img src="assets/berita/B_1.webp" alt="Pendidikan">
-                            <div class="date-badge">15 Sep 2024</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="fw-semibold">Pelatihan Guru Honorer</h5>
-                            <p class="text-muted">Guru honorer di desa mendapatkan pelatihan untuk meningkatkan
-                                kualitas...</p>
-                            <div class="admin-info">👤 Administrator | 👁️ Dilihat 378 kali</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tombol lihat berita -->
-        <div class="d-flex justify-content-end container">
-            <a href="berita.php" class="more"><i class="fa-solid fa-clipboard-list mx-2"></i>LIHAT BERITA LEBIH BANYAK
-                BERITA</a>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-brand">
                 <div class="logo-image-container">
-                    <img src="assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
+                    <img src="/assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
                 </div>
 
                 <div class="footer-brand-content">
@@ -376,21 +252,15 @@
             </div>
             <div class="footer-section contact">
                 <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> 088888888888</p>
-                <p><i class="fas fa-envelope"></i> sindoharjo.desa@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
                 <p>
                     <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
                     (08.00 - 11.00)
                 </p>
-                <p>
-                    <i class="fas fa-map-marker-alt"></i> Jalan Sindoharjo, Desa Sleman,
-                    Rt 004 / Rw 005 DIY.
-                </p>
             </div>
             <div class="footer-section emergency">
                 <h4>Nomer Telephone Penting</h4>
-                <p>Jumadi/Kades Kersik<br /><strong>08124368478</strong></p>
-                <p>Yayan/Ambulan Kersik<br /><strong>085392095123</strong></p>
+                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
             </div>
         </div>
     </footer>
