@@ -27,7 +27,7 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
-                <h1 class="sitename">Padusunan Dukuh</h1>
+                <h1 class="sitename">Padukuhan Dukuh</h1>
                 <span>.</span>
             </a>
             <nav id="navmenu" class="navmenu">
@@ -57,7 +57,7 @@
         <video class="video-slide active" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
 
         <div class="content active">
-            <h1>Sugeng rawuh <br /><span>di Padusunan Dukuh kelurahan Sinduharjo</span></h1>
+            <h1>Sugeng rawuh <br /><span>di Padukuhan Dukuh kelurahan Sinduharjo</span></h1>
             <p>
                 Tempat di mana kearifan lokal, semangat gotong royong, dan keindahan
                 alam bersatu. Temukan informasi seputar kegiatan warga, potensi dusun, dan layanan masyarakat di sini.
@@ -71,13 +71,14 @@
             <img src="assets/Staff/Kades.png" alt="" class="fade-in-image" class="touch-animate-img" />
         </div>
         <div class="about-content">
-            <h2 class="heading">SAMBUTAN KEPALA DUSUN</h2>
+            <h2 class="heading">SAMBUTAN KEPALA DUKUH</h2>
             <h3>Assalamualaikum Warohmatullah Wabarokatuh,</h3>
             <p class="fw-medium">
-                Website ini hadir sebagai wujud transformasi Dukuh Dukuh dalam memanfaatkan teknologi informasi dan
+                Website ini hadir sebagai wujud transformasi Padukuhan Dukuh dalam memanfaatkan teknologi informasi dan
                 komunikasi yang terintegrasi ke dalam sistem digital. Kehadiran website ini diharapkan dapat menjadi
                 sarana informasi dan dokumentasi kegiatan masyarakat serta pembangunan di tingkat dusun, sekaligus
-                mendukung visi menjadikan Dukuh Dukuh sebagai bagian dari Desa Sinduharjo yang berkelanjutan, adaptif
+                mendukung visi menjadikan Padukuhan Dukuh sebagai bagian dari Desa Sinduharjo yang berkelanjutan,
+                adaptif
                 terhadap perubahan zaman.
             </p>
         </div>
@@ -94,7 +95,7 @@
                     <div class="card shadow-sm mx-2">
                         <div class="card-body">
                             <p class="card-text fw-medium">
-                                Mewujudkan Dusun Padusunan Dukuh yang mandiri, sejahtera,
+                                Mewujudkan Dusun Padukuhan Dukuh yang mandiri, sejahtera,
                                 dan berbudaya melalui partisipasi aktif masyarakat serta
                                 pembangunan yang berkelanjutan.
                             </p>
@@ -144,7 +145,7 @@
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <p class="card-text fw-medium">
-                                Mewujudkan lingkungan dusun yang bersih, sehat, dan tertata melalui program kebersihan,
+                                Mewujudkan lingkungan Dukuh yang bersih, sehat, dan tertata melalui program kebersihan,
                                 penghijauan, serta pengelolaan sampah yang baik.
                             </p>
                         </div>
@@ -173,7 +174,7 @@
             <div class="subheading">
                 <h2>INFORMASI KEPENDUDUKAN</h2>
                 <p class="bottom-contact-title mb-2"></p>
-                <p>Informasi jumlah kependudukan masyarakat Dusun Dukuh</p>
+                <p>Informasi jumlah kependudukan masyarakat Padukuhan Dukuh</p>
             </div>
 
             <!-- Stats Items -->
@@ -181,7 +182,7 @@
                 <!-- Penduduk -->
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="556" data-purecounter-duration="1"
                             class="purecounter"></span>
                         <p>Penduduk</p>
                     </div>
@@ -190,7 +191,7 @@
                 <!-- Keluarga -->
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="167" data-purecounter-duration="1"
                             class="purecounter"></span>
                         <p>Keluarga</p>
                     </div>
@@ -199,18 +200,18 @@
                 <!-- Perempuan -->
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="550" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="280" data-purecounter-duration="1"
                             class="purecounter"></span>
-                        <p>Perempuan</p>
+                        <p>Laki-laki</p>
                     </div>
                 </div>
 
                 <!-- Laki-laki -->
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="276" data-purecounter-duration="1"
                             class="purecounter"></span>
-                        <p>Laki-laki</p>
+                        <p>Perempuan</p>
                     </div>
                 </div>
             </div>
@@ -222,7 +223,7 @@
         <div class="d-flex flex-column align-items-center text-center text-berita">
             <h2 class="display-6">BERITA TERKINI</h2>
             <p class="bottom-contact-title mb-2"></p>
-            <p class="fw-semibold">Menyajikan informasi berita terkini di Dusun Dukuh</p>
+            <p class="fw-semibold">Menyajikan informasi berita terkini di Padukuhan Dukuh</p>
         </div>
 
         <!-- Mobile Carousel -->
@@ -346,7 +347,7 @@
         <div class="d-flex flex-column align-items-center text-center text-berita">
             <h2 class="display-6">PRODUK UMKM</h2>
             <p class="bottom-contact-title mb-2"></p>
-            <p class="fw-semibold">Menyajikan informasi produk UMK Dusun Dukuh</p>
+            <p class="fw-semibold">Menyajikan informasi produk UMK Padukuhan Dukuh</p>
         </div>
 
         <!-- Mobile Carousel -->
@@ -495,9 +496,10 @@
                 <div class="footer-brand-content">
                     <div class="footer-address">
                         <p class="address-text">
-                            <span class="address-line">Desa Sinduharjo</span>
-                            <span class="address-line">Kecamatan Ngaglik</span>
-                            <span class="address-line">Kabupaten Sleman</span>
+                            <span class="address-line">Padukuhan Dukuh, </span>
+                            <span class="address-line">Desa Sinduharjo, </span>
+                            <span class="address-line">Kecamatan Ngaglik, </span>
+                            <span class="address-line">Kabupaten Sleman, </span>
                             <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
                         </p>
                     </div>

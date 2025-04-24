@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kelompok Maggot - Dusun Dukuh</title>
+    <title>Kelompok Maggot - Padukuhan Dukuh</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,7 +23,7 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
-                <h1 class="sitename">Dusun Dukuh</h1>
+                <h1 class="sitename">Padukuhan Dukuh</h1>
                 <span>.</span>
             </a>
 
@@ -53,7 +53,7 @@
     <!-- Page Header -->
     <section class="page-header text-center">
         <div class="container">
-            <h1 style="color: white;">Kelompok Maggot Dusun Dukuh</h1>
+            <h1 style="color: white;">Kelompok Maggot Padukuhan Dukuh</h1>
             <p>Inovasi pengelolaan sampah organik untuk lingkungan yang lebih bersih dan berkelanjutan</p>
         </div>
     </section>
@@ -70,7 +70,7 @@
                     <h2 class="h3 fw-bold" style="color: var(--color-primary);">Apa itu Kelompok Maggot?</h2>
                 </div>
                 <div class="col-lg-8">
-                    <p class="lead mb-3">Kelompok Maggot Dusun Dukuh adalah komunitas yang berfokus pada pengelolaan
+                    <p class="lead mb-3">Kelompok Maggot Padukuhan Dukuh adalah komunitas yang berfokus pada pengelolaan
                         sampah organik menjadi sumber daya bernilai melalui budidaya larva lalat Black Soldier Fly
                         (BSF).</p>
                     <p>Dibentuk dengan tujuan mengurangi volume sampah organik dan menciptakan produk bernilai ekonomi,
@@ -93,7 +93,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h2 class="section-title">Tentang Kelompok Maggot</h2>
-                    <p class="mb-4">Kelompok Maggot Dusun Dukuh adalah kelompok masyarakat yang fokus pada pengelolaan
+                    <p class="mb-4">Kelompok Maggot Padukuhan Dukuh adalah kelompok masyarakat yang fokus pada
+                        pengelolaan
                         sampah organik menjadi maggot (larva lalat Black Soldier Fly). Kegiatan ini tidak hanya membantu
                         mengurangi sampah organik tetapi juga menghasilkan produk bernilai ekonomi.</p>
 
@@ -184,7 +185,8 @@
                         <i class="fas fa-info-circle me-3 fa-2x"></i>
                         <div>
                             <h5 class="alert-heading">Kunjungan Mahasiswa</h5>
-                            <p class="mb-0">Kelompok Maggot Dusun Dukuh juga sering menerima kunjungan dari mahasiswa
+                            <p class="mb-0">Kelompok Maggot Padukuhan Dukuh juga sering menerima kunjungan dari
+                                mahasiswa
                                 berbagai universitas, terutama dari UII dan UMY untuk keperluan penelitian dan
                                 pembelajaran.</p>
                         </div>
@@ -196,7 +198,8 @@
         <!-- Struktur Organisasi -->
         <section class="section-spacing img-struktur " id="struktur">
             <h2 class="section-title">Struktur Organisasi</h2>
-            <p class="text-muted mb-4">Kelompok Maggot Dusun Dukuh dikelola oleh tim yang berpengalaman dan berdedikasi
+            <p class="text-muted mb-4">Kelompok Maggot Padukuhan Dukuh dikelola oleh tim yang berpengalaman dan
+                berdedikasi
                 dalam pengembangan budidaya maggot dan pengelolaan sampah organik.</p>
 
             <img src="assets/Staff/Struktur Magot.webp" alt="Event Masyarakat" />
@@ -205,7 +208,7 @@
         <!-- Produk Maggot -->
         <section class="section-spacing" id="produk">
             <h2 class="section-title">Produk Maggot</h2>
-            <p class="text-muted mb-4">Kelompok Maggot Dusun Dukuh memproduksi maggot berkualitas tinggi yang dapat
+            <p class="text-muted mb-4">Kelompok Maggot Padukuhan Dukuh memproduksi maggot berkualitas tinggi yang dapat
                 digunakan sebagai pakan ternak dan pengurai sampah organik.</p>
 
             <div class="row">
@@ -219,7 +222,7 @@
                             <div class="price-tag">
                                 <i class="fas fa-tag me-1"></i> Rp 10.000/kg
                             </div>
-                            <p>Kelompok Maggot Dusun Dukuh menjual maggot segar dengan harga Rp 10.000 per kilogram.
+                            <p>Kelompok Maggot Padukuhan Dukuh menjual maggot segar dengan harga Rp 10.000 per kilogram.
                                 Maggot ini sangat baik digunakan sebagai:</p>
                             <ul class="mb-4">
                                 <li>Pakan ternak (ayam, bebek, ikan, dll)</li>
@@ -262,7 +265,7 @@
                             <h2 class="mb-3" style="color: var(--color-primary);">Tertarik dengan Budidaya Maggot?
                             </h2>
                             <p class="mb-4">
-                                Kelompok Maggot Dusun Dukuh terbuka untuk kunjungan, studi banding, dan konsultasi
+                                Kelompok Maggot Padukuhan Dukuh terbuka untuk kunjungan, studi banding, dan konsultasi
                                 tentang budidaya maggot. Kami juga menerima pesanan maggot segar dan kering untuk
                                 kebutuhan
                                 pakan ternak Anda.
@@ -363,130 +366,130 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="/js/main.js"></script>
 
     <script>
-    // Navbar JS
-    (function() {
-        "use strict";
+        // Navbar JS
+        (function () {
+            "use strict";
 
-        // Apply .scrolled class to the body as the page is scrolled down
-        const toggleScrolled = () => {
-            const body = document.querySelector("body");
-            const header = document.querySelector("#header");
+            // Apply .scrolled class to the body as the page is scrolled down
+            const toggleScrolled = () => {
+                const body = document.querySelector("body");
+                const header = document.querySelector("#header");
 
-            if (
-                !header.classList.contains("scroll-up-sticky") &&
-                !header.classList.contains("sticky-top") &&
-                !header.classList.contains("fixed-top")
-            )
-                return;
+                if (
+                    !header.classList.contains("scroll-up-sticky") &&
+                    !header.classList.contains("sticky-top") &&
+                    !header.classList.contains("fixed-top")
+                )
+                    return;
 
-            window.scrollY > 100 ?
-                body.classList.add("scrolled") :
-                body.classList.remove("scrolled");
-        };
+                window.scrollY > 100 ?
+                    body.classList.add("scrolled") :
+                    body.classList.remove("scrolled");
+            };
 
-        // Event listeners for scroll and load
-        document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
+            // Event listeners for scroll and load
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
 
-        // Mobile navigation toggle
-        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        const mobileNavToogle = () => {
-            document.querySelector("body").classList.toggle("mobile-nav-active");
-            mobileNavToggleBtn.classList.toggle("bi-list");
-            mobileNavToggleBtn.classList.toggle("bi-x");
-        };
-        mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
+            // Mobile navigation toggle
+            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+            const mobileNavToogle = () => {
+                document.querySelector("body").classList.toggle("mobile-nav-active");
+                mobileNavToggleBtn.classList.toggle("bi-list");
+                mobileNavToggleBtn.classList.toggle("bi-x");
+            };
+            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
 
-        // Hide mobile nav on same-page/hash links
-        document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-            navmenu.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
-                }
-            });
-        });
-
-        // Toggle mobile nav dropdowns
-        document
-            .querySelectorAll(".navmenu .toggle-dropdown")
-            .forEach((navmenu) => {
-                navmenu.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    const parent = this.parentNode;
-                    parent.classList.toggle("active");
-                    parent.nextElementSibling.classList.toggle("dropdown-active");
-                    e.stopImmediatePropagation();
+            // Hide mobile nav on same-page/hash links
+            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
+                navmenu.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
                 });
             });
 
-        // Preloader
-        const preloader = document.querySelector("#preloader");
-        if (preloader) {
-            window.addEventListener("load", () => preloader.remove());
-        }
+            // Toggle mobile nav dropdowns
+            document
+                .querySelectorAll(".navmenu .toggle-dropdown")
+                .forEach((navmenu) => {
+                    navmenu.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle("active");
+                        parent.nextElementSibling.classList.toggle("dropdown-active");
+                        e.stopImmediatePropagation();
+                    });
+                });
 
-        //  Scroll top button
-        const scrollTop = document.querySelector(".scroll-top");
-
-        const toggleScrollTop = () => {
-            if (scrollTop) {
-                window.scrollY > 100 ?
-                    scrollTop.classList.add("active") :
-                    scrollTop.classList.remove("active");
+            // Preloader
+            const preloader = document.querySelector("#preloader");
+            if (preloader) {
+                window.addEventListener("load", () => preloader.remove());
             }
-        };
 
-        scrollTop?.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
+            //  Scroll top button
+            const scrollTop = document.querySelector(".scroll-top");
 
-        window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
-
-        // Gallery image hover effects
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.querySelector('.gallery-caption').style.transform = 'translateY(0)';
-            });
-
-            item.addEventListener('mouseleave', function() {
-                this.querySelector('.gallery-caption').style.transform = 'translateY(100%)';
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== "#") {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-
-                    if (targetElement) {
-                        const headerOffset = 100;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
+            const toggleScrollTop = () => {
+                if (scrollTop) {
+                    window.scrollY > 100 ?
+                        scrollTop.classList.add("active") :
+                        scrollTop.classList.remove("active");
                 }
+            };
+
+            scrollTop?.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             });
-        });
-    })();
+
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
+
+            // Gallery image hover effects
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    this.querySelector('.gallery-caption').style.transform = 'translateY(0)';
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    this.querySelector('.gallery-caption').style.transform = 'translateY(100%)';
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href') !== "#") {
+                        e.preventDefault();
+
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+
+                        if (targetElement) {
+                            const headerOffset = 100;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        })();
     </script>
 </body>
 

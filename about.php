@@ -27,7 +27,7 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
-                <h1 class="sitename">Padusunan Dukuh</h1>
+                <h1 class="sitename">Padukuhan Dukuh</h1>
                 <span>.</span>
             </a>
             <nav id="navmenu" class="navmenu">
@@ -58,7 +58,7 @@
             <img src="assets/Sejarah-dusun/Logodesa1.png" alt="Kades" class="fade-in-image touch-animate-img" />
         </div>
         <div class="about-content mt-5">
-            <h2 class="heading">SEJARAH DUSUN</h2>
+            <h2 class="heading">SEJARAH DUKUH</h2>
             <p class="fw-semibold" style="font-weight: 500;">
                 Dusun Sindoharjo, terletak di wilayah pedesaan Indonesia, memiliki
                 sejarah yang kaya dan menarik. Konon, wilayah ini awalnya merupakan
@@ -76,8 +76,8 @@
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="h-100 d-flex flex-column rounded">
-                    <h2 class="display-6 ">Sekilas <span class="fw-bold">Dusun Dukuh</span></h2>
-                    <p class="fw-semibold">Kenali lebih dekat dusun kami yang penuh kekayaan budaya. </p>
+                    <h2 class="display-6 ">Sekilas <span class="fw-bold">Padukuhan Dukuh</span></h2>
+                    <p class="fw-semibold">Kenali lebih dekat Dukuh kami yang penuh kekayaan budaya. </p>
                 </div>
             </div>
 
@@ -88,19 +88,19 @@
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="fas fa-globe-asia" style="padding-right: 8px;"></i> Profil Dusun
+                                    <i class="fas fa-globe-asia" style="padding-right: 8px;"></i> Profil Dukuh
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
                                 <div class="accordion-body" style="text-align: justify;">
-                                    <strong>Dusun Dukuh dalam Sekilas Pandang.</strong>
-                                    Dusun Dukuh merupakan salah
+                                    <strong>Padukuhan Dukuh dalam Sekilas Pandang.</strong>
+                                    Padukuhan Dukuh merupakan salah
                                     satu
-                                    dusun yang berada di Desa Sinduharjo, Kecamatan Ngaglik, Kabupaten Sleman,
+                                    Dukuh yang berada di Desa Sinduharjo, Kecamatan Ngaglik, Kabupaten Sleman,
                                     Provinsi
                                     Daerah Istimewa Yogyakarta. Terletak di kawasan yang strategis namun tetap
                                     menjaga
-                                    nuansa pedesaan yang asri, Dusun Dukuh dikenal sebagai lingkungan yang harmonis,
+                                    nuansa pedesaan yang asri, Padukuhan Dukuh dikenal sebagai lingkungan yang harmonis,
                                     aman, dan ramah penduduk.
                                 </div>
                             </div>
@@ -115,9 +115,10 @@
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
                                 <div class="accordion-body" style="text-align: justify;">
-                                    <strong>Pertanian Sebagai Sumber Penghidupan.</strong> Dusun Dukuh dikenal sebagai
+                                    <strong>Pertanian Sebagai Sumber Penghidupan.</strong> Padukuhan Dukuh dikenal
+                                    sebagai
                                     daerah yang subur dan mendukung kegiatan pertanian. Komoditas utama yang
-                                    dibudidayakan antara lain padi, jagung, dan aneka sayuran. Sistem pertanian di dusun
+                                    dibudidayakan antara lain padi, jagung, dan aneka sayuran. Sistem pertanian di Dukuh
                                     ini masih mengandalkan metode tradisional namun mulai diarahkan menuju pertanian
                                     berkelanjutan. Kehidupan petani menjadi bagian penting dalam menjaga ketahanan
                                     pangan lokal
@@ -135,7 +136,7 @@
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
                                 <div class="accordion-body">
-                                    <strong>Gotong Royong dan Tradisi Lokal.</strong> Masyarakat Dusun Dukuh dikenal
+                                    <strong>Gotong Royong dan Tradisi Lokal.</strong> Masyarakat Padukuhan Dukuh dikenal
                                     ramah dan menjunjung tinggi nilai-nilai kekeluargaan. Berbagai kegiatan sosial
                                     seperti kerja bakti, pengajian, hingga arisan rutin menjadi bagian dari kehidupan
                                     sehari-hari warga.
@@ -151,10 +152,10 @@
     <!-- Galeri -->
     <section class="portfolio">
         <main class="mainContainer">
-            <h2 class="gallery-title">GALERI DESA</h2>
+            <h2 class="gallery-title">GALERI DUKUH</h2>
             <p class="bottom-contact-title mb-2"></p>
             <p class="fw-semibold">
-                Dokumentasi foto kegiatan-kegiatan yang berlangsung di Dusun Dukuh
+                Dokumentasi foto kegiatan-kegiatan yang berlangsung di Padukuhan Dukuh
             </p>
             <div class="button-group">
                 <button class="button active" data-filter="*">All</button>
@@ -194,9 +195,9 @@
     <!-- Potensi Desa -->
     <section class="potensi m-5">
         <div class="d-flex flex-column align-items-center text-center">
-            <h2 class="display-6 fw-semibold">POTENSI DUSUN</h2>
+            <h2 class="display-6 fw-semibold">POTENSI DUKUH</h2>
             <p class="bottom-contact-title mb-2"></p>
-            <p class="fw-semibold">Potensi Dusun Dukuh yang menjadi keunggulan</p>
+            <p class="fw-semibold">Potensi Padukuhan Dukuh yang menjadi keunggulan</p>
         </div>
         <div class="gallery-wrapper">
             <div class="gallery-container" id="gallery">
@@ -285,10 +286,12 @@
                 <div class="footer-brand-content">
                     <div class="footer-address">
                         <p class="address-text">
-                            <span class="address-line">Desa Sinduharjo</span>
-                            <span class="address-line">Kecamatan Ngaglik</span>
-                            <span class="address-line">Kabupaten Sleman</span>
+                            <span class="address-line">Padukuhan Dukuh, </span>
+                            <span class="address-line">Desa Sinduharjo, </span>
+                            <span class="address-line">Kecamatan Ngaglik, </span>
+                            <span class="address-line">Kabupaten Sleman, </span>
                             <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
+
                         </p>
                     </div>
 

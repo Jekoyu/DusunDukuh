@@ -741,7 +741,8 @@ p {
 /* ------------------------- Bagian Footer ---------------------- */
 /* -------------------------------------------------------------- */
 footer {
-  background: linear-gradient(to right, #018577, #90e2da);
+  background: var(--color-primary);
+  /* background: linear-gradient(to right, #018577, #38cfc0); */
   color: white;
   padding: 40px 0;
   box-sizing: border-box;

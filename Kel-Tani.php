@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kelompok Tani - Dusun Dukuh</title>
+    <title>Kelompok Tani - Padukuhan Dukuh</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,7 +23,7 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
-                <h1 class="sitename">Dusun Dukuh</h1>
+                <h1 class="sitename">Padukuhan Dukuh</h1>
                 <span>.</span>
             </a>
 
@@ -54,7 +54,7 @@
     <!-- Page Header -->
     <section class="page-header text-center">
         <div class="container">
-            <h1 style="color: white;">Kelompok Tani Dusun Dukuh</h1>
+            <h1 style="color: white;">Kelompok Tani Padukuhan Dukuh</h1>
             <p>Memajukan pertanian lokal melalui inovasi dan kerjasama untuk kesejahteraan petani dan ketahanan pangan
             </p>
         </div>
@@ -72,7 +72,7 @@
                     <h2 class="h3 fw-bold" style="color: var(--color-primary);">Tentang Kelompok Tani</h2>
                 </div>
                 <div class="col-lg-8">
-                    <p class="lead mb-3">Kelompok Tani Dusun Dukuh adalah organisasi petani lokal yang berfokus pada
+                    <p class="lead mb-3">Kelompok Tani Padukuhan Dukuh adalah organisasi petani lokal yang berfokus pada
                         pengembangan pertanian berkelanjutan dan peningkatan kesejahteraan anggotanya.</p>
                     <p>Melalui berbagai program dan kegiatan, kelompok ini berupaya meningkatkan produktivitas pertanian
                         dan kualitas hasil panen.</p>
@@ -93,7 +93,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h2 class="section-title">Tentang Kelompok Tani</h2>
-                    <p class="mb-4">Kelompok Tani Dusun Dukuh dipimpin oleh Pak RW dan beranggotakan para petani lokal
+                    <p class="mb-4">Kelompok Tani Padukuhan Dukuh dipimpin oleh Pak RW dan beranggotakan para petani
+                        lokal
                         yang berdedikasi untuk memajukan sektor pertanian di daerah kami. Kelompok ini aktif dalam
                         berbagai kegiatan pertanian dan program pengembangan kapasitas petani.</p>
 
@@ -141,7 +142,8 @@
                             <div class="funding-badge">
                                 <i class="fas fa-tag me-1"></i> PUDANA PUUPN MANDIRI 2024
                             </div>
-                            <p>Tahun ini, Kelompok Tani Dusun Dukuh menerima bantuan PUDANA PUUPN MANDIRI berupa:</p>
+                            <p>Tahun ini, Kelompok Tani Padukuhan Dukuh menerima bantuan PUDANA PUUPN MANDIRI berupa:
+                            </p>
                             <ul class="mb-4">
                                 <li>Dana bantuan sebesar Rp 50 juta</li>
                                 <li>Benih bawang merah berkualitas</li>
@@ -183,7 +185,8 @@
         <!-- Struktur Organisasi -->
         <section class="section-spacing img-struktur " id="struktur">
             <h2 class="section-title">Struktur Organisasi</h2>
-            <p class="text-muted mb-4">Kelompok Tani Dusun Dukuh dikelola oleh tim yang berpengalaman dan berdedikasi
+            <p class="text-muted mb-4">Kelompok Tani Padukuhan Dukuh dikelola oleh tim yang berpengalaman dan
+                berdedikasi
                 dalam pengembangan pertanian dan pengelolaan sumber daya alam.</p>
 
             <img src="assets/Staff/Struktur Tani.webp" alt="Event Masyarakat" />
@@ -201,7 +204,7 @@
                             <h5 class="mb-0">Budidaya Bawang Merah</h5>
                         </div>
                         <div class="card-body">
-                            <p>Melalui bantuan PUDANA PUUPN MANDIRI, Kelompok Tani Dusun Dukuh fokus pada budidaya
+                            <p>Melalui bantuan PUDANA PUUPN MANDIRI, Kelompok Tani Padukuhan Dukuh fokus pada budidaya
                                 bawang merah dengan pendekatan modern dan berkelanjutan.</p>
 
                             <h6 class="fw-bold mt-4 mb-3">Manfaat Program:</h6>
@@ -242,7 +245,7 @@
                                 tani</h2>
                             </h2>
                             <p class="mb-4">
-                                Untuk informasi lebih lanjut tentang Kelompok Tani Dusun Dukuh atau ingin
+                                Untuk informasi lebih lanjut tentang Kelompok Tani Padukuhan Dukuh atau ingin
                                 bergabung dengan kami, silakan hubungi:
                             </p>
                             <div class="d-flex flex-wrap gap-3">
@@ -271,9 +274,10 @@
                 <div class="footer-brand-content">
                     <div class="footer-address">
                         <p class="address-text">
-                            <span class="address-line">Desa Sinduharjo</span>
-                            <span class="address-line">Kecamatan Ngaglik</span>
-                            <span class="address-line">Kabupaten Sleman</span>
+                            <span class="address-line">Padukuhan Dukuh, </span>
+                            <span class="address-line">Desa Sinduharjo, </span>
+                            <span class="address-line">Kecamatan Ngaglik, </span>
+                            <span class="address-line">Kabupaten Sleman, </span>
                             <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
                         </p>
                     </div>
