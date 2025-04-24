@@ -226,23 +226,23 @@ $event = $conn->query($query_2);
                         <p>Padukuhan Dukuh meriahkan HUT RI ke-80.</p>
                     </span>
                 </div>
-                < class="event-item" style="
+                <div class="event-item" style="
                 background-image: url('assets/program/Ruwuhan.webp');
               ">
                     <span class="text-event">
                         <p class="event-date"><i class="fas fa-calendar-alt"></i> 20 November 2025</p>
                         <p>Padukuhan Dukuh menggelar tradisi Ruwahan.</p>
                     </span>
-            </div>
-            <div class="event-item" style="
+                </div>
+                <div class="event-item" style="
                 background-image: url('assets/program/Hadrohan.webp');
               ">
-                <span class="text-event">
-                    <p class="event-date"><i class="fas fa-calendar-alt"></i> 5 Desember 2025</p>
-                    <p>Kegiatan keagamaan Dusun Dukuh, penampilan Hadroh..</p>
-                </span>
+                    <span class="text-event">
+                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 5 Desember 2025</p>
+                        <p>Kegiatan keagamaan Dusun Dukuh, penampilan Hadroh..</p>
+                    </span>
+                </div>
             </div>
-        </div>
         </div>
     </section>
 
