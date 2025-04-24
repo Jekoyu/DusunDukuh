@@ -220,8 +220,10 @@ $event = $conn->query($query_2);
                 background-image: url('assets/program/17 Agustusan.webp');
               ">
                     <span class="text-event">
-                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 12 Oktober 2025</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, dolorum.</p>
+                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 17 Agustus 2024</p>
+                        <p>Padukuhan Dukuh meriahkan HUT RI ke-80 dengan berbagai lomba dan kegiatan kebersamaan yang
+                            melibatkan seluruh warga. Semangat nasionalisme dan gotong royong terasa kental di setiap
+                            momen perayaan.</p>
                     </span>
                 </div>
                 <div class="event-item" style="
