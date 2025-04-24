@@ -155,8 +155,8 @@
             }
 
             .gambah img {
-                width: 180px;
-                height: 120px;
+                width: 150px;
+                height: 100px;
                 object-fit: cover;
             }
         }
@@ -420,8 +420,61 @@
         </script>
 
     <!-- Js main -->
-    <script src="js/toggtext.js"></script>
     <script src="js/navbar.js"></script>
+
+    <script>
+        function toggleText() {
+            const dots = document.getElementById("dots");
+            const moreText = document.getElementById("more");
+            const btnText = document.getElementById("readMoreBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Baca Selengkapnya";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Sembunyikan";
+                moreText.style.display = "inline";
+            }
+        }
+
+        // Filter fungsi
+        function filterGallery(kategori, button) {
+            const images = document.querySelectorAll(".gambah img");
+            images.forEach((img) => {
+                const imgKategori = img.getAttribute("data-kategori");
+                if (kategori === "all" || imgKategori === kategori) {
+                    img.classList.remove("hidden");
+                } else {
+                    img.classList.add("hidden");
+                }
+            });
+
+            document
+                .querySelectorAll(".filter-btn")
+                .forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+        }
+
+        // Lightbox logic
+        document.querySelectorAll(".gambah img").forEach((img) => {
+            img.addEventListener("click", () => {
+                document.getElementById("lightbox-img").src = img.src;
+                document.getElementById("lightbox").style.display = "flex";
+            });
+        });
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        document.getElementById("lightbox").addEventListener("click", (e) => {
+            if (e.target.id === "lightbox") {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
 
 </html>
