@@ -22,6 +22,145 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+        /* -------- Galeri Section ------- */
+        .gallery-section {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .gallery-section h2 {
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--color-font-primary1);
+            margin-bottom: 10px;
+        }
+
+        .gallery-section p {
+            font-size: 16px;
+            color: var(--color-font-primary2);
+        }
+
+        .gallery-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .gallery-desc {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            background-color: var(--color-secondary);
+            color: var(--color-font-primary2);
+            border: none;
+            padding: 5px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-buttons button:hover {
+            background-color: var(--color-hvr-program);
+            color: var(--background-color);
+        }
+
+        .filter-buttons button.active {
+            background-color: var(--color-hvr-program);
+            color: var(--background-color);
+        }
+
+        /* Gallery */
+        .gambah {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .gambah img {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 3px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gambah img:hover {
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Responsive: 2 columns on mobile */
+        @media (max-width: 760px) {
+            .gallery-section {
+                margin-bottom: 50px;
+            }
+
+            .gallery-section h2 {
+                font-size: 20px;
+                font-weight: 600;
+                color: var(--color-font-primary1);
+                margin-bottom: 20px;
+            }
+
+            .gambah {
+                gap: 10px;
+            }
+
+            .gambah img {
+                width: 180px;
+                height: 120px;
+                object-fit: cover;
+            }
+        }
+    </style>
 </head>
 
 <body>

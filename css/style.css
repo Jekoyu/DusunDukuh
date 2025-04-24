@@ -1194,7 +1194,7 @@ footer {
   cursor: pointer;
 }
 
-/* Responsive: 2 columns on mobile */
+/* Responsive: 2 columns on mobile
 @media (max-width: 600px) {
   .gallery-section{
     margin-bottom: 50px;
@@ -1213,7 +1213,7 @@ footer {
     height: 120px;
     object-fit: cover;
   }
-}
+} */
 
 /* ------------------------------------------------------------------ */
 /* ------------------------- Layout Berita -------------------------- */
