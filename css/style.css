@@ -1210,8 +1210,9 @@ footer {
     gap: 10px;
   }
   .gambah img {
-    width: 40%;
-    height: 30%;
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
   }
 }
 

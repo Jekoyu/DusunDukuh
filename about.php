@@ -168,11 +168,13 @@
         <!-- Gallery Images -->
         <div class="gambah">
             <img src="assets/Galeri/17_1.webp" alt="Gambar 1" data-kategori="all" onclick="openLightbox(this)">
-            <img src="assets/Galeri/17_1.webp" alt="Masyarakat" data-kategori="masyarakat" onclick="openLightbox(this)">
-            <img src="assets/Galeri/17_1.webp" alt="Kebudayaan" data-kategori="kebudayaan" onclick="openLightbox(this)">
-            <img src="assets/Galeri/17_1.webp" alt="Gambar 4" data-kategori="all" onclick="openLightbox(this)">
-            <img src="assets/Galeri/17_1.webp" alt="UMKM" data-kategori="umkm" onclick="openLightbox(this)">
-            <img src="assets/Galeri/17_1.webp" alt="Gambar 1" data-kategori="all" onclick="openLightbox(this)">
+            <img src="assets/Galeri/17_2.webp" alt="Masyarakat" data-kategori="masyarakat" onclick="openLightbox(this)">
+            <img src="assets/Galeri/H_1.webp" alt="Kebudayaan" data-kategori="masyarakat" onclick="openLightbox(this)">
+            <img src="assets/Galeri/H_2.webp" alt="Gambar 4" data-kategori="all" onclick="openLightbox(this)">
+            <img src="assets/Galeri/R_1.webp" alt="UMKM" data-kategori="masyarakat" onclick="openLightbox(this)">
+            <img src="assets/Galeri/R_2.webp" alt="Gambar 1" data-kategori="masyarakat" onclick="openLightbox(this)">
+            <img src="assets/Galeri/SP_1.webp" alt="Gambar 1" data-kategori="kebudayaan" onclick="openLightbox(this)">
+            <img src="assets/Galeri/SP_2.webp" alt="Gambar 1" data-kategori="kebudayaan" onclick="openLightbox(this)">
         </div>
     </section>
 
