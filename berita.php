@@ -110,7 +110,7 @@ $event = $conn->query($query_2);
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/program/Ruwuhan.webp" class="d-block w-100" alt="...">
+                    <img src="assets/berita/B_1.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
                         <h2>Berita Warga, Cerita Kita.</h2>
                         <p>Temukan berita dan informasi terkini seputar Padusunan Dukuh di sini. Kami menyajikan kabar
@@ -121,7 +121,7 @@ $event = $conn->query($query_2);
                 </div>
 
                 <div class="carousel-item">
-                    <img src="assets/program/Ruwuhan.webp" class="d-block w-100" alt="...">
+                    <img src="assets/berita/B_2.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
                         <h2>Berita Warga, Cerita Kita.</h2>
                         <p>Temukan berita dan informasi terkini seputar Padusunan Dukuh di sini. Kami menyajikan kabar
@@ -132,7 +132,7 @@ $event = $conn->query($query_2);
                 </div>
 
                 <div class="carousel-item">
-                    <img src="assets/program/Ruwuhan.webp" class="d-block w-100" alt="...">
+                    <img src="assets/berita/B_3.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
                         <h2>Berita Warga, Cerita Kita.</h2>
                         <p>Temukan berita dan informasi terkini seputar Padusunan Dukuh di sini. Kami menyajikan kabar
