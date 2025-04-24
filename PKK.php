@@ -33,6 +33,77 @@
         --color-font-primary3: #fff;
         --color-font-secondary: #777777;
     }
+
+    /* List view styling */
+    #umkm-container.list-view .umkm-item {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    #umkm-container.list-view .card-body {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    #umkm-container.list-view .umkm-header {
+        width: 25%;
+    }
+
+    #umkm-container.list-view .umkm-product {
+        width: 45%;
+        padding-left: 0 !important;
+    }
+
+    #umkm-container.list-view .umkm-contact {
+        width: 20%;
+        padding-left: 0 !important;
+        text-align: right;
+    }
+
+    #umkm-container.list-view .umkm-image {
+        width: 10%;
+        
+        text-align: center;
+    }
+
+    #umkm-container.list-view .product-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .product-image {
+        display: flex;
+        width: 70%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+        #umkm-container.list-view .card-body {
+            flex-direction: column;
+        }
+
+        #umkm-container.list-view .umkm-header,
+        #umkm-container.list-view .umkm-product,
+        #umkm-container.list-view .umkm-contact,
+        #umkm-container.list-view .umkm-image {
+            width: 100%;
+            text-align: left;
+            padding-left: 65px !important;
+            margin-bottom: 10px;
+        }
+
+        #umkm-container.list-view .umkm-image {
+            padding-left: 0 !important;
+        }
+    }
 </style>
 
 <body>
@@ -223,230 +294,7 @@
                     <!-- UMKM Cards -->
                     <div class="card-body" style="padding: 25px;">
                         <div class="row" id="umkm-container">
-                            <!-- UMKM Item 1 -->
-                            <div class="col-md-6 col-lg-4 mb-4 umkm-item" data-category="makanan">
-                                <div class="card h-100 border-0 shadow-sm"
-                                    style="border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div
-                                                style="background-color: var(--color-secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                                <i class="fas fa-utensils"
-                                                    style="color: var(--color-primary); font-size: 20px;"></i>
-                                            </div>
-                                            <div>
-                                                <h5
-                                                    style="font-family: var(--heading-font); font-weight: 600; margin-bottom: 0; color: var(--color-font-primary2);">
-                                                    Bu Harini</h5>
-                                                <span style="font-size: 12px; color: var(--color-font-secondary);">RT
-                                                    02</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3" style="padding-left: 65px;">
-                                            <p
-                                                style="color: var(--color-font-primary2); margin-bottom: 5px; font-weight: 500;">
-                                                Produk:</p>
-                                            <p style="color: var(--color-font-secondary); margin-bottom: 0;">Pepes tahu
-                                                jamur (tiap hari), bakmi goreng, nasi goreng</p>
-                                        </div>
-                                        <div style="padding-left: 65px;">
-                                            <a href="tel:085810245923" class="btn btn-sm"
-                                                style="background-color: var(--color-primary); color: white; border-radius: 30px; padding: 5px 15px;">
-                                                <i class="fas fa-phone-alt me-2"></i> 085810245923
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- UMKM Item 2 -->
-                            <div class="col-md-6 col-lg-4 mb-4 umkm-item" data-category="makanan">
-                                <div class="card h-100 border-0 shadow-sm"
-                                    style="border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div
-                                                style="background-color: var(--color-secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                                <i class="fas fa-utensils"
-                                                    style="color: var(--color-primary); font-size: 20px;"></i>
-                                            </div>
-                                            <div>
-                                                <h5
-                                                    style="font-family: var(--heading-font); font-weight: 600; margin-bottom: 0; color: var(--color-font-primary2);">
-                                                    Bu Meiti Aris Setyani</h5>
-                                                <span
-                                                    style="font-size: 12px; color: var(--color-font-secondary);">-</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3" style="padding-left: 65px;">
-                                            <p
-                                                style="color: var(--color-font-primary2); margin-bottom: 5px; font-weight: 500;">
-                                                Produk:</p>
-                                            <p style="color: var(--color-font-secondary); margin-bottom: 0;">Kripik usus
-                                                re-packing</p>
-                                        </div>
-                                        <div style="padding-left: 65px;">
-                                            <a href="tel:085729827177" class="btn btn-sm"
-                                                style="background-color: var(--color-primary); color: white; border-radius: 30px; padding: 5px 15px;">
-                                                <i class="fas fa-phone-alt me-2"></i> 085729827177
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- UMKM Item 3 -->
-                            <div class="col-md-6 col-lg-4 mb-4 umkm-item" data-category="pembibitan">
-                                <div class="card h-100 border-0 shadow-sm"
-                                    style="border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div
-                                                style="background-color: var(--color-secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                                <i class="fas fa-seedling"
-                                                    style="color: var(--color-primary); font-size: 20px;"></i>
-                                            </div>
-                                            <div>
-                                                <h5
-                                                    style="font-family: var(--heading-font); font-weight: 600; margin-bottom: 0; color: var(--color-font-primary2);">
-                                                    Bu Tanti</h5>
-                                                <span style="font-size: 12px; color: var(--color-font-secondary);">RT
-                                                    02</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3" style="padding-left: 65px;">
-                                            <p
-                                                style="color: var(--color-font-primary2); margin-bottom: 5px; font-weight: 500;">
-                                                Produk:</p>
-                                            <p style="color: var(--color-font-secondary); margin-bottom: 0;">Pembibitan
-                                            </p>
-                                        </div>
-                                        <div style="padding-left: 65px;">
-                                            <a href="tel:08974831397" class="btn btn-sm"
-                                                style="background-color: var(--color-primary); color: white; border-radius: 30px; padding: 5px 15px;">
-                                                <i class="fas fa-phone-alt me-2"></i> 08974831397
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- UMKM Item 4 -->
-                            <div class="col-md-6 col-lg-4 mb-4 umkm-item" data-category="pembibitan">
-                                <div class="card h-100 border-0 shadow-sm"
-                                    style="border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div
-                                                style="background-color: var(--color-secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                                <i class="fas fa-seedling"
-                                                    style="color: var(--color-primary); font-size: 20px;"></i>
-                                            </div>
-                                            <div>
-                                                <h5
-                                                    style="font-family: var(--heading-font); font-weight: 600; margin-bottom: 0; color: var(--color-font-primary2);">
-                                                    Bu Ngatijo</h5>
-                                                <span style="font-size: 12px; color: var(--color-font-secondary);">RT
-                                                    04</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3" style="padding-left: 65px;">
-                                            <p
-                                                style="color: var(--color-font-primary2); margin-bottom: 5px; font-weight: 500;">
-                                                Produk:</p>
-                                            <p style="color: var(--color-font-secondary); margin-bottom: 0;">Pembibitan
-                                            </p>
-                                        </div>
-                                        <div style="padding-left: 65px;">
-                                            <a href="tel:085729120709" class="btn btn-sm"
-                                                style="background-color: var(--color-primary); color: white; border-radius: 30px; padding: 5px 15px;">
-                                                <i class="fas fa-phone-alt me-2"></i> 085729120709
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- UMKM Item 5 -->
-                            <div class="col-md-6 col-lg-4 mb-4 umkm-item" data-category="makanan">
-                                <div class="card h-100 border-0 shadow-sm"
-                                    style="border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div
-                                                style="background-color: var(--color-secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                                <i class="fas fa-utensils"
-                                                    style="color: var(--color-primary); font-size: 20px;"></i>
-                                            </div>
-                                            <div>
-                                                <h5
-                                                    style="font-family: var(--heading-font); font-weight: 600; margin-bottom: 0; color: var(--color-font-primary2);">
-                                                    Bu Umie Nufiyaningsih</h5>
-                                                <span style="font-size: 12px; color: var(--color-font-secondary);">RT 03
-                                                    RW 10</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3" style="padding-left: 65px;">
-                                            <p
-                                                style="color: var(--color-font-primary2); margin-bottom: 5px; font-weight: 500;">
-                                                Produk:</p>
-                                            <p style="color: var(--color-font-secondary); margin-bottom: 0;">Peyek</p>
-                                        </div>
-                                        <div style="padding-left: 65px;">
-                                            <a href="tel:085643700070" class="btn btn-sm"
-                                                style="background-color: var(--color-primary); color: white; border-radius: 30px; padding: 5px 15px;">
-                                                <i class="fas fa-phone-alt me-2"></i> 085643700070
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- UMKM Item 6 -->
-                            <div class="col-md-6 col-lg-4 mb-4 umkm-item" data-category="makanan">
-                                <div class="card h-100 border-0 shadow-sm"
-                                    style="border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div
-                                                style="background-color: var(--color-secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                                <i class="fas fa-utensils"
-                                                    style="color: var(--color-primary); font-size: 20px;"></i>
-                                            </div>
-                                            <div>
-                                                <h5
-                                                    style="font-family: var(--heading-font); font-weight: 600; margin-bottom: 0; color: var(--color-font-primary2);">
-                                                    Bu Devi</h5>
-                                                <span style="font-size: 12px; color: var(--color-font-secondary);">RT
-                                                    02</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3" style="padding-left: 65px;">
-                                            <p
-                                                style="color: var(--color-font-primary2); margin-bottom: 5px; font-weight: 500;">
-                                                Produk:</p>
-                                            <p style="color: var(--color-font-secondary); margin-bottom: 0;">Gudeg</p>
-                                        </div>
-                                        <div style="padding-left: 65px;">
-                                            <a href="tel:081326006761" class="btn btn-sm"
-                                                style="background-color: var(--color-primary); color: white; border-radius: 30px; padding: 5px 15px;">
-                                                <i class="fas fa-phone-alt me-2"></i> 081326006761
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Add more UMKM items here following the same pattern -->
-                            <!-- You can add the remaining UMKM items following the same structure -->
-
-                            <!-- "Show More" Button -->
-                            <div class="col-12 text-center mt-3">
-                                <button id="show-more-umkm" class="btn"
-                                    style="background-color: var(--color-font-primary1); color: white; border-radius: 30px; padding: 10px 25px; font-weight: 500;">
-                                    Lihat Semua UMKM <i class="fas fa-chevron-down ms-2"></i>
-                                </button>
-                            </div>
+                            <!-- UMKM items will be generated by JavaScript -->
                         </div>
                     </div>
                 </div>
@@ -518,6 +366,9 @@
 
     <!-- Library PureCounter (opsional, jika digunakan) -->
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+    <!-- UMKM Data and Script -->
+    <script src="js/umkm-script.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -602,71 +453,6 @@
             // PURECOUNTER
             if (typeof PureCounter === "function") {
                 new PureCounter();
-            }
-
-            // UMKM SECTION
-            const viewGridBtn = document.getElementById('view-grid');
-            const viewListBtn = document.getElementById('view-list');
-            const umkmContainer = document.getElementById('umkm-container');
-
-            if (viewGridBtn && viewListBtn && umkmContainer) {
-                viewGridBtn.addEventListener('click', function () {
-                    viewGridBtn.style.backgroundColor = 'white';
-                    viewGridBtn.style.color = 'var(--color-primary)';
-                    viewListBtn.style.backgroundColor = 'transparent';
-                    viewListBtn.style.color = 'white';
-                    umkmContainer.classList.remove('list-view');
-                });
-
-                viewListBtn.addEventListener('click', function () {
-                    viewListBtn.style.backgroundColor = 'white';
-                    viewListBtn.style.color = 'var(--color-primary)';
-                    viewGridBtn.style.backgroundColor = 'transparent';
-                    viewGridBtn.style.color = 'white';
-                    umkmContainer.classList.add('list-view');
-                });
-            }
-
-            const searchInput = document.getElementById('search-umkm');
-            const filterCategory = document.getElementById('filter-category');
-            const umkmItems = document.querySelectorAll('.umkm-item');
-
-            const filterUMKM = () => {
-                const searchTerm = searchInput?.value.toLowerCase() || "";
-                const category = filterCategory?.value.toLowerCase() || "";
-
-                umkmItems.forEach(item => {
-                    const title = item.querySelector('h5')?.textContent.toLowerCase() || "";
-                    const product = item.querySelector('p:nth-of-type(2)')?.textContent.toLowerCase() ||
-                        "";
-                    const itemCategory = item.dataset.category?.toLowerCase() || "";
-
-                    const matchesSearch = title.includes(searchTerm) || product.includes(searchTerm);
-                    const matchesCategory = category === '' || itemCategory === category;
-
-                    item.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
-                });
-            };
-
-            searchInput?.addEventListener('input', filterUMKM);
-            filterCategory?.addEventListener('change', filterUMKM);
-
-            // Show more / less UMKM
-            const showMoreBtn = document.getElementById('show-more-umkm');
-            const hiddenItems = document.querySelectorAll('.umkm-item:nth-child(n+7)');
-
-            if (showMoreBtn) {
-                hiddenItems.forEach(item => item.style.display = 'none');
-
-                showMoreBtn.addEventListener('click', function () {
-                    let isHidden = [...hiddenItems].some(item => item.style.display === 'none');
-                    hiddenItems.forEach(item => {
-                        item.style.display = isHidden ? 'block' : 'none';
-                    });
-                    showMoreBtn.innerHTML = isHidden ?
-                        'Tampilkan Lebih Sedikit <i class="fas fa-chevron-up ms-2"></i>' :
-                        'Lihat Semua UMKM <i class="fas fa-chevron-down ms-2"></i>';
-                });
             }
 
             // Card hover effect
