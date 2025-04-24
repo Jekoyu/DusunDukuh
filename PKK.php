@@ -64,7 +64,7 @@
 
     #umkm-container.list-view .umkm-image {
         width: 10%;
-        
+
         text-align: center;
     }
 
