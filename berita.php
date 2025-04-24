@@ -184,7 +184,8 @@ $event = $conn->query($query_2);
                                     <!-- Gunakan gambar dari database jika ada -->
                                     <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
                                     <div class=" date-badge">
-                                    <?= $date ?></div>
+                                        <?= $date ?>
+                                    </div>
                                 </div>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
@@ -225,23 +226,23 @@ $event = $conn->query($query_2);
                         <p>Padukuhan Dukuh meriahkan HUT RI ke-80.</p>
                     </span>
                 </div>
-                <div class="event-item" style="
-                background-image: url('assets/program/Hadrohan.webp');
-              ">
-                    <span class="text-event">
-                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 20 November 2025</p>
-                        <p>Padukuhan Dukuh menggelar tradisi Ruwahan menjelang bulan Ramadan.</p>
-                    </span>
-                </div>
-                <div class="event-item" style="
+                < class="event-item" style="
                 background-image: url('assets/program/Ruwuhan.webp');
               ">
                     <span class="text-event">
-                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 5 Desember 2025</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, dolorum.</p>
+                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 20 November 2025</p>
+                        <p>Padukuhan Dukuh menggelar tradisi Ruwahan.</p>
                     </span>
-                </div>
             </div>
+            <div class="event-item" style="
+                background-image: url('assets/program/Hadrohan.webp');
+              ">
+                <span class="text-event">
+                    <p class="event-date"><i class="fas fa-calendar-alt"></i> 5 Desember 2025</p>
+                    <p>Kegiatan keagamaan Dusun Dukuh, penampilan Hadroh..</p>
+                </span>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -308,29 +309,29 @@ $event = $conn->query($query_2);
 
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
 
     <!-- Js main -->
     <script src="/js/main.js"></script>
 
-        <script>
+    <script>
         // ---------- Corasel slider Berita ------------ //
-         document.addEventListener("DOMContentLoaded", function() {
-        const captions = document.querySelectorAll(".carousel-caption");
-    
+        document.addEventListener("DOMContentLoaded", function () {
+            const captions = document.querySelectorAll(".carousel-caption");
+
             captions.forEach((caption) => {
                 gsap.set(caption, {
                     opacity: 0,
                     y: 50
                 });
-        });
-    
+            });
+
             function animateCaption(slideIndex) {
                 const activeCaption = document.querySelector(
                     `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-            );
-    
+                );
+
                 if (activeCaption) {
                     gsap.to(activeCaption, {
                         opacity: 1,
@@ -341,104 +342,104 @@ $event = $conn->query($query_2);
                 }
             }
             const carousel = document.querySelector("#carouselExam pleCaptions");
-            carousel.addEventListener("slid.bs.carousel", function(event) {
+            carousel.addEventListener("slid.bs.carousel", function (event) {
                 const newIndex = event.to;
                 gsap.set(captions, {
                     opacity: 0,
                     y: 50
-            });
-    
+                });
+
                 animateCaption(newIndex);
             });
             animateCaption(0);
-    });
-   
-         // ------ ------------ Navbar JS ---------------- //
-        (function() {
-        "use strict";
+        });
 
-                // Apply .scrolled class to the body as the page is scrolled down
-         cons   t toggleScrolled = () => {
+        // ------ ------------ Navbar JS ---------------- //
+        (function () {
+            "use strict";
+
+        // Apply .scrolled class to the body as the page is scrolled down
+        cons t toggleScrolled = () => {
                 const body = document.querySelector("body");
-            const header = document.querySelector("#header");
-  
-                 if ( 
+                const header = document.querySelector("#header");
+
+                if (
                     !header.classList.contains("scroll-up-sticky") &&
                     !header.classList.contains("sticky-top") &&
                     !header.classList.contains("fixed-top")
-            )
+                )
                     return;
- 
-                wind   ow.scrollY > 100 ?
+
+            wind ow.scrollY > 100 ?
                     body.classList.add("scrolled") :
                     body.classList.remove("scrolled");
-        };
-   
-             // Event listeners for scroll and load
-            document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
+            };
 
-                // Mobile navigation toggle
+            // Event listeners for scroll and load
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
+
+            // Mobile navigation toggle
             const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-          cons  t mobileNavToogle = () => {
+        cons t mobileNavToogle = () => {
                 document.querySelector("body").classList.toggle("mobile-nav-active");
                 mobileNavToggleBtn.classList.toggle("bi-list");
                 mobileNavToggleBtn.classList.toggle("bi-x");
             };
-        mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
+            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
 
-                // Hide mobile nav on same-page/hash links
-         docu   ment.querySelectorAll("#navmenu a").forEach((navmenu) => {
-              navm  enu.addEventListener("click", () => {
-                  if (  document.querySelector(".mobile-nav-active")) {
-                        mobileNavToogle();
-                    }
-                });
-        });
-    
-            // Toggle mobile nav dropdowns
-         docu   ment
-                .querySelectorAll(".navmenu .toggle-dropdown")
-               .for Each((navmenu) => {
-                   navm  enu.addEventListener("click", function(e) {
-                        e.preventDefault();
-                        const parent = this.parentNode;
-                        parent.classList.toggle("active");
-                        parent.nextElementSibling.classList.toggle("dropdown-active");
-                        e.stopImmediatePropagation();
-                    });
+        // Hide mobile nav on same-page/hash links
+        docu ment.querySelectorAll("#navmenu a").forEach((navmenu) => {
+            navm enu.addEventListener("click", () => {
+                if (document.querySelector(".mobile-nav-active")) {
+                    mobileNavToogle();
+                }
             });
- 
-               // Preloader
-            const preloader = document.querySelector("#preloader");
-           if ( preloader) {
-                window.addEventListener("load", () => preloader.remove());
-        }
-    
-            //  Scroll top button
-        const scrollTop = document.querySelector(".scroll-top");
+            });
 
-             cons   t toggleScrollTop = () => {
-             if (   scrollTop) {
-                  wind  ow.scrollY > 100 ?
+        // Toggle mobile nav dropdowns
+        docu ment
+                .querySelectorAll(".navmenu .toggle-dropdown")
+                .for Each((navmenu) => {
+                navm enu.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const parent = this.parentNode;
+                    parent.classList.toggle("active");
+                    parent.nextElementSibling.classList.toggle("dropdown-active");
+                    e.stopImmediatePropagation();
+                });
+                });
+
+            // Preloader
+            const preloader = document.querySelector("#preloader");
+            if (preloader) {
+                window.addEventListener("load", () => preloader.remove());
+            }
+
+            //  Scroll top button
+            const scrollTop = document.querySelector(".scroll-top");
+
+        cons t toggleScrollTop = () => {
+                if (scrollTop) {
+                wind ow.scrollY > 100 ?
                         scrollTop.classList.add("active") :
                         scrollTop.classList.remove("active");
                 }
-        };
-    
+            };
+
             scrollTop?.addEventListener("click", (e) => {
                 e.preventDefault();
-             wind   ow.scrollTo({
+            wind ow.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
-        });
-   
-             window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
-    
+            });
+
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
+
             new PureCounter();
-    })();
+        })();
     </script>
 </body>
 
