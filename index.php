@@ -54,7 +54,7 @@
 
     <!-- Conten Home -->
     <section class="home">
-        <video class="video-slide active" src="vidio/HMSI Impac 17 agustus.mp4" autoplay muted loop></video>
+        <video class="video-slide active" src="vidio/Layout Dukuh .mp4" autoplay muted loop></video>
 
         <div class="content active">
             <h1>Sugeng rawuh <br /><span>di Padukuhan Dukuh kelurahan Sinduharjo</span></h1>
