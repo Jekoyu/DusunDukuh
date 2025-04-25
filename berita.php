@@ -8,6 +8,7 @@ $result = $conn->query($query);
 $query_2 = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Event' ORDER BY created_at DESC";
 $event = $conn->query($query_2);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,46 +22,47 @@ $event = $conn->query($query_2);
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
     <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <style>
-        /* Card Berita */
-        .news-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    /* Card Berita */
+    .news-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
+    .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
 
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
 
-        .date-badge {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-        }
+    .date-badge {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+    }
 
-        .admin-info {
-            font-size: 0.8rem;
-            color: #6c757d;
-        }
+    .admin-info {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
     </style>
 </head>
 
@@ -70,16 +72,14 @@ $event = $conn->query($query_2);
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
-                <h1 class="sitename">Padusunan Dukuh</h1>
+                <h1 class="sitename">Padukuhan Dukuh</h1>
                 <span>.</span>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="about.php">Tentang</a></li>
                     <li><a href="berita.php" class="active">Berita</a></li>
-
                     <li class="dropdown">
                         <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
@@ -177,30 +177,30 @@ $event = $conn->query($query_2);
                         $content = $row['content'];
                         $date = date('d M Y', strtotime($row['created_at']));
                         ?>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card news-card h-100">
-                                <!-- Tambahkan h-100 untuk tinggi seragam -->
-                                <div class="position-relative">
-                                    <!-- Gunakan gambar dari database jika ada -->
-                                    <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
-                                    <div class=" date-badge">
-                                        <?= $date ?>
-                                    </div>
-                                </div>
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
-                                    <p class="card-text flex-grow-1">
-                                        <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
-                                    </p>
-                                    <div class="admin-info mt-auto">
-                                        <span>👤 Administrator</span> |
-                                        <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
-                                    </div>
-                                    <a href="berita_detail.php?id=<?= $id ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
-                                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card news-card h-100">
+                        <!-- Tambahkan h-100 untuk tinggi seragam -->
+                        <div class="position-relative">
+                            <!-- Gunakan gambar dari database jika ada -->
+                            <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
+                            <div class=" date-badge">
+                                <?= $date ?>
                             </div>
                         </div>
-                        <?php
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
+                            <p class="card-text flex-grow-1">
+                                <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
+                            </p>
+                            <div class="admin-info mt-auto">
+                                <span>👤 Administrator</span> |
+                                <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
+                            </div>
+                            <a href="berita_detail.php?id=<?= $id ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <?php
                     }
                 } else {
                     echo 'Mohon maaf Belum ada berita saat ini.';
@@ -251,7 +251,7 @@ $event = $conn->query($query_2);
         <div class="container">
             <div class="footer-brand">
                 <div class="logo-image-container">
-                    <img src="/assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
+                    <img src="assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
                 </div>
 
                 <div class="footer-brand-content">
@@ -305,136 +305,49 @@ $event = $conn->query($query_2);
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Js main -->
-    <script src="/js/main.js"></script>
+    <script src="js/navbar.js"></script>
 
     <script>
-        // ---------- Corasel slider Berita ------------ //
-        document.addEventListener("DOMContentLoaded", function () {
-            const captions = document.querySelectorAll(".carousel-caption");
+    // ---------- Corasel slider Berita ------------ //
+    docu ment.addEventListener("DOMContentLoaded", function() {
+        const captions = document.querySelectorAll(".carousel-caption");
 
-            captions.forEach((caption) => {
-                gsap.set(caption, {
-                    opacity: 0,
-                    y: 50
-                });
+        capt ions.forEach((caption) => {
+            gsap.set(caption, {
+                opacity: 0,
+                y: 50
             });
-
-            function animateCaption(slideIndex) {
-                const activeCaption = document.querySelector(
-                    `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-                );
-
-                if (activeCaption) {
-                    gsap.to(activeCaption, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1,
-                        ease: "power3.out",
-                    });
-                }
-            }
-            const carousel = document.querySelector("#carouselExam pleCaptions");
-            carousel.addEventListener("slid.bs.carousel", function (event) {
-                const newIndex = event.to;
-                gsap.set(captions, {
-                    opacity: 0,
-                    y: 50
-                });
-
-                animateCaption(newIndex);
-            });
-            animateCaption(0);
         });
 
-        // ------ ------------ Navbar JS ---------------- //
-        (function () {
-            "use strict";
+        func tion animateCaption(slideIndex) {
+            cons t activeCaption = document.querySelector(
+                `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
+            );
 
-        // Apply .scrolled class to the body as the page is scrolled down
-        cons t toggleScrolled = () => {
-                const body = document.querySelector("body");
-                const header = document.querySelector("#header");
-
-                if (
-                    !header.classList.contains("scroll-up-sticky") &&
-                    !header.classList.contains("sticky-top") &&
-                    !header.classList.contains("fixed-top")
-                )
-                    return;
-
-            wind ow.scrollY > 100 ?
-                    body.classList.add("scrolled") :
-                    body.classList.remove("scrolled");
-            };
-
-            // Event listeners for scroll and load
-            document.addEventListener("scroll", toggleScrolled);
-            window.addEventListener("load", toggleScrolled);
-
-            // Mobile navigation toggle
-            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        cons t mobileNavToogle = () => {
-                document.querySelector("body").classList.toggle("mobile-nav-active");
-                mobileNavToggleBtn.classList.toggle("bi-list");
-                mobileNavToggleBtn.classList.toggle("bi-x");
-            };
-            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
-
-        // Hide mobile nav on same-page/hash links
-        docu ment.querySelectorAll("#navmenu a").forEach((navmenu) => {
-            navm enu.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
-                }
-            });
-            });
-
-        // Toggle mobile nav dropdowns
-        docu ment
-                .querySelectorAll(".navmenu .toggle-dropdown")
-                .for Each((navmenu) => {
-                navm enu.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const parent = this.parentNode;
-                    parent.classList.toggle("active");
-                    parent.nextElementSibling.classList.toggle("dropdown-active");
-                    e.stopImmediatePropagation();
+            if (activeCaption) {
+                gsap.to(activeCaption, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
                 });
-                });
-
-            // Preloader
-            const preloader = document.querySelector("#preloader");
-            if (preloader) {
-                window.addEventListener("load", () => preloader.remove());
             }
-
-            //  Scroll top button
-            const scrollTop = document.querySelector(".scroll-top");
-
-        cons t toggleScrollTop = () => {
-                if (scrollTop) {
-                wind ow.scrollY > 100 ?
-                        scrollTop.classList.add("active") :
-                        scrollTop.classList.remove("active");
-                }
-            };
-
-            scrollTop?.addEventListener("click", (e) => {
-                e.preventDefault();
-            wind ow.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+        }
+        const carousel = document.querySelector("#carouselExam  pleCaptions");
+        carousel.addEventListener("slid.bs.carousel", function(event) {
+            const newIndex = event.to;
+            gsap.set(captions, {
+                opacity: 0,
+                y: 50
             });
 
-            window.addEventListener("load", toggleScrollTop);
-            document.addEventListener("scroll", toggleScrollTop);
-
-            new PureCounter();
-        })();
+            animateCaption(newIndex);
+        });
+        animateCaption(0);
+    });
     </script>
 </body>
 

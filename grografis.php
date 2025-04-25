@@ -15,19 +15,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
 
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Navbar -->
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.php" class="logo d-flex align-items-center">
-                <h1 class="sitename">Dusun Dukuh</h1>
+                <h1 class="sitename">Padukuhan Dukuh</h1>
                 <span>.</span>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="index.php">Home</a></li>
@@ -36,7 +36,7 @@
                     <li class="dropdown">
                         <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a href="Kel-Tani.php" class="active">Kel. Tani</a></li>
+                            <li><a href="Kel-Tani.php">Kel. Tani</a></li>
                             <li><a href="Kel-Maggot.php">Kel. Maggot</a></li>
                             <li><a href="Kel-Pemuda.php">Kel. Pemuda</a></li>
                             <li><a href="PKK.php">PKK</a></li>
@@ -194,96 +194,7 @@
         </script>
 
     <!-- Js main -->
-    <script src="/js/main.js"></script>
-
-    <script>
-        // Navbar JS
-        (function () {
-            "use strict";
-
-            // Apply .scrolled class to the body as the page is scrolled down
-            const toggleScrolled = () => {
-                const body = document.querySelector("body");
-                const header = document.querySelector("#header");
-
-                if (
-                    !header.classList.contains("scroll-up-sticky") &&
-                    !header.classList.contains("sticky-top") &&
-                    !header.classList.contains("fixed-top")
-                )
-                    return;
-
-                window.scrollY > 100 ?
-                    body.classList.add("scrolled") :
-                    body.classList.remove("scrolled");
-            };
-
-            // Event listeners for scroll and load
-            document.addEventListener("scroll", toggleScrolled);
-            window.addEventListener("load", toggleScrolled);
-
-            // Mobile navigation toggle
-            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-            const mobileNavToogle = () => {
-                document.querySelector("body").classList.toggle("mobile-nav-active");
-                mobileNavToggleBtn.classList.toggle("bi-list");
-                mobileNavToggleBtn.classList.toggle("bi-x");
-            };
-            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
-
-            // Hide mobile nav on same-page/hash links
-            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-                navmenu.addEventListener("click", () => {
-                    if (document.querySelector(".mobile-nav-active")) {
-                        mobileNavToogle();
-                    }
-                });
-            });
-
-            // Toggle mobile nav dropdowns
-            document
-                .querySelectorAll(".navmenu .toggle-dropdown")
-                .forEach((navmenu) => {
-                    navmenu.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        const parent = this.parentNode;
-                        parent.classList.toggle("active");
-                        parent.nextElementSibling.classList.toggle("dropdown-active");
-                        e.stopImmediatePropagation();
-                    });
-                });
-
-            // Preloader
-            const preloader = document.querySelector("#preloader");
-            if (preloader) {
-                window.addEventListener("load", () => preloader.remove());
-            }
-
-            //  Scroll top button
-            const scrollTop = document.querySelector(".scroll-top");
-
-            const toggleScrollTop = () => {
-                if (scrollTop) {
-                    window.scrollY > 100 ?
-                        scrollTop.classList.add("active") :
-                        scrollTop.classList.remove("active");
-                }
-            };
-
-            scrollTop?.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
-
-            window.addEventListener("load", toggleScrollTop);
-            document.addEventListener("scroll", toggleScrollTop);
-
-            new PureCounter();
-        })();
-    </script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>
