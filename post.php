@@ -1,3 +1,75 @@
+<?php
+include 'conn.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// echo "<pre>GET Parameters: ";
+// print_r($_GET);
+// Ambil slug & category dari URL (via .htaccess RewriteRule)
+$slug = $_GET['slug'] ?? '';
+$category = $_GET['category'] ?? '';
+// Debug query
+// echo "<pre>Debug Query:\n";
+// echo "Slug: $slug\n";
+// echo "Category: $category\n";
+// $debug_query = "SELECT posts.*, categories.name AS category_name 
+//                 FROM posts 
+//                 JOIN categories ON posts.category_id = categories.id 
+//                 WHERE posts.slug = '$slug' AND categories.slug = '$category'";
+// echo $debug_query . "\n</pre>";
+
+// // Jalankan query dan tampilkan hasil
+// $debug_result = $conn->query($debug_query);
+// if ($debug_result) {
+//     echo "<pre>Query Results:\n";
+//     print_r($debug_result->fetch_all(MYSQLI_ASSOC));
+//     echo "</pre>";
+// } else {
+//     echo "<pre>Query Error: " . $conn->error . "</pre>";
+// }
+// Validasi input
+if (empty($slug) || empty($category)) {
+    header("HTTP/1.0 404 Not Found");
+    die("<h1>404 - Halaman tidak ditemukan</h1>");
+}
+
+// Sanitize input
+$slug = $conn->real_escape_string($slug);
+$category = $conn->real_escape_string($category);
+
+// Query untuk ambil data post + kategori + image
+$stmt = $conn->prepare("
+    SELECT posts.*, categories.name AS category_name, categories.slug AS category_slug, 
+           images.image_url
+    FROM posts
+    JOIN categories ON posts.category_id = categories.id
+    LEFT JOIN images ON images.post_id = posts.id
+    WHERE posts.slug = ? AND categories.slug = ?
+    LIMIT 1
+");
+
+$stmt->bind_param("ss", $slug, $category);
+$stmt->execute();
+$result = $stmt->get_result();
+$post = $result->fetch_assoc();
+
+// Jika tidak ditemukan, tampilkan 404
+if (!$post) {
+    header("HTTP/1.0 404 Not Found");
+    die("<h1>404 - Berita tidak ditemukan</h1>");
+}
+
+
+// Siapkan data untuk ditampilkan
+$title = htmlspecialchars($post['title']);
+$date = date('d F Y', strtotime($post['created_at']));
+$content = $post['content'];
+$views = number_format($post['views'] ?? 0);
+$image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $post['image_url']))
+    ? 'assets/uploads/' . $post['image_url']
+    : 'assets/berita/B_1.webp';
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -8,8 +80,9 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
   <!-- Font Awesome -->
+  <base href="DusunDukuh/" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -167,29 +240,22 @@
       <div class="col-lg-8">
         <div class="card p-4">
           <!-- News Title -->
-          <h1 class="news-title">Pemerintah Desa Kersik Gelar Pelatihan untuk Anggota Linmas</h1>
+          <h1 class="news-title"><?= htmlspecialchars($title) ?></h1>
 
           <!-- News Meta Information -->
           <div class="news-meta">
-            <span><i class="far fa-calendar-alt"></i> 5 September 2024</span>
+            <span><i class="far fa-calendar-alt"></i> <?= $date ?></span>
+
             <span><i class="far fa-user"></i> Administrator</span>
             <span><i class="far fa-eye"></i> 850 kali dilihat</span>
           </div>
 
           <!-- News Image -->
-          <img src="https://via.placeholder.com/600x400" alt="Pelatihan Linmas Desa Kersik" class="news-image">
+          <img src="<?= $image_url ?>" alt="<?= htmlspecialchars($title) ?>" class="news-image">
 
           <!-- News Content -->
           <div class="news-content">
-            <p>Kersik – Pemerintah Desa Kersik baru-baru ini menyelenggarakan pelatihan intensif bagi anggota Perlindungan Masyarakat (Linmas). Kegiatan yang berlangsung selama dua hari ini bertujuan untuk meningkatkan kapasitas dan keterampilan anggota Linmas dalam menjaga keamanan dan ketertiban di lingkungan desa.</p>
-
-            <p>Pelatihan dibuka secara resmi oleh Kepala Desa Kersik, Bapak Suryanto, yang dalam sambutannya menekankan pentingnya peran Linmas sebagai garda terdepan dalam menjaga keamanan desa. "Anggota Linmas adalah mitra penting pemerintah desa dalam menciptakan lingkungan yang aman dan tertib bagi seluruh warga," ujarnya.</p>
-
-            <p>Materi pelatihan mencakup berbagai aspek penting, termasuk teknik patroli, penanganan situasi darurat, pertolongan pertama pada kecelakaan (P3K), dan koordinasi dengan aparat keamanan lainnya. Para peserta juga dibekali pengetahuan tentang regulasi terbaru terkait keamanan dan ketertiban masyarakat.</p>
-
-            <p>Salah satu peserta, Hendra Wijaya (42), mengungkapkan apresiasinya terhadap pelatihan tersebut. "Pelatihan ini sangat bermanfaat bagi kami. Sekarang kami lebih percaya diri dalam menjalankan tugas sebagai anggota Linmas," katanya.</p>
-
-            <p>Di akhir pelatihan, seluruh peserta menerima sertifikat dan perlengkapan pendukung tugas Linmas. Pemerintah Desa Kersik berkomitmen untuk terus meningkatkan kapasitas anggota Linmas melalui berbagai program pelatihan serupa di masa mendatang.</p>
+            <?= $content ?>
           </div>
 
           <!-- Social Share Buttons -->
@@ -299,7 +365,7 @@
       <div class="footer-brand">
         <div class="logo-image-container">
           <img
-            src="assets/Logodesa.png"
+            src="/assets/Logodesa.png"
             alt="Logo Desa Sinduharjo"
             class="footer-logo" />
         </div>
@@ -405,7 +471,7 @@
     crossorigin="anonymous"></script>
 
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 
 </body>
 

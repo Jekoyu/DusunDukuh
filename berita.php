@@ -29,40 +29,40 @@ $event = $conn->query($query_2);
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-    /* Card Berita */
-    .news-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: none;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        /* Card Berita */
+        .news-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .news-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
 
-    .card-img-top {
-        height: 200px;
-        object-fit: cover;
-    }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
 
-    .date-badge {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.8rem;
-    }
+        .date-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
 
-    .admin-info {
-        font-size: 0.8rem;
-        color: #6c757d;
-    }
+        .admin-info {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
     </style>
 </head>
 
@@ -177,30 +177,30 @@ $event = $conn->query($query_2);
                         $content = $row['content'];
                         $date = date('d M Y', strtotime($row['created_at']));
                         ?>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card news-card h-100">
-                        <!-- Tambahkan h-100 untuk tinggi seragam -->
-                        <div class="position-relative">
-                            <!-- Gunakan gambar dari database jika ada -->
-                            <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
-                            <div class=" date-badge">
-                                <?= $date ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card news-card h-100">
+                                <!-- Tambahkan h-100 untuk tinggi seragam -->
+                                <div class="position-relative">
+                                    <!-- Gunakan gambar dari database jika ada -->
+                                    <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
+                                    <div class=" date-badge">
+                                        <?= $date ?>
+                                    </div>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
+                                    <p class="card-text flex-grow-1">
+                                        <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
+                                    </p>
+                                    <div class="admin-info mt-auto">
+                                        <span>👤 Administrator</span> |
+                                        <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
+                                    </div>
+                                    <a href="berita_detail.php?id=<?= $id ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
-                            <p class="card-text flex-grow-1">
-                                <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
-                            </p>
-                            <div class="admin-info mt-auto">
-                                <span>👤 Administrator</span> |
-                                <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
-                            </div>
-                            <a href="berita_detail.php?id=<?= $id ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <?php
+                        <?php
                     }
                 } else {
                     echo 'Mohon maaf Belum ada berita saat ini.';
@@ -265,14 +265,14 @@ $event = $conn->query($query_2);
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
 
     <script>
     // ---------- Corasel slider Berita ------------ //
-    docu ment.addEventListener("DOMContentLoaded", function() {
+    docu ment.addEventListener("DOMContentLoaded", function () {
         const captions = document.querySelectorAll(".carousel-caption");
 
         capt ions.forEach((caption) => {
@@ -284,8 +284,8 @@ $event = $conn->query($query_2);
 
         func tion animateCaption(slideIndex) {
             cons t activeCaption = document.querySelector(
-                `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-            );
+            `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
+        );
 
             if (activeCaption) {
                 gsap.to(activeCaption, {
@@ -297,7 +297,7 @@ $event = $conn->query($query_2);
             }
         }
         const carousel = document.querySelector("#carouselExam  pleCaptions");
-        carousel.addEventListener("slid.bs.carousel", function(event) {
+        carousel.addEventListener("slid.bs.carousel", function (event) {
             const newIndex = event.to;
             gsap.set(captions, {
                 opacity: 0,
