@@ -1433,6 +1433,10 @@ footer {
     font-weight: 600;
     color: var(--color-font-primary1);  
   }
+  .contact-section h2{
+    font-size: 20px;
+    font-weight: 600;
+  }
 }
 
 /* ------ Kelompok Tani ------- */
