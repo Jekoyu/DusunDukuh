@@ -32,29 +32,58 @@ if (isset($_GET['id'])) {
                 throw new Exception("Error updating post: " . htmlspecialchars($stmt->error));
             }
 
-             if (isset($_FILES['images']) && $_FILES['images']['error'][0] != 4) {  
-                $total_files = count($_FILES['images']['name']);
-                for ($i = 0; $i < $total_files; $i++) {
-                    $file_name = $_FILES['images']['name'][$i];
-                    $file_tmp = $_FILES['images']['tmp_name'][$i];
-                    $target_dir = "assets/uploads/";
-                    $target_file = $target_dir . basename($file_name);
-
-                    if (getimagesize($file_tmp) === false) {
-                        echo "File {$file_name} is not an image.<br>";
-                        continue;
-                    }
-
-                    if (move_uploaded_file($file_tmp, $target_file)) {
-                        $image_url = __dir__ . $target_file;
-                        $image_stmt = $conn->prepare("INSERT INTO images (post_id, image_url) VALUES (?, ?)");
-                        $image_stmt->bind_param("is", $post_id, $image_url);
-                        if (!$image_stmt->execute()) {
-                            throw new Exception("Error inserting image: " . htmlspecialchars($image_stmt->error));
-                        }
+            if (isset($_FILES['image']) && $_FILES['image']['error'] !== 4) {
+                // Hapus gambar lama dari database dan folder
+                $stmt = $conn->prepare("SELECT image_url FROM images WHERE post_id = ?");
+                $stmt->bind_param("i", $post_id);
+                $stmt->execute();
+                $result = $stmt->get_result();
+            
+                while ($row = $result->fetch_assoc()) {
+                    $old_image_path = $row['image_url'];
+                    if (file_exists($old_image_path)) {
+                        unlink($old_image_path); // hapus file fisik
                     }
                 }
+            
+                // Hapus dari database
+                $stmt = $conn->prepare("DELETE FROM images WHERE post_id = ?");
+                $stmt->bind_param("i", $post_id);
+                $stmt->execute();
+            
+                // Upload gambar baru
+                $file_name = $_FILES['image']['name'];
+                $file_tmp = $_FILES['image']['tmp_name'];
+                $file_error = $_FILES['image']['error'];
+                $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+                $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
+                $upload_dir = 'assets/uploads/';
+                $new_filename = 'img_' . bin2hex(random_bytes(8)) . '.' . $file_ext;
+                $target_path = $upload_dir . $new_filename;
+            
+                if (!in_array($file_ext, $allowed_ext)) {
+                    throw new Exception("Ekstensi file tidak diizinkan.");
+                }
+            
+                if (getimagesize($file_tmp) === false) {
+                    throw new Exception("File yang diupload bukan gambar valid.");
+                }
+            
+                if ($file_error !== UPLOAD_ERR_OK) {
+                    throw new Exception("Terjadi error saat upload file. Kode: $file_error");
+                }
+            
+                if (move_uploaded_file($file_tmp, $target_path)) {
+                    $image_stmt = $conn->prepare("INSERT INTO images (post_id, image_url) VALUES (?, ?)");
+                    $image_stmt->bind_param("is", $post_id, $target_path);
+                    if (!$image_stmt->execute()) {
+                        throw new Exception("Gagal menyimpan gambar baru ke database: " . $image_stmt->error);
+                    }
+                } else {
+                    throw new Exception("Gagal memindahkan file ke folder upload.");
+                }
             }
+            
             header("Location: index.php");
             exit();
         } catch (Exception $e) {
@@ -123,7 +152,7 @@ if (isset($_GET['id'])) {
                                 <!-- Upload Gambar -->
                                 <div class="form-group">
                                     <label for="images">Upload Gambar</label>
-                                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
+                                    <input type="file" name="image" id="image" class="form-control" accept="image/*">
                                     <small class="form-text text-muted">Pilih beberapa gambar untuk diunggah.</small>
                                 </div>
 

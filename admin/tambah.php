@@ -13,6 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($status === 'draft' && isset($_POST['scheduled_at'])) {
         $scheduled_at = $_POST['scheduled_at'];
     }
+    echo '<pre>';
+    print_r($_FILES);
+    echo '</pre>';
+
 
     $conn->begin_transaction();
     try {
@@ -26,33 +30,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             throw new Exception("Error inserting post: " . htmlspecialchars($stmt->error));
         }
         $post_id = $stmt->insert_id;
-
         // Handle image upload (optional)
-        if (isset($_FILES['images']) && $_FILES['images']['error'][0] != 4) { // Check if images are uploaded
-            $total_files = count($_FILES['images']['name']);
-            for ($i = 0; $i < $total_files; $i++) {
-                $file_name = $_FILES['images']['name'][$i];
-                $file_tmp = $_FILES['images']['tmp_name'][$i];
-                $target_dir = "assets/uploads/";
-                $target_file = $target_dir . basename($file_name);
+        // Handle image upload (single image)
+        if (isset($_FILES['image']) && $_FILES['image']['error'] !== 4) {
+            $file_name = $_FILES['image']['name'];
+            $file_tmp = $_FILES['image']['tmp_name'];
+            $file_error = $_FILES['image']['error'];
+            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+            $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
+            $upload_dir = 'assets/uploads/';
+            $new_filename = 'img_' . bin2hex(random_bytes(8)) . '.' . $file_ext;
 
-               
-                if (getimagesize($file_tmp) === false) {
-                    echo "File {$file_name} is not an image.<br>";
-                    continue;
-                }
+            $target_path = $upload_dir . $new_filename;
 
-                // Move the uploaded file to the target directory
-                if (move_uploaded_file($file_tmp, $target_file)) {
-                    $image_url = __dir__ . $target_file;
-                    $image_stmt = $conn->prepare("INSERT INTO images (post_id, image_url) VALUES (?, ?)");
-                    $image_stmt->bind_param("is", $post_id, $image_url);
-                    if (!$image_stmt->execute()) {
-                        throw new Exception("Error inserting image: " . htmlspecialchars($image_stmt->error));
-                    }
+            // Buat folder jika belum ada
+            if (!file_exists($upload_dir)) {
+                mkdir($upload_dir, 0777, true);
+            }
+
+            // Validasi ekstensi
+            if (!in_array($file_ext, $allowed_ext)) {
+                throw new Exception("Ekstensi file tidak diizinkan.");
+            }
+
+            // Validasi gambar
+            if (getimagesize($file_tmp) === false) {
+                throw new Exception("File yang diupload bukan gambar valid.");
+            }
+
+            // Validasi error
+            if ($file_error !== UPLOAD_ERR_OK) {
+                throw new Exception("Terjadi error saat upload file. Kode: $file_error");
+            }
+
+            // Upload dan simpan ke database
+            if (move_uploaded_file($file_tmp, $target_path)) {
+                $image_url = $target_path;
+                $image_stmt = $conn->prepare("INSERT INTO images (post_id, image_url) VALUES (?, ?)");
+                $image_stmt->bind_param("is", $post_id, $image_url);
+                if (!$image_stmt->execute()) {
+                    throw new Exception("Gagal menyimpan image: " . $image_stmt->error);
                 }
+            } else {
+                throw new Exception("Gagal memindahkan file ke folder upload.");
             }
         }
+
+
 
         $conn->commit();
 
@@ -142,11 +166,13 @@ include 'partials/head.php';
                                 </div>
 
                                 <!-- Upload Gambar -->
+                                <!-- Upload Gambar -->
                                 <div class="form-group">
-                                    <label for="images">Upload Gambar</label>
-                                    <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
-                                    <small class="form-text text-muted">Pilih gambar untuk diunggah.</small>
+                                    <label for="image">Upload Gambar</label>
+                                    <input type="file" name="image" id="image" class="form-control" accept="image/*" required>
+                                    <small class="form-text text-muted">Pilih satu gambar untuk diunggah.</small>
                                 </div>
+
 
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
