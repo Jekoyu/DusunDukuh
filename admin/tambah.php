@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $file_error = $_FILES['image']['error'];
             $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
             $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
-            $upload_dir = 'assets/uploads/';
+            $upload_dir = '../assets/uploads/';
             $new_filename = 'img_' . bin2hex(random_bytes(8)) . '.' . $file_ext;
 
             $target_path = $upload_dir . $new_filename;
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Upload dan simpan ke database
             if (move_uploaded_file($file_tmp, $target_path)) {
-                $image_url = $target_path;
+                $image_url = $new_filename;
                 $image_stmt = $conn->prepare("INSERT INTO images (post_id, image_url) VALUES (?, ?)");
                 $image_stmt->bind_param("is", $post_id, $image_url);
                 if (!$image_stmt->execute()) {

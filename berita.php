@@ -1,13 +1,25 @@
 <?php
 include 'conn.php';
 
-$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC";
+$query = "SELECT posts.*,images.image_url FROM posts
+ join categories on categories.id = posts.category_id
+    left join images on images.post_id = posts.id
+  where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY posts.created_at DESC";
 $result = $conn->query($query);
-// var_dump($result->num_rows);
+// $data = $result->fetch_all(MYSQLI_ASSOC);
+
+// echo '<pre>';
+// var_dump($data);
+// echo '</pre>';
 
 $query_2 = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Event' ORDER BY created_at DESC";
 $event = $conn->query($query_2);
 ?>
+
+<!-- // echo '<pre>';
+// var_dump($data);
+// echo '</pre>'; -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -172,17 +184,25 @@ $event = $conn->query($query_2);
                 <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
+                        $default_image = 'assets/berita/B_1.webp';
+                        $base_path = 'assets/uploads/';
+                        $image_name = $row['image_url']; // misalnya: img_xxx.jpg
+
+                        $image_url = (!empty($image_name) && file_exists($base_path . $image_name))
+                            ? $base_path . $image_name
+                            : $default_image;
+
                         $id = $row['id'];
                         $title = $row['title'];
                         $content = $row['content'];
                         $date = date('d M Y', strtotime($row['created_at']));
-                        ?>
+                ?>
                         <div class="col-lg-4 col-md-6">
                             <div class="card news-card h-100">
                                 <!-- Tambahkan h-100 untuk tinggi seragam -->
                                 <div class="position-relative">
                                     <!-- Gunakan gambar dari database jika ada -->
-                                    <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
+                                    <img src="<?= $image_url ?>" class="card-img-top" alt="<?= $title ?>">
                                     <div class=" date-badge">
                                         <?= $date ?>
                                     </div>
@@ -200,7 +220,7 @@ $event = $conn->query($query_2);
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     }
                 } else {
                     echo 'Mohon maaf Belum ada berita saat ini.';
@@ -305,14 +325,14 @@ $event = $conn->query($query_2);
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Js main -->
     <script src="/js/main.js"></script>
 
     <script>
         // ---------- Corasel slider Berita ------------ //
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const captions = document.querySelectorAll(".carousel-caption");
 
             captions.forEach((caption) => {
@@ -337,7 +357,7 @@ $event = $conn->query($query_2);
                 }
             }
             const carousel = document.querySelector("#carouselExam pleCaptions");
-            carousel.addEventListener("slid.bs.carousel", function (event) {
+            carousel.addEventListener("slid.bs.carousel", function(event) {
                 const newIndex = event.to;
                 gsap.set(captions, {
                     opacity: 0,
@@ -350,11 +370,11 @@ $event = $conn->query($query_2);
         });
 
         // ------ ------------ Navbar JS ---------------- //
-        (function () {
+        (function() {
             "use strict";
 
-        // Apply .scrolled class to the body as the page is scrolled down
-        cons t toggleScrolled = () => {
+            // Apply .scrolled class to the body as the page is scrolled down
+            cons t toggleScrolled = () => {
                 const body = document.querySelector("body");
                 const header = document.querySelector("#header");
 
@@ -365,7 +385,7 @@ $event = $conn->query($query_2);
                 )
                     return;
 
-            wind ow.scrollY > 100 ?
+                wind ow.scrollY > 100 ?
                     body.classList.add("scrolled") :
                     body.classList.remove("scrolled");
             };
@@ -376,33 +396,33 @@ $event = $conn->query($query_2);
 
             // Mobile navigation toggle
             const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        cons t mobileNavToogle = () => {
+            cons t mobileNavToogle = () => {
                 document.querySelector("body").classList.toggle("mobile-nav-active");
                 mobileNavToggleBtn.classList.toggle("bi-list");
                 mobileNavToggleBtn.classList.toggle("bi-x");
             };
             mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
 
-        // Hide mobile nav on same-page/hash links
-        docu ment.querySelectorAll("#navmenu a").forEach((navmenu) => {
-            navm enu.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
-                }
-            });
+            // Hide mobile nav on same-page/hash links
+            docu ment.querySelectorAll("#navmenu a").forEach((navmenu) => {
+                navm enu.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
+                });
             });
 
-        // Toggle mobile nav dropdowns
-        docu ment
+            // Toggle mobile nav dropdowns
+            docu ment
                 .querySelectorAll(".navmenu .toggle-dropdown")
                 .for Each((navmenu) => {
-                navm enu.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const parent = this.parentNode;
-                    parent.classList.toggle("active");
-                    parent.nextElementSibling.classList.toggle("dropdown-active");
-                    e.stopImmediatePropagation();
-                });
+                    navm enu.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle("active");
+                        parent.nextElementSibling.classList.toggle("dropdown-active");
+                        e.stopImmediatePropagation();
+                    });
                 });
 
             // Preloader
@@ -414,9 +434,9 @@ $event = $conn->query($query_2);
             //  Scroll top button
             const scrollTop = document.querySelector(".scroll-top");
 
-        cons t toggleScrollTop = () => {
+            cons t toggleScrollTop = () => {
                 if (scrollTop) {
-                wind ow.scrollY > 100 ?
+                    wind ow.scrollY > 100 ?
                         scrollTop.classList.add("active") :
                         scrollTop.classList.remove("active");
                 }
@@ -424,7 +444,7 @@ $event = $conn->query($query_2);
 
             scrollTop?.addEventListener("click", (e) => {
                 e.preventDefault();
-            wind ow.scrollTo({
+                wind ow.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
