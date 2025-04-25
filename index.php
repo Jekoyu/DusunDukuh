@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -223,7 +223,7 @@
         <div class="container">
             <div class="footer-brand">
                 <div class="logo-image-container">
-                    <img src="/assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
+                    <img src="assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
                 </div>
 
                 <div class="footer-brand-content">
