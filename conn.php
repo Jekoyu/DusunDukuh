@@ -5,11 +5,11 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/config.php';
 
-$host = $_ENV['DB_HOST'];
-$port = $_ENV['DB_PORT'];
-$dbname = $_ENV['DB_DATABASE'];
-$username = $_ENV['DB_USERNAME'];
-$password = $_ENV['DB_PASSWORD'];
+$host = "167.99.79.36" || 'sql112.infinityfree.com';
+$port = 3306;
+$dbname = "hmsi_impact_2025" || "if0_38676309_hmsi";
+$username = "hmsi" || "if0_38676309";
+$password = "hmsiimpact" || "6blJrX3Ojh";
 
 $conn = new mysqli($host, $username, $password, $dbname, $port);
 

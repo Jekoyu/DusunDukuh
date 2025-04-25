@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <style>
         /* -------- Galeri Section ------- */
         .gallery-section {
@@ -370,7 +370,7 @@
         <div class="container">
             <div class="footer-brand">
                 <div class="logo-image-container">
-                    <img src="/assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
+                    <img src="assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
                 </div>
 
                 <div class="footer-brand-content">
