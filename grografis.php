@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-    @media (max-width: 768px) {
-        .contact-section h2 {
-            font-size: 20px;
-            font-weight: 600;
+        @media (max-width: 768px) {
+            .contact-section h2 {
+                font-size: 20px;
+                font-weight: 600;
+            }
         }
-    }
     </style>
 </head>
 
@@ -76,7 +76,7 @@
 
     <!-- Faq Section -->
     <section>
-        <div class="container contact-section">
+        <div class="container contact-section mb-4">
             <div class="text-center mb-5 mt-5">
                 <h2>HUBUNGI KAMI</h2>
                 <p class="bottom-contact-title"></p>
@@ -158,7 +158,7 @@
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
