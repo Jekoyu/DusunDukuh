@@ -250,7 +250,7 @@ $event = $conn->query($query_2);
                 if ($event->num_rows > 0) {
                     while ($row = $event->fetch_assoc()) {
                 ?>
-                        <div class="event-item me-3" style="flex: 0 0 auto; width: 300px; height: 300px; background-image: url('assets/program/17 Agustusan.webp'); background-size: cover; background-position: center; border-radius: 10px;">
+                        <div class="event-item me-3" style="flex: 0 0 auto; width: 250px; height: 350px; background-image: url('assets/program/17 Agustusan.webp'); background-size: cover; background-position: center; border-radius: 10px;">
                             <span class="text-event" style="color: white; background: rgba(0,0,0,0.5); padding: 10px; display: block;">
                                 <p class="event-date"><i class="fas fa-calendar-alt"></i> <?= date('d M Y', strtotime($row['created_at'])) ?></p>
                                 <p><?= htmlspecialchars($row['title']) ?></p>
