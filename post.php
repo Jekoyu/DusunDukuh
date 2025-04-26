@@ -299,12 +299,12 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
             if ($data2->num_rows > 0) {
               while ($row = $data2->fetch_assoc()) {
                 echo "<div class='latest-news-item'>
-                <a href='/" . htmlspecialchars($row['category_slug']) . "/" . htmlspecialchars($row['slug']) . "/" .  "' class='text-decoration-none text-dark'>
+                <a href='/".htmlspecialchars($row['category_slug']) ."/" . htmlspecialchars($row['slug']) . "/" .  "' class='text-decoration-none text-dark'>
                   <h5 class='latest-news-title'>" . htmlspecialchars($row['title']) . "</h5>
                 </a>
                 <div class='latest-news-meta'>
                   <span><i class='far fa-calendar-alt'></i> " . date('d F Y', strtotime($row['created_at'])) . "</span>
-                  <span><i class='far fa-eye'></i> " . number_format(rand(500, 1000)) . " kali</span>
+                  <span><i class='far fa-eye'></i> " . number_format( rand(500, 1000)) . " kali</span>
                 </div>
               </div>";
               }
@@ -312,34 +312,34 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
               echo 'Belum ada berita terbaru.';
             }
             ?>
+            
           </div>
+
+
         </div>
 
-
-      </div>
-
-      <!-- Categories Widget -->
-      <div class="card p-4">
-        <h3 class="sidebar-title">Kategori</h3>
-        <ul class="list-group list-group-flush">
-          <?php
-          if ($data->num_rows > 0) {
-            while ($row = $data->fetch_assoc()) {
-              echo "<li class='list-group-item d-flex justify-content-between align-items-center'>
+        <!-- Categories Widget -->
+        <div class="card p-4">
+          <h3 class="sidebar-title">Kategori</h3>
+          <ul class="list-group list-group-flush">
+            <?php
+            if ($data->num_rows > 0) {
+              while ($row = $data->fetch_assoc()) {
+                echo "<li class='list-group-item d-flex justify-content-between align-items-center'>
                 <span>" . htmlspecialchars($row['category_name']) . "</span>
                 <span class='badge bg-primary rounded-pill'>" . $row['total'] . "</span>";
+              }
+            } else {
+              echo 'Mohon maaf Belum ada berita saat ini.';
             }
-          } else {
-            echo 'Mohon maaf Belum ada berita saat ini.';
-          }
 
 
-          ?>
-          </li>
-        </ul>
+            ?>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!-- Footer would go here -->
