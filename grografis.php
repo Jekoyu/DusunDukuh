@@ -1,3 +1,33 @@
+<?php
+include 'conn.php'; // koneksi database
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $subject = htmlspecialchars(trim($_POST['subject']));
+    $message = htmlspecialchars(trim($_POST['message']));
+
+    if (!empty($name) && !empty($email) && !empty($subject) && !empty($message)) {
+        $stmt = $conn->prepare("INSERT INTO messages (name, email, subject, message) VALUES (?, ?, ?, ?)");
+        if ($stmt) {
+            $stmt->bind_param("ssss", $name, $email, $subject, $message);
+            if ($stmt->execute()) {
+                echo "success"; // << kirim 'success' string
+            } else {
+                echo "error";
+            }
+        } else {
+            echo "error";
+        }
+    } else {
+        echo "empty";
+    }
+    exit(); // stop supaya tidak ngeprint HTML
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,7 +106,7 @@
 
     <!-- Faq Section -->
     <section>
-        <div class="container contact-section mb-4">
+        <div class="container contact-section">
             <div class="text-center mb-5 mt-5">
                 <h2>HUBUNGI KAMI</h2>
                 <p class="bottom-contact-title"></p>
@@ -118,25 +148,27 @@
                 </div>
 
                 <div class="col-md-8 form-input">
-                    <form>
+                    <form id="contactForm" method="post">
+
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email">
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                             </div>
                         </div>
-                        <div class="mb-3 mb-3">
-                            <input type="text" class="form-control" placeholder="Subject">
+                        <div class="mb-3">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
                         </div>
-                        <div class="mb-3 mb-3">
-                            <textarea class="form-control" style="height: 180px;" placeholder="Message"></textarea>
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control" style="height: 180px;" placeholder="Message" required></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-send">Send Message</button>
+                            <button type="submit" name="send" class="btn btn-send">Send Message</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -158,10 +190,70 @@
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#contactForm').submit(function(e) {
+                e.preventDefault(); // stop reload
+
+                Swal.fire({
+                    title: 'Mengirim...',
+                    text: 'Mohon tunggu sebentar',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                $.ajax({
+                    type: 'POST',
+                    url: '', // submit ke halaman ini
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.trim() === 'success') {
+                            Swal.fire({
+                                title: 'Berhasil!',
+                                text: 'Pesan Anda berhasil dikirim!',
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = 'grografis.php';
+                                }
+                            });
+                        } else if (response.trim() === 'empty') {
+                            Swal.fire({
+                                title: 'Form Belum Lengkap!',
+                                text: 'Mohon isi semua data.',
+                                icon: 'warning'
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'Gagal!',
+                                text: 'Terjadi kesalahan. Coba lagi.',
+                                icon: 'error'
+                            });
+                        }
+                    },
+                    error: function() {
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'Tidak bisa mengirim data. Periksa koneksi Anda.',
+                            icon: 'error'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>
