@@ -32,7 +32,6 @@ $event = $conn->query($query_2);
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-        /* Card Berita */
         .news-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
@@ -96,6 +95,14 @@ $event = $conn->query($query_2);
 
         .btn-berita:hover {
             color: #f8a23d;
+        }
+
+        @media (max-width: 760px) {
+            .event-item {
+                font-size: 12px;
+                width: 170px !important;
+                height: 250px !important;
+            }
         }
     </style>
 </head>
