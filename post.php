@@ -101,8 +101,8 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css" />
-  <!-- Font Awesome -->
 
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Style CSS -->
@@ -345,56 +345,11 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
     </div>
   </div>
 
-  <!-- Footer would go here -->
+  <!-- Footter -->
   <footer>
-    <div class="container">
-      <div class="footer-brand">
-        <div class="logo-image-container">
-          <img src="assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
-        </div>
-
-        <div class="footer-brand-content">
-          <div class="footer-address">
-            <p class="address-text">
-              <span class="address-line">Desa Sinduharjo</span>
-              <span class="address-line">Kecamatan Ngaglik</span>
-              <span class="address-line">Kabupaten Sleman</span>
-              <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
-            </p>
-          </div>
-
-          <div class="footer-social">
-            <a href="#" class="social-link">
-              <i class="fab fa-facebook social-icon"></i>
-            </a>
-            <a href="#" class="social-link">
-              <i class="fab fa-instagram social-icon"></i>
-            </a>
-            <a href="#" class="social-link">
-              <i class="fab fa-twitter social-icon"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-section contact">
-        <h4>Kontak Desa</h4>
-        <p><i class="fas fa-phone"></i> 088888888888</p>
-        <p><i class="fas fa-envelope"></i> sindoharjo.desa@gmail.com</p>
-        <p>
-          <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
-          (08.00 - 11.00)
-        </p>
-        <p>
-          <i class="fas fa-map-marker-alt"></i> Jalan Sindoharjo, Desa Sleman,
-          Rt 004 / Rw 005 DIY.
-        </p>
-      </div>
-      <div class="footer-section emergency">
-        <h4>Nomer Telephone Penting</h4>
-        <p>Jumadi/Kades Kersik<br /><strong>08124368478</strong></p>
-        <p>Yayan/Ambulan Kersik<br /><strong>085392095123</strong></p>
-      </div>
-    </div>
+    <?php
+    include 'footer.php';
+    ?>
   </footer>
 
   <!-- Bootstrap JS Bundle with Popper -->
