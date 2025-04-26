@@ -16,6 +16,11 @@ ORDER BY
 ";
 $data = $conn->query($q);
 
+
+$r = "SELECT posts.*,categories.name,categories.slug as category_slug FROM posts 
+join categories on categories.id = posts.category_id 
+where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC";
+$data2 = $conn->query($r);
 // var_dump($category->fetch_all(MYSQLI_ASSOC));
 
 // echo "<pre>GET Parameters: ";
@@ -290,16 +295,26 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
 
           <!-- Latest News Item 1 -->
           <div class="latest-news-item">
-            <a href="#" class="text-decoration-none text-dark">
-              <h5 class="latest-news-title">Desa Kersik Raih Penghargaan Desa Terbaik Tingkat Kabupaten</h5>
-            </a>
-            <div class="latest-news-meta">
-              <span><i class="far fa-calendar-alt"></i> 1 September 2024</span>
-              <span><i class="far fa-eye"></i> 732 kali</span>
-            </div>
+            <?php
+            if ($data2->num_rows > 0) {
+              while ($row = $data2->fetch_assoc()) {
+                echo "<div class='latest-news-item'>
+                <a href='post.php?slug=" . htmlspecialchars($row['slug']) . "&category=" . htmlspecialchars($row['category_slug']) . "' class='text-decoration-none text-dark'>
+                  <h5 class='latest-news-title'>" . htmlspecialchars($row['title']) . "</h5>
+                </a>
+                <div class='latest-news-meta'>
+                  <span><i class='far fa-calendar-alt'></i> " . date('d F Y', strtotime($row['created_at'])) . "</span>
+                  <span><i class='far fa-eye'></i> " . number_format( rand(500, 1000)) . " kali</span>
+                </div>
+              </div>";
+              }
+            } else {
+              echo 'Belum ada berita terbaru.';
+            }
+            ?>
           </div>
 
-         
+
         </div>
 
         <!-- Categories Widget -->
