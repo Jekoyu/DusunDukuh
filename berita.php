@@ -84,7 +84,7 @@ $event = $conn->query($query_2);
             background: none;
             border: none;
             color: #333333;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 400;
             text-decoration: underline;
             cursor: pointer;
@@ -95,8 +95,7 @@ $event = $conn->query($query_2);
         }
 
         .btn-berita:hover {
-            color: #555555;
-            /* Sedikit lebih gelap saat hover */
+            color: #f8a23d;
         }
     </style>
 </head>
