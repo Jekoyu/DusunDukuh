@@ -79,6 +79,21 @@ $event = $conn->query($query_2);
         .event-wrapper::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+
+        .btn-berita {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-berita:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -223,7 +238,7 @@ $event = $conn->query($query_2);
                                         <span>Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
                                     </div>
                                     <a href="<?= strtolower($row['category_slug']) ?>/<?= $row['slug'] ?>"
-                                        class="btn btn-success mt-2">Baca Selengkapnya</a>
+                                        class="btn btn-berita btn-success mt-2">Baca Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
