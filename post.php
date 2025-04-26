@@ -213,22 +213,22 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="berita.php" class="active">Berita</a></li>
+          <li><a href="/ndex.php">Home</a></li>
+          <li><a href="/about.php">About</a></li>
+          <li><a href="/berita.php" class="active">Berita</a></li>
 
           <li class="dropdown">
             <a href="#"><span>Pejabat</span>
               <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="Kel-Tani.php">Kel. Tani</a></li>
+              <li><a href="/Kel-Tani.php">Kel. Tani</a></li>
               <li><a href="#">Kel. Maggot</a></li>
               <li><a href="#">Kel. Pemuda</a></li>
               <li><a href="#">PKK</a></li>
               <li><a href="#">LPMKAL</a></li>
             </ul>
           </li>
-          <li><a href="grografis.php">Geografis</a></li>
+          <li><a href="/grografis.php">Geografis</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -256,7 +256,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
           <!-- News Content -->
           <div class="news-content">
             <?= $content ?>
-          </div>erita/pkk
+          </div>
 
           <!-- Social Share Buttons -->
           <div class="mt-4 pt-3 border-top">
@@ -413,47 +413,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
       </div>
     </div>
   </footer>
-  <section>
-    <button class="pengaduan-btn" onclick="toggleForm()">📝 Pengaduan</button>
-
-    <div class="form-container" id="formPengaduan">
-      <form>
-        <h2>Form Pengaduan</h2>
-        <label for="nama">Nama <span>*</span></label>
-        <input
-          type="text"
-          id="nama"
-          placeholder="Masukkan nama Anda"
-          required />
-
-        <label for="telepon">Nomor Telepon/WA <span>*</span></label>
-        <input
-          type="tel"
-          id="telepon"
-          placeholder="Masukkan nomor HP/WhatsApp"
-          required />
-
-        <label for="kategori">Kategori Pengaduan <span>*</span></label>
-        <select id="kategori" required>
-          <option value="">Pilih kategori pengaduan</option>
-          <option value="pelayanan">Pelayanan</option>
-          <option value="infrastruktur">Infrastruktur</option>
-          <option value="administrasi">Administrasi</option>
-        </select>
-
-        <label for="pengaduan">Pengaduan <span>*</span></label>
-        <textarea
-          id="pengaduan"
-          placeholder="Masukkan kesan, informasi, atau detail aduan Anda"
-          required></textarea>
-
-        <label for="lampiran">Lampiran</label>
-        <input type="file" id="lampiran" />
-
-        <button type="submit" class="kirim-btn">📩 Kirim</button>
-      </form>
-    </div>
-  </section>
+  
   <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
