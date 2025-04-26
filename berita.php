@@ -26,7 +26,7 @@ $event = $conn->query($query_2);
     <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <style>
         /* Card Berita */
@@ -276,22 +276,22 @@ $event = $conn->query($query_2);
     </script>
 
     <!-- Js main -->
-    <script src="js/navbar.js"></script>
+    <script src="/js/navbar.js"></script>
 
     <script>
         // ---------- Corasel slider Berita ------------ //
-        docu ment.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
             const captions = document.querySelectorAll(".carousel-caption");
 
-            capt ions.forEach((caption) => {
+            captions.forEach((caption) => {
                 gsap.set(caption, {
                     opacity: 0,
                     y: 50
                 });
             });
 
-            func tion animateCaption(slideIndex) {
-                cons t activeCaption = document.querySelector(
+            function animateCaption(slideIndex) {
+                const activeCaption = document.querySelector(
                     `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
                 );
 
