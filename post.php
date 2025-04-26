@@ -299,7 +299,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
             if ($data2->num_rows > 0) {
               while ($row = $data2->fetch_assoc()) {
                 echo "<div class='latest-news-item'>
-                <a href='/".htmlspecialchars($row['category_slug'])  . htmlspecialchars($row['slug']) . "/" .  "' class='text-decoration-none text-dark'>
+                <a href='/".htmlspecialchars($row['category_slug']) ."/" . htmlspecialchars($row['slug']) . "/" .  "' class='text-decoration-none text-dark'>
                   <h5 class='latest-news-title'>" . htmlspecialchars($row['title']) . "</h5>
                 </a>
                 <div class='latest-news-meta'>
