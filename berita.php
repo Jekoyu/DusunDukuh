@@ -1,7 +1,10 @@
 <?php
 include 'conn.php';
 
-$query = "SELECT posts.*,categories.name,categories.slug as category_slug FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC";
+$query = "SELECT posts.*,categories.name,categories.slug as category_slug,images.image_url FROM posts 
+join categories on categories.id = posts.category_id 
+left join images on images.post_id = posts.id
+where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC";
 $result = $conn->query($query);
 // var_dump($result->fetch_assoc() );
 
@@ -26,7 +29,7 @@ $event = $conn->query($query_2);
     <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <style>
         /* Card Berita */
@@ -190,6 +193,7 @@ $event = $conn->query($query_2);
                         $slug = $row['slug'];
                         $category_slug = $row['category_slug'];
                         $content = $row['content'];
+                        $image = $row['image_url'];
                         $date = date('d M Y', strtotime($row['created_at']));
                 ?>
                         <div class="col-lg-4 col-md-6">
@@ -197,7 +201,16 @@ $event = $conn->query($query_2);
                                 <!-- Tambahkan h-100 untuk tinggi seragam -->
                                 <div class="position-relative">
                                     <!-- Gunakan gambar dari database jika ada -->
-                                    <img src="assets/berita/B_1.webp" class="card-img-top" alt="<?= $title ?>">
+                                    <?php
+
+                                    if ($image) {
+                                        echo "<img src='assets/uploads/$image' class='card-img-top' alt='$title'>";
+                                    } else {
+
+                                        echo "   <img src='assets/berita/B_1.webp' class='card-img-top' alt= $title >";
+                                    }
+
+                                    ?>
                                     <div class=" date-badge">
                                         <?= $date ?>
                                     </div>
@@ -276,7 +289,7 @@ $event = $conn->query($query_2);
     </script>
 
     <!-- Js main -->
-    <script src="/js/navbar.js"></script>
+    <script src="js/navbar.js"></script>
 
     <script>
         // ---------- Corasel slider Berita ------------ //
