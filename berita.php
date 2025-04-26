@@ -83,10 +83,10 @@ $event = $conn->query($query_2);
         .btn-berita {
             background-color: #007bff;
             color: #fff;
-            padding: 10px 20px;
+            padding: 5px 10px;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 14px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
