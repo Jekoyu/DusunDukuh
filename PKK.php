@@ -20,90 +20,90 @@
 
 <!-- Add CSS for list view -->
 <style>
-:root {
-    --font-primary: "Poppins", sans-serif;
-    --font-secondary: "Montserrat", sans-serif;
-    --heading-font: "Raleway", sans-serif;
+    :root {
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Montserrat", sans-serif;
+        --heading-font: "Raleway", sans-serif;
 
-    /* Color Global */
-    --color-primary: #018577;
-    --color-secondary: #eaf8ef;
-    --color-font-primary1: #f8a23d;
-    --color-font-primary2: #272727;
-    --color-font-primary3: #fff;
-    --color-font-secondary: #777777;
-}
-
-/* List view styling */
-#umkm-container.list-view .umkm-item {
-    width: 100%;
-    max-width: 100%;
-    flex: 0 0 100%;
-}
-
-#umkm-container.list-view .card-body {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-#umkm-container.list-view .umkm-header {
-    width: 25%;
-}
-
-#umkm-container.list-view .umkm-product {
-    width: 45%;
-    padding-left: 0 !important;
-}
-
-#umkm-container.list-view .umkm-contact {
-    width: 20%;
-    padding-left: 0 !important;
-    text-align: right;
-}
-
-#umkm-container.list-view .umkm-image {
-    width: 10%;
-
-    text-align: center;
-}
-
-#umkm-container.list-view .product-image {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.product-image {
-    display: flex;
-    width: 70%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 0 auto;
-    margin-bottom: 15px;
-}
-
-@media (max-width: 768px) {
-    #umkm-container.list-view .card-body {
-        flex-direction: column;
+        /* Color Global */
+        --color-primary: #018577;
+        --color-secondary: #eaf8ef;
+        --color-font-primary1: #f8a23d;
+        --color-font-primary2: #272727;
+        --color-font-primary3: #fff;
+        --color-font-secondary: #777777;
     }
 
-    #umkm-container.list-view .umkm-header,
-    #umkm-container.list-view .umkm-product,
-    #umkm-container.list-view .umkm-contact,
-    #umkm-container.list-view .umkm-image {
+    /* List view styling */
+    #umkm-container.list-view .umkm-item {
         width: 100%;
-        text-align: left;
-        padding-left: 65px !important;
-        margin-bottom: 10px;
+        max-width: 100%;
+        flex: 0 0 100%;
     }
 
-    #umkm-container.list-view .umkm-image {
+    #umkm-container.list-view .card-body {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    #umkm-container.list-view .umkm-header {
+        width: 25%;
+    }
+
+    #umkm-container.list-view .umkm-product {
+        width: 45%;
         padding-left: 0 !important;
     }
-}
+
+    #umkm-container.list-view .umkm-contact {
+        width: 20%;
+        padding-left: 0 !important;
+        text-align: right;
+    }
+
+    #umkm-container.list-view .umkm-image {
+        width: 10%;
+
+        text-align: center;
+    }
+
+    #umkm-container.list-view .product-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .product-image {
+        display: flex;
+        width: 70%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+        #umkm-container.list-view .card-body {
+            flex-direction: column;
+        }
+
+        #umkm-container.list-view .umkm-header,
+        #umkm-container.list-view .umkm-product,
+        #umkm-container.list-view .umkm-contact,
+        #umkm-container.list-view .umkm-image {
+            width: 100%;
+            text-align: left;
+            padding-left: 65px !important;
+            margin-bottom: 10px;
+        }
+
+        #umkm-container.list-view .umkm-image {
+            padding-left: 0 !important;
+        }
+    }
 </style>
 
 <body>
@@ -248,7 +248,7 @@
                     berdedikasi
                     dalam pengembangan pertanian dan pengelolaan sumber daya alam.</p>
 
-                <img src="assets/Staff/Struktur Tani.webp" alt="Event Masyarakat" />
+                <img src="assets/Staff/PKK.webp" alt="Event Masyarakat" />
             </section>
 
             <!-- UMKM Section -->
@@ -329,7 +329,7 @@
     <!--   *****   Bootstrap JS Link   *****   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Library PureCounter (opsional, jika digunakan) -->
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
@@ -338,103 +338,103 @@
     <script src="js/umkm-script.js"></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        "use strict";
+        document.addEventListener('DOMContentLoaded', function () {
+            "use strict";
 
-        const body = document.querySelector("body");
-        const header = document.querySelector("#header");
+            const body = document.querySelector("body");
+            const header = document.querySelector("#header");
 
-        // SCROLL HANDLING
-        const toggleScrolled = () => {
-            if (
-                header &&
-                (header.classList.contains("scroll-up-sticky") ||
-                    header.classList.contains("sticky-top") ||
-                    header.classList.contains("fixed-top"))
-            ) {
-                window.scrollY > 100 ?
-                    body.classList.add("scrolled") :
-                    body.classList.remove("scrolled");
-            }
-        };
-
-        document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
-
-        // TOGGLE MOBILE NAV
-        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-        const mobileNavToogle = () => {
-            body.classList.toggle("mobile-nav-active");
-            mobileNavToggleBtn.classList.toggle("bi-list");
-            mobileNavToggleBtn.classList.toggle("bi-x");
-        };
-
-        if (mobileNavToggleBtn) {
-            mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
-        }
-
-        // CLOSE NAV ON LINK CLICK
-        document.querySelectorAll("#navmenu a").forEach((navLink) => {
-            navLink.addEventListener("click", () => {
-                if (document.querySelector(".mobile-nav-active")) {
-                    mobileNavToogle();
+            // SCROLL HANDLING
+            const toggleScrolled = () => {
+                if (
+                    header &&
+                    (header.classList.contains("scroll-up-sticky") ||
+                        header.classList.contains("sticky-top") ||
+                        header.classList.contains("fixed-top"))
+                ) {
+                    window.scrollY > 100 ?
+                        body.classList.add("scrolled") :
+                        body.classList.remove("scrolled");
                 }
-            });
-        });
+            };
 
-        // Toggle mobile nav dropdowns
-        document
-            .querySelectorAll(".navmenu .toggle-dropdown")
-            .forEach((navmenu) => {
-                navmenu.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    const parent = this.parentNode;
-                    parent.classList.toggle("active");
-                    parent.nextElementSibling.classList.toggle("dropdown-active");
-                    e.stopImmediatePropagation();
-                });
-            });
+            document.addEventListener("scroll", toggleScrolled);
+            window.addEventListener("load", toggleScrolled);
 
-        // SCROLL TO TOP
-        const scrollTop = document.querySelector(".scroll-top");
-        const toggleScrollTop = () => {
-            if (scrollTop) {
-                window.scrollY > 100 ?
-                    scrollTop.classList.add("active") :
-                    scrollTop.classList.remove("active");
+            // TOGGLE MOBILE NAV
+            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+            const mobileNavToogle = () => {
+                body.classList.toggle("mobile-nav-active");
+                mobileNavToggleBtn.classList.toggle("bi-list");
+                mobileNavToggleBtn.classList.toggle("bi-x");
+            };
+
+            if (mobileNavToggleBtn) {
+                mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
             }
-        };
-        if (scrollTop) {
-            scrollTop.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
+
+            // CLOSE NAV ON LINK CLICK
+            document.querySelectorAll("#navmenu a").forEach((navLink) => {
+                navLink.addEventListener("click", () => {
+                    if (document.querySelector(".mobile-nav-active")) {
+                        mobileNavToogle();
+                    }
                 });
             });
-        }
 
-        window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
+            // Toggle mobile nav dropdowns
+            document
+                .querySelectorAll(".navmenu .toggle-dropdown")
+                .forEach((navmenu) => {
+                    navmenu.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle("active");
+                        parent.nextElementSibling.classList.toggle("dropdown-active");
+                        e.stopImmediatePropagation();
+                    });
+                });
 
-        // PURECOUNTER
-        if (typeof PureCounter === "function") {
-            new PureCounter();
-        }
+            // SCROLL TO TOP
+            const scrollTop = document.querySelector(".scroll-top");
+            const toggleScrollTop = () => {
+                if (scrollTop) {
+                    window.scrollY > 100 ?
+                        scrollTop.classList.add("active") :
+                        scrollTop.classList.remove("active");
+                }
+            };
+            if (scrollTop) {
+                scrollTop.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+            }
 
-        // Card hover effect
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)';
+            window.addEventListener("load", toggleScrollTop);
+            document.addEventListener("scroll", toggleScrollTop);
+
+            // PURECOUNTER
+            if (typeof PureCounter === "function") {
+                new PureCounter();
+            }
+
+            // Card hover effect
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                });
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)';
+                });
             });
         });
-    });
     </script>
 
 </body>

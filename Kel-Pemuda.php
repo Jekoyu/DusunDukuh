@@ -198,7 +198,7 @@
             <h2 class="section-title">Struktur Organisasi</h2>
             <p class="text-muted mb-4">Kelompok Tani Dusun Dukuh dikelola oleh tim yang berpengalaman dan berdedikasi
                 dalam pengembangan pertanian dan pengelolaan sumber daya alam.</p>
-            <img src="assets/Staff/Struktur Pemuda.webp" alt="Event Masyarakat" />
+            <img src="assets/Staff/Kel_Pemuda.webp" alt="Event Masyarakat" />
         </section>
 
         <!-- Kegiatan dan Event -->
@@ -414,7 +414,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>

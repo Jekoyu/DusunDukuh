@@ -65,7 +65,7 @@
         <p class="fw-semibold">
             Stuktur pengurus LPMKAL Dusun Dukuh
         </p>
-        <img src="assets/Staff/Struktur LPM.webp" alt="Event Masyarakat" />
+        <img src="assets/Staff/LPMK.webp" alt="Event Masyarakat" />
     </section>
 
     <!-- Footter -->
@@ -84,7 +84,7 @@
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
