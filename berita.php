@@ -81,21 +81,19 @@ $event = $conn->query($query_2);
         }
 
         .btn-berita {
-            background-color: transparent;
-            color: #272727;
-            border: 1px solid #272727;
-            padding: 8px 10px;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 50px;
-            text-align: center;
+            background: none;
+            border: none;
+            color: #333333;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: underline;
             cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
         }
 
         .btn-berita:hover {
-            background-color: #ffffff;
-            color: #f8a23d;
+            color: #555555;
         }
     </style>
 </head>
@@ -302,53 +300,53 @@ $event = $conn->query($query_2);
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-   
-     <!-- Bootstrep JS -->
+
+    <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
-        <!-- Js main -->
-        <script src="js/navbar.js"></script>
-   
-      <script>
+    <!-- Js main -->
+    <script src="js/navbar.js"></script>
+
+    <script>
         // ---------- Corasel slider Berita ------------ //
-    document    .addEventListener("DOMContentLoaded", function() {
-         const ca   ptions = document.querySelectorAll(".carousel-caption");
-   
-             captions.forEach((caption) => {
+        document.addEventListener("DOMContentLoaded", function () {
+            const ca ptions = document.querySelectorAll(".carousel-caption");
+
+            captions.forEach((caption) => {
                 gsap.set(caption, {
-                opacity: 0,
+                    opacity: 0,
                     y: 50
                 });
-          });
-   
-           function animateCaption(slideIndex) {
+            });
+
+            function animateCaption(slideIndex) {
                 const activeCaption = document.querySelector(
                     `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-             );
-     
-                  if (activeCaption) {
-                gsap    .to(activeCaption, {
+                );
+
+                if (activeCaption) {
+                    gsap.to(activeCaption, {
                         opacity: 1,
                         y: 0,
                         duration: 1,
                         ease: "power3.out",
                     });
-                 }
-          }
-           const ca   rousel = document.querySelector("#carouselExam  pleCaptions");
-          carousel  .addEventListener("slid.bs.carousel", function(event) {
+                }
+            }
+            const ca rousel = document.querySelector("#carouselExam  pleCaptions");
+            carousel.addEventListener("slid.bs.carousel", function (event) {
                 const newIndex = event.to;
-            gsap.set(captions, {
+                gsap.set(captions, {
                     opacity: 0,
                     y: 50
                 });
-    
-            animateCaption(newIndex);
+
+                animateCaption(newIndex);
+            });
+            animateCaption(0);
         });
-        animateCaption(0);
-    });
     </script>
 </body>
 
