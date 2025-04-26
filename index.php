@@ -56,8 +56,10 @@
     <section class="home">
         <video class="video-slide active" src="assets/vidio/Layout Dukuh .mp4" autoplay muted loop></video>
         <div class="content active">
-            <h1>Sugeng rawuh <br /><span>di Padukuhan Dukuh kelurahan Sinduharjo</span></h1>
-            <p>
+            <h1>Sugeng rawuh <br /> di <span
+                    style="color: #f8a23d; font-family: 'Dancing Script', cursive; font-size: 40px; font-weight: 700; letter-spacing: 1px; text-transform: capitalize;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                    Padukuhan Dukuh</span> kelurahan Sinduharjo</h1>
+            <p style="font-family: 'Dancing Script', cursive;">
                 Tempat di mana kearifan lokal, semangat gotong royong, dan keindahan
                 alam bersatu. Temukan informasi seputar kegiatan warga, potensi dusun, dan layanan masyarakat di sini.
             </p>
