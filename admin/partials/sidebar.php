@@ -24,6 +24,12 @@
             <span>Postingan</span>
         </a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="messages.php">
+            <i class="fas fa-envelope"></i>
+            <span>Pesan</span>
+        </a>
+    </li>
 
     <li class="nav-item active">
         <a class="nav-link" href="profile.php">
