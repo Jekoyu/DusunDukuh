@@ -16,6 +16,35 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="./css/style.css" />
+
+    <style>
+        .activity-card {
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .activity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .activity-card img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+        }
+    </style>
 </head>
 
 <body>
