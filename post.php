@@ -122,7 +122,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
     }
 
     .news-title {
-      font-weight: 500;
+      font-weight: 600;
       font-size: 30px;
       line-height: 1.2;
       margin-bottom: 1rem;
@@ -164,9 +164,10 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
 
     .sidebar-title {
       font-weight: 600;
+      font-size: 25px;
       padding-bottom: 0.75rem;
       margin-bottom: 1.25rem;
-      border-bottom: 2px solid var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
       position: relative;
     }
 
