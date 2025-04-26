@@ -84,8 +84,8 @@ $event = $conn->query($query_2);
             background-color: transparent;
             color: #272727;
             border: 1px solid #272727;
-            padding: 8px 24px;
-            font-size: 16px;
+            padding: 8px 15px;
+            font-size: 14px;
             font-weight: bold;
             border-radius: 50px;
             text-align: center;
@@ -95,7 +95,7 @@ $event = $conn->query($query_2);
 
         .btn-berita:hover {
             background-color: #ffffff;
-            color: #000000;
+            color: #f8a23d;
         }
     </style>
 </head>
