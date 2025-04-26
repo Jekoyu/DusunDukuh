@@ -105,6 +105,9 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
   <style>
     :root {
       --primary-color: #0d6efd;
@@ -256,7 +259,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
       </nav>
     </div>
   </header>
-  <div class="container py-5 mt-5">
+  <div class="container py-5 mt-4">
     <div class="row">
       <!-- Main Content Column -->
       <div class="col-lg-8">
@@ -412,7 +415,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
     </script>
 
 
-  <script src="/js/main.js"></script>
+  <script src="js/navbar.js"></script>
 
 </body>
 
