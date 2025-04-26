@@ -81,18 +81,22 @@ $event = $conn->query($query_2);
         }
 
         .btn-berita {
-            background-color: #007bff;
-            color: #fff;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
+            background-color: #ffffff;
+            color: #333333;
+            border: 2px solid #333333;
+            padding: 8px 18px;
+            font-size: 15px;
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 0;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease-in-out;
         }
 
         .btn-berita:hover {
-            background-color: #0056b3;
+            background-color: #333333;
+            color: #ffffff;
         }
     </style>
 </head>
