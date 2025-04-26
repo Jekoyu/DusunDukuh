@@ -249,9 +249,6 @@
                                 bergabung dengan kami, silakan hubungi:
                             </p>
                             <div class="d-flex flex-wrap gap-3">
-                                <a href="https://wa.me/+6281234567890" class="btn btn-primary">
-                                    <i class="fab fa-whatsapp me-2"></i> Hubungi via Telephone
-                                </a>
                                 <a href="https://wa.me/+6281234567890" class="btn btn-success">
                                     <i class="fab fa-whatsapp me-2"></i> Hubungi via WhatsApp
                                 </a>

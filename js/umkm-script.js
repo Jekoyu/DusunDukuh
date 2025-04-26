@@ -124,37 +124,48 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       umkmCard.innerHTML = `
-                  <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                      <div class="card-body">
-                          <div class="d-flex align-items-center mb-3 umkm-header">
-                              <div style="background-color: var(--color-secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                  <i class="fas fa-${umkm.icon}" style="color: var(--color-primary); font-size: 20px;"></i>
-                              </div>
-                              <div>
-                                  <h5 style="font-family: var(--heading-font); font-weight: 600; margin-bottom: 0; color: var(--color-font-primary2);">
-                                      ${umkm.name}</h5>
-                                  <span style="font-size: 12px; color: var(--color-font-secondary);">${umkm.location}</span>
-                              </div>
-                          </div>
-                          
-                          <!-- Perbaikan container gambar produk -->
-                          <div class="product-image-container">
-                              <img src="${umkm.image}" alt="${umkm.name} - ${umkm.products}" class="product-image">
-                          </div>
-                          
-                          <div class="mb-3 umkm-product" style="padding-left: 65px;">
-                              <p style="color: var(--color-font-primary2); margin-bottom: 5px; font-weight: 500;">
-                                  Produk:</p>
-                              <p style="color: var(--color-font-secondary); margin-bottom: 0;">${umkm.products}</p>
-                          </div>
-                          <div class="umkm-contact" style="padding-left: 65px;">
-                              <a href="tel:${umkm.phone}" class="btn btn-sm" style="background-color: var(--color-primary); color: white; border-radius: 30px; padding: 5px 15px;">
-                                  <i class="fas fa-phone-alt me-2"></i> ${umkm.phone}
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-              `;
+      <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-3 umkm-header">
+            <div style="background-color: var(--color-secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+              <i class="fas fa-${
+                umkm.icon
+              }" style="color: var(--color-primary); font-size: 20px;"></i>
+            </div>
+            <div>
+              <h5 style="font-family: var(--heading-font); font-weight: 600; margin-bottom: 0; color: var(--color-font-primary2);">
+                ${umkm.name}
+              </h5>
+              <span style="font-size: 12px; color: var(--color-font-secondary);">${
+                umkm.location
+              }</span>
+            </div>
+          </div>
+          
+          <div class="product-image-container">
+            <img src="${umkm.image}" alt="${umkm.name} - ${
+        umkm.products
+      }" class="product-image">
+          </div>
+          
+          <div class="mb-3 umkm-product" style="padding-left: 65px;">
+            <p style="color: var(--color-font-primary2); margin-bottom: 5px; font-weight: 500;">Produk:</p>
+            <p style="color: var(--color-font-secondary); margin-bottom: 0;">${
+              umkm.products
+            }</p>
+          </div>
+          
+          <div class="umkm-contact" style="padding-left: 65px;">
+            <a href="https://wa.me/${umkm.phone.replace(
+              /^0/,
+              "62"
+            )}" class="btn btn-sm" style="background-color: var(--color-primary); color: white; border-radius: 30px; padding: 5px 15px;">
+              <i class="fab fa-whatsapp me-2"></i> ${umkm.phone}
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
 
       umkmContainer.appendChild(umkmCard);
     });
