@@ -38,11 +38,11 @@
                     <li class="dropdown">
                         <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
+                            <li><a href="LPMKAL.php">LPMKAL</a></li>
+                            <li><a href="PKK.php">PKK</a></li>
                             <li><a href="Kel-Tani.php">Kel. Tani</a></li>
                             <li><a href="Kel-Maggot.php">Kel. Maggot</a></li>
                             <li><a href="Kel-Pemuda.php">Kel. Pemuda</a></li>
-                            <li><a href="PKK.php">PKK</a></li>
-                            <li><a href="LPMKAL.php">LPMKAL</a></li>
                         </ul>
                     </li>
                     <li><a href="grografis.php">Geografis</a></li>
