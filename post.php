@@ -137,7 +137,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
     }
 
     .news-meta i {
-      color: var(--primary-color);
+      color: var(--accent-color);
       margin-right: 0.25rem;
     }
 
