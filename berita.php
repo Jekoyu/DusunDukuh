@@ -241,7 +241,7 @@ $event = $conn->query($query_2);
                                         <span>Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
                                     </div>
                                     <a href="<?= strtolower($row['category_slug']) ?>/<?= $row['slug'] ?>"
-                                        class="btn btn-berita btn-success mt-2">Baca Selengkapnya</a>
+                                        class="btn btn-berita mt-2">Baca Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
