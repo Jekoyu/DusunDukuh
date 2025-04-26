@@ -183,8 +183,6 @@ $event = $conn->query($query_2);
         <div class="container p-5 pt-4 pb-5">
             <div class="row g-4">
 
-
-
                 <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
@@ -225,7 +223,7 @@ $event = $conn->query($query_2);
                                         <span>Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
                                     </div>
                                     <a href="<?= strtolower($row['category_slug']) ?>/<?= $row['slug'] ?>"
-                                        class="btn btn-primary mt-2">Baca Selengkapnya</a>
+                                        class="btn btn-success mt-2">Baca Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
