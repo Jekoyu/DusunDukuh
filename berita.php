@@ -82,8 +82,8 @@ $event = $conn->query($query_2);
 
         .btn-berita {
             background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
+            color: #272727;
+            border: 1px solid #272727;
             padding: 8px 24px;
             font-size: 16px;
             font-weight: bold;
