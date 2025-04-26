@@ -123,6 +123,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
 
     .news-title {
       font-weight: 500;
+      font-size: 30px;
       line-height: 1.2;
       margin-bottom: 1rem;
     }
