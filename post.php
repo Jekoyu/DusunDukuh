@@ -237,20 +237,20 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="about.php">Tentang</a></li>
-          <li><a href="berita.php" class="active">Berita</a></li>
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/about.php">Tentang</a></li>
+          <li><a href="/berita.php" class="active">Berita</a></li>
           <li class="dropdown">
             <a href="#"><span>Organisasi Desa</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="Kel-Tani.php">Kel. Tani</a></li>
-              <li><a href="Kel-Maggot.php">Kel. Maggot</a></li>
-              <li><a href="Kel-Pemuda.php">Kel. Pemuda</a></li>
-              <li><a href="PKK.php">PKK</a></li>
-              <li><a href="LPMKAL.php">LPMKAL</a></li>
+              <li><a href="/Kel-Tani.php">Kel. Tani</a></li>
+              <li><a href="/Kel-Maggot.php">Kel. Maggot</a></li>
+              <li><a href="/Kel-Pemuda.php">Kel. Pemuda</a></li>
+              <li><a href="/PKK.php">PKK</a></li>
+              <li><a href="/LPMKAL.php">LPMKAL</a></li>
             </ul>
           </li>
-          <li><a href="grografis.php">Geografis</a></li>
+          <li><a href="/grografis.php">Geografis</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
