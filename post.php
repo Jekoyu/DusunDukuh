@@ -122,7 +122,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
     }
 
     .news-title {
-      font-weight: 700;
+      font-weight: 500;
       line-height: 1.2;
       margin-bottom: 1rem;
     }
@@ -224,8 +224,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
 <body>
   <!-- Header would go here -->
   <header id="header" class="header d-flex align-items-center fixed-top">
-    <div
-      class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="/index.php" class="logo d-flex align-items-center">
         <h1 class="sitename">Dusun Dukuh</h1>
         <span>.</span>
@@ -299,12 +298,12 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
             if ($data2->num_rows > 0) {
               while ($row = $data2->fetch_assoc()) {
                 echo "<div class='latest-news-item'>
-                <a href='/".htmlspecialchars($row['category_slug']) ."/" . htmlspecialchars($row['slug']) . "/" .  "' class='text-decoration-none text-dark'>
+                <a href='/" . htmlspecialchars($row['category_slug']) . "/" . htmlspecialchars($row['slug']) . "/" . "' class='text-decoration-none text-dark'>
                   <h5 class='latest-news-title'>" . htmlspecialchars($row['title']) . "</h5>
                 </a>
                 <div class='latest-news-meta'>
                   <span><i class='far fa-calendar-alt'></i> " . date('d F Y', strtotime($row['created_at'])) . "</span>
-                  <span><i class='far fa-eye'></i> " . number_format( rand(500, 1000)) . " kali</span>
+                  <span><i class='far fa-eye'></i> " . number_format(rand(500, 1000)) . " kali</span>
                 </div>
               </div>";
               }
@@ -312,7 +311,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
               echo 'Belum ada berita terbaru.';
             }
             ?>
-            
+
           </div>
 
 
@@ -347,10 +346,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
     <div class="container">
       <div class="footer-brand">
         <div class="logo-image-container">
-          <img
-            src="assets/Logodesa.png"
-            alt="Logo Desa Sinduharjo"
-            class="footer-logo" />
+          <img src="assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
         </div>
 
         <div class="footer-brand-content">
@@ -408,10 +404,9 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <!-- Bootstrep JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
 
   <script src="/js/main.js"></script>
