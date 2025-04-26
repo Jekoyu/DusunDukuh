@@ -84,13 +84,14 @@ $event = $conn->query($query_2);
             background: none;
             border: none;
             color: #333333;
-            font-size: 18px;
-            font-weight: 500;
+            font-size: 16px;
+            font-weight: 400;
             text-decoration: underline;
             cursor: pointer;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            /* atau font elegan lainnya */
+            display: block;
+            text-align: right;
         }
 
         .btn-berita:hover {
