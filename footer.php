@@ -11,7 +11,7 @@
                     <span class="address-line">Desa Sinduharjo, </span>
                     <span class="address-line">Kecamatan Ngaglik, </span>
                     <span class="address-line">Kabupaten Sleman, </span>
-                    <span class="address-line">Provinsi Daerah Istimewa Yogyakarta</span>
+                    <span class="address-line">Daerah Istimewa Yogyakarta</span>
                 </p>
             </div>
 
