@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Faq Section -->
     <section>
-        <div class="container contact-section">
+        <div class="container contact-section mb-4">
             <div class="text-center mb-5 mt-5">
                 <h2>HUBUNGI KAMI</h2>
                 <p class="bottom-contact-title"></p>
@@ -162,7 +162,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <input type="text" name="subject" class="form-control" placeholder="Subject" required>
                         </div>
                         <div class="mb-3">
-                            <textarea name="message" class="form-control" style="height: 180px;" placeholder="Message" required></textarea>
+                            <textarea name="message" class="form-control" style="height: 180px;" placeholder="Message"
+                                required></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" name="send" class="btn btn-send">Send Message</button>
@@ -190,7 +191,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
@@ -198,8 +199,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $('#contactForm').submit(function(e) {
+        $(document).ready(function () {
+            $('#contactForm').submit(function (e) {
                 e.preventDefault(); // stop reload
 
                 Swal.fire({
@@ -215,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     type: 'POST',
                     url: '', // submit ke halaman ini
                     data: $(this).serialize(),
-                    success: function(response) {
+                    success: function (response) {
                         if (response.trim() === 'success') {
                             Swal.fire({
                                 title: 'Berhasil!',
@@ -241,7 +242,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             });
                         }
                     },
-                    error: function() {
+                    error: function () {
                         Swal.fire({
                             title: 'Error!',
                             text: 'Tidak bisa mengirim data. Periksa koneksi Anda.',
