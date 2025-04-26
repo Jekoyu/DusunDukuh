@@ -256,7 +256,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
       </nav>
     </div>
   </header>
-  <div class="container py-5">
+  <div class="container py-5 mt-5">
     <div class="row">
       <!-- Main Content Column -->
       <div class="col-lg-8">
