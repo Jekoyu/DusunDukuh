@@ -215,15 +215,16 @@
                     <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="assets/Staff/Bu_Rini.jpg" alt="Futsal" class="img-fluid">
+                                <img src="assets/umum/Bola.jpg" alt="Futsal" class="img-fluid">
                                 <div
                                     class="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 m-2 rounded-pill">
                                     <small>Rutin</small>
                                 </div>
                             </div>
                             <div class="card-body p-3">
-                                <h5 class="fw-semibold fs-5 mb-2">Futsal</h5>
-                                <p class="text-muted mb-0">Kegiatan olahraga futsal yang rutin diadakan untuk menjaga
+                                <h5 class="fw-semibold fs-5 mb-2">Sepak Bola</h5>
+                                <p class="text-muted mb-0">Kegiatan olahraga Sepak Bola yang rutin diadakan untuk
+                                    menjaga
                                     kekompakan dan kesehatan pemuda desa.</p>
                             </div>
                         </div>
@@ -233,7 +234,7 @@
                     <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="assets/Galeri/voli.png" alt="Voli" class="img-fluid">
+                                <img src="assets/umum/Voli.jpg" alt="Voli" class="img-fluid">
                                 <div
                                     class="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 m-2 rounded-pill">
                                     <small>Tahunan</small>
@@ -248,7 +249,7 @@
                     </div>
 
                     <!-- Mini Soccer -->
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
                                 <img src="assets/Galeri/minisoccer.png" alt="Mini Soccer" class="img-fluid">
@@ -263,7 +264,7 @@
                                     sarana rekreasi dan olahraga bagi pemuda desa.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -271,16 +272,16 @@
             <div class="activity-category mt-4">
                 <h3><i class="fas fa-calendar-alt me-2"></i> Kegiatan Umum</h3>
                 <div class="row g-4">
-                    <!-- Makrab -->
+                    <!-- Ruwuhan -->
                     <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="assets/Galeri/makrab.png" alt="Makrab" class="img-fluid">
+                                <img src="assets/umum/Ruwuhan.webp" alt="Ruwuhan" class="img-fluid">
                             </div>
                             <div class="card-body p-3">
-                                <h5 class="fw-semibold fs-5 mb-2">Makrab</h5>
-                                <p class="text-muted mb-0">Malam keakraban untuk mempererat hubungan antar pemuda di
-                                    lingkungan desa dengan berbagai kegiatan menarik.</p>
+                                <h5 class="fw-semibold fs-5 mb-2">Ruwuhan</h5>
+                                <p class="text-muted mb-0">Tradisi doa bersama dan silaturahmi untuk mempererat
+                                    kebersamaan warga.</p>
                             </div>
                         </div>
                     </div>
@@ -289,7 +290,7 @@
                     <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="assets/Galeri/sumpahpemuda.png" alt="Sumpah Pemuda" class="img-fluid">
+                                <img src="assets/umum/Sumpah_Pemuda.webp" alt="Sumpah Pemuda" class="img-fluid">
                             </div>
                             <div class="card-body p-3">
                                 <h5 class="fw-semibold fs-5 mb-2">Sumpah Pemuda</h5>
@@ -303,7 +304,7 @@
                     <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="assets/Galeri/17an.png" alt="17 Agustusan" class="img-fluid">
+                                <img src="assets/umum/17Agustus.webp" alt="17 Agustusan" class="img-fluid">
                             </div>
                             <div class="card-body p-3">
                                 <h5 class="fw-semibold fs-5 mb-2">17 Agustusan</h5>
@@ -323,7 +324,7 @@
                     <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="assets/Galeri/pengajian.png" alt="Pengajian Rutin" class="img-fluid">
+                                <img src="assets/umum/Pengajian.jpg" alt="Pengajian Rutin" class="img-fluid">
                             </div>
                             <div class="card-body p-3">
                                 <h5 class="fw-semibold fs-5 mb-2">Pengajian Rutin</h5>
@@ -337,7 +338,7 @@
                     <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="assets/Galeri/hadroh.png" alt="Hadroh" class="img-fluid">
+                                <img src="assets/umum/Hadroh.jpg" alt="Hadroh" class="img-fluid">
                             </div>
                             <div class="card-body p-3">
                                 <h5 class="fw-semibold fs-5 mb-2">Hadroh</h5>
@@ -348,7 +349,7 @@
                     </div>
 
                     <!-- Yasinan -->
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <div class="activity-card h-100">
                             <div class="position-relative overflow-hidden">
                                 <img src="assets/Galeri/yasinan.png" alt="Yasinan" class="img-fluid">
@@ -359,7 +360,7 @@
                                     bersama warga di masjid TPA.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -385,9 +386,6 @@
                     <p class="mb-4">Untuk informasi lebih lanjut tentang Kelompok Pemuda Dusun Dukuh atau ingin
                         bergabung dengan kami, silakan hubungi:</p>
                     <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-calendar-alt me-2"></i> Jadwalkan Kunjungan
-                        </a>
                         <a href="https://wa.me/+6281234567890" class="btn btn-success">
                             <i class="fab fa-whatsapp me-2"></i> Hubungi via WhatsApp
                         </a>

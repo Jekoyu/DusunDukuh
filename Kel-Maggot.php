@@ -247,7 +247,7 @@
 
                             <div class="mt-4">
                                 <a href="https://wa.me/+6281234567890" class="btn btn-success">
-                                    <i class="fab fa-whatsapp me-2"></i> Hubungi Pak Edy untuk Pemesanan
+                                    <i class="fab fa-whatsapp me-2"></i>Lakukan Pemesanan
                                 </a>
                             </div>
                         </div>
@@ -271,9 +271,6 @@
                                 pakan ternak Anda.
                             </p>
                             <div class="d-flex flex-wrap gap-3">
-                                <a href="https://wa.me/+6281234567890" class="btn btn-primary">
-                                    <i class="fab fa-whatsapp me-2"></i> Hubungi via Telephone
-                                </a>
                                 <a href="https://wa.me/+6281234567890" class="btn btn-success">
                                     <i class="fab fa-whatsapp me-2"></i> Hubungi via WhatsApp
                                 </a>
@@ -283,26 +280,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Video Dokumentasi -->
-        <!-- <section class="section-spacing" id="dokumentasi">
-            <h2 class="section-title">Video Dokumentasi</h2>
-            <p class="text-muted mb-4">Berikut adalah dokumentasi kegiatan Kelompok Maggot Dusun Dukuh dalam mengelola
-                sampah organik dan budidaya maggot.</p>
-
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                            title="Video Dokumentasi Kelompok Maggot" allowfullscreen></iframe>
-                    </div>
-                    <p class="text-center text-muted mt-3">
-                        <i class="fas fa-info-circle me-1"></i> Semua informasi dalam kegiatan maggot ditampilkan dalam
-                        video menggunakan handphone Pak Edy.
-                    </p>
-                </div>
-            </div>
-        </section> -->
     </div>
 
     <!-- Footter -->
