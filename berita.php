@@ -79,6 +79,24 @@ $event = $conn->query($query_2);
         .event-wrapper::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+
+        .btn-berita {
+            background: none;
+            border: none;
+            color: #333333;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            /* atau font elegan lainnya */
+        }
+
+        .btn-berita:hover {
+            color: #555555;
+            /* Sedikit lebih gelap saat hover */
+        }
     </style>
 </head>
 
