@@ -1358,7 +1358,6 @@ footer {
 
 /* ------ faq Section ------ */
 .contact-section {
-  padding: 30px 0;  
   margin: 0 auto;
   display: block;
   max-width: 1200px; 
@@ -1518,7 +1517,7 @@ footer {
   border: none;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .tani-card:hover {
   transform: translateY(-5px);
@@ -1671,6 +1670,9 @@ footer {
   }
   .section-spacing {
       padding: 40px 0;
+  }
+  .section-spacing h2{
+    font-size: 23px;
   }
 }
 

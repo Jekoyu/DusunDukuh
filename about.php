@@ -23,147 +23,147 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <style>
-        /* -------- Galeri Section ------- */
+    /* -------- Galeri Section ------- */
+    .gallery-section {
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .gallery-section h2 {
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--color-font-primary1);
+        margin-bottom: 10px;
+    }
+
+    .gallery-section p {
+        font-size: 16px;
+        color: var(--color-font-primary2);
+    }
+
+    .gallery-title {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .gallery-desc {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    /* Filter Buttons */
+    .filter-buttons {
+        margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+        background-color: var(--color-secondary);
+        color: var(--color-font-primary2);
+        border: none;
+        padding: 5px 15px;
+        margin: 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+        font-weight: 500;
+    }
+
+    .filter-buttons button:hover {
+        background-color: var(--color-hvr-program);
+        color: var(--background-color);
+    }
+
+    .filter-buttons button.active {
+        background-color: var(--color-hvr-program);
+        color: var(--background-color);
+    }
+
+    /* Gallery */
+    .gambah {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .gambah img {
+        width: 250px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        cursor: pointer;
+    }
+
+    .gambah img:hover {
+        transform: scale(1.05);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* Lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .lightbox img {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
         .gallery-section {
-            max-width: 1000px;
-            margin: auto;
-            text-align: center;
-            margin-bottom: 100px;
+            margin-bottom: 50px;
         }
 
         .gallery-section h2 {
-            font-size: 30px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--color-font-primary1);
-            margin-bottom: 10px;
-        }
-
-        .gallery-section p {
-            font-size: 16px;
-            color: var(--color-font-primary2);
-        }
-
-        .gallery-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        .gallery-desc {
-            font-size: 1rem;
-            color: #555;
             margin-bottom: 20px;
         }
 
-        /* Filter Buttons */
-        .filter-buttons {
-            margin-bottom: 20px;
-        }
-
-        .filter-buttons button {
-            background-color: var(--color-secondary);
-            color: var(--color-font-primary2);
-            border: none;
-            padding: 5px 15px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-            font-weight: 500;
-        }
-
-        .filter-buttons button:hover {
-            background-color: var(--color-hvr-program);
-            color: var(--background-color);
-        }
-
-        .filter-buttons button.active {
-            background-color: var(--color-hvr-program);
-            color: var(--background-color);
-        }
-
-        /* Gallery */
         .gambah {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* Menjadikan 2 kolom */
             gap: 10px;
+            padding: 10px;
         }
 
         .gambah img {
-            width: 250px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 3px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .gambah img:hover {
-            transform: scale(1.05);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+            /* Agar gambar mengisi kolom */
+            height: 100px;
+            object-fit: cover;
         }
-
-        .lightbox img {
-            max-width: 80%;
-            max-height: 80%;
-            border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        @media (max-width: 600px) {
-            .gallery-section {
-                margin-bottom: 50px;
-            }
-
-            .gallery-section h2 {
-                font-size: 20px;
-                font-weight: 600;
-                color: var(--color-font-primary1);
-                margin-bottom: 20px;
-            }
-
-            .gambah {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                /* Menjadikan 2 kolom */
-                gap: 10px;
-                padding: 10px;
-            }
-
-            .gambah img {
-                width: 100%;
-                /* Agar gambar mengisi kolom */
-                height: 100px;
-                object-fit: cover;
-            }
-        }
+    }
     </style>
 </head>
 
@@ -353,63 +353,23 @@
         <div class="gallery-wrapper">
             <div class="gallery-container" id="gallery">
                 <div class="gallery-item" style="
-              background-image: url('assets/potensi/Keseniann.webp');
+              background-image: url('assets/potensi/P_Kesenian.webp');
             "></div>
                 <div class="gallery-item" style="
-              background-image: url('assets/potensi/Pertanian.webp');
+              background-image: url('assets/potensi/P_Pertanian.webp');
             "></div>
                 <div class="gallery-item" style="
-              background-image: url('assets/potensi/Magot.webp');
+              background-image: url('assets/potensi/P_Magot.webp');
             "></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footter -->
     <footer>
-        <div class="container">
-            <div class="footer-brand">
-                <div class="logo-image-container">
-                    <img src="assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
-                </div>
-
-                <div class="footer-brand-content">
-                    <div class="footer-address">
-                        <p class="address-text">
-                            <span class="address-line">Padukuhan Dukuh, </span>
-                            <span class="address-line">Desa Sinduharjo, </span>
-                            <span class="address-line">Kecamatan Ngaglik, </span>
-                            <span class="address-line">Kabupaten Sleman, </span>
-                            <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
-                        </p>
-                    </div>
-
-                    <div class="footer-social">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-facebook social-icon"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram social-icon"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter social-icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-section contact">
-                <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
-                <p>
-                    <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
-                    (08.00 - 11.00)
-                </p>
-            </div>
-            <div class="footer-section emergency">
-                <h4>Nomer Telephone Penting</h4>
-                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
-            </div>
-        </div>
+        <?php
+        include 'footer.php';
+        ?>
     </footer>
 
     <!--   *****   JQuery Link   *****   -->
@@ -421,63 +381,63 @@
     <!--   *****   Bootstrap JS Link   *****   -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
 
     <script>
-        function toggleText() {
-            const dots = document.getElementById("dots");
-            const moreText = document.getElementById("more");
-            const btnText = document.getElementById("readMoreBtn");
+    function toggleText() {
+        const dots = document.getElementById("dots");
+        const moreText = document.getElementById("more");
+        const btnText = document.getElementById("readMoreBtn");
 
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Baca Selengkapnya";
-                moreText.style.display = "none";
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Baca Selengkapnya";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Sembunyikan";
+            moreText.style.display = "inline";
+        }
+    }
+
+    // Filter fungsi
+    function filterGallery(kategori, button) {
+        const images = document.querySelectorAll(".gambah img");
+        images.forEach((img) => {
+            const imgKategori = img.getAttribute("data-kategori");
+            if (kategori === "all" || imgKategori === kategori) {
+                img.classList.remove("hidden");
             } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Sembunyikan";
-                moreText.style.display = "inline";
-            }
-        }
-
-        // Filter fungsi
-        function filterGallery(kategori, button) {
-            const images = document.querySelectorAll(".gambah img");
-            images.forEach((img) => {
-                const imgKategori = img.getAttribute("data-kategori");
-                if (kategori === "all" || imgKategori === kategori) {
-                    img.classList.remove("hidden");
-                } else {
-                    img.classList.add("hidden");
-                }
-            });
-
-            document
-                .querySelectorAll(".filter-btn")
-                .forEach((btn) => btn.classList.remove("active"));
-            button.classList.add("active");
-        }
-
-        // Lightbox logic
-        document.querySelectorAll(".gambah img").forEach((img) => {
-            img.addEventListener("click", () => {
-                document.getElementById("lightbox-img").src = img.src;
-                document.getElementById("lightbox").style.display = "flex";
-            });
-        });
-
-        function closeLightbox() {
-            document.getElementById("lightbox").style.display = "none";
-        }
-
-        document.getElementById("lightbox").addEventListener("click", (e) => {
-            if (e.target.id === "lightbox") {
-                closeLightbox();
+                img.classList.add("hidden");
             }
         });
+
+        document
+            .querySelectorAll(".filter-btn")
+            .forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+    }
+
+    // Lightbox logic
+    document.querySelectorAll(".gambah img").forEach((img) => {
+        img.addEventListener("click", () => {
+            document.getElementById("lightbox-img").src = img.src;
+            document.getElementById("lightbox").style.display = "flex";
+        });
+    });
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    document.getElementById("lightbox").addEventListener("click", (e) => {
+        if (e.target.id === "lightbox") {
+            closeLightbox();
+        }
+    });
     </script>
 </body>
 

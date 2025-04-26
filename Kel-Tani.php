@@ -263,51 +263,11 @@
         </section>
     </div>
 
-    <!-- Footer -->
+    <!-- Footter -->
     <footer>
-        <div class="container">
-            <div class="footer-brand">
-                <div class="logo-image-container">
-                    <img src="/assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
-                </div>
-
-                <div class="footer-brand-content">
-                    <div class="footer-address">
-                        <p class="address-text">
-                            <span class="address-line">Padukuhan Dukuh, </span>
-                            <span class="address-line">Desa Sinduharjo, </span>
-                            <span class="address-line">Kecamatan Ngaglik, </span>
-                            <span class="address-line">Kabupaten Sleman, </span>
-                            <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
-                        </p>
-                    </div>
-
-                    <div class="footer-social">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-facebook social-icon"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram social-icon"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter social-icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-section contact">
-                <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
-                <p>
-                    <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
-                    (08.00 - 11.00)
-                </p>
-            </div>
-            <div class="footer-section emergency">
-                <h4>Nomer Telephone Penting</h4>
-                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
-            </div>
-        </div>
+        <?php
+        include 'footer.php';
+        ?>
     </footer>
 
     <!--   *****   JQuery Link   *****   -->
@@ -319,108 +279,10 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Js main -->
-    <script src="/js/main.js"></script>
-
-    <script>
-        // Navbar JS
-        (function () {
-            "use strict";
-
-            // Apply .scrolled class to the body as the page is scrolled down
-            const toggleScrolled = () => {
-                const body = document.querySelector("body");
-                const header = document.querySelector("#header");
-
-                if (
-                    !header.classList.contains("scroll-up-sticky") &&
-                    !header.classList.contains("sticky-top") &&
-                    !header.classList.contains("fixed-top")
-                )
-                    return;
-
-                window.scrollY > 100 ?
-                    body.classList.add("scrolled") :
-                    body.classList.remove("scrolled");
-            };
-
-            // Event listeners for scroll and load
-            document.addEventListener("scroll", toggleScrolled);
-            window.addEventListener("load", toggleScrolled);
-
-            // Mobile navigation toggle
-            const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-            const mobileNavToogle = () => {
-                document.querySelector("body").classList.toggle("mobile-nav-active");
-                mobileNavToggleBtn.classList.toggle("bi-list");
-                mobileNavToggleBtn.classList.toggle("bi-x");
-            };
-            mobileNavToggleBtn?.addEventListener("click", mobileNavToogle);
-
-            // Hide mobile nav on same-page/hash links
-            document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-                navmenu.addEventListener("click", () => {
-                    if (document.querySelector(".mobile-nav-active")) {
-                        mobileNavToogle();
-                    }
-                });
-            });
-
-            // Toggle mobile nav dropdowns
-            document
-                .querySelectorAll(".navmenu .toggle-dropdown")
-                .forEach((navmenu) => {
-                    navmenu.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        const parent = this.parentNode;
-                        parent.classList.toggle("active");
-                        parent.nextElementSibling.classList.toggle("dropdown-active");
-                        e.stopImmediatePropagation();
-                    });
-                });
-
-            // Preloader
-            const preloader = document.querySelector("#preloader");
-            if (preloader) {
-                window.addEventListener("load", () => preloader.remove());
-            }
-
-            //  Scroll top button
-            const scrollTop = document.querySelector(".scroll-top");
-
-            const toggleScrollTop = () => {
-                if (scrollTop) {
-                    window.scrollY > 100 ?
-                        scrollTop.classList.add("active") :
-                        scrollTop.classList.remove("active");
-                }
-            };
-
-            scrollTop?.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
-
-            window.addEventListener("load", toggleScrollTop);
-            document.addEventListener("scroll", toggleScrollTop);
-
-            // Gallery image hover effects
-            document.querySelectorAll('.gallery-item').forEach(item => {
-                item.addEventListener('mouseenter', function () {
-                    this.querySelector('.gallery-caption').style.transform = 'translateY(0)';
-                });
-
-                item.addEventListener('mouseleave', function () {
-                    this.querySelector('.gallery-caption').style.transform = 'translateY(100%)';
-                });
-            });
-        })();
-    </script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>

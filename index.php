@@ -54,8 +54,7 @@
 
     <!-- Conten Home -->
     <section class="home">
-        <video class="video-slide active" src="vidio/Layout Dukuh .mp4" autoplay muted loop></video>
-
+        <video class="video-slide active" src="assets/vidio/Layout Dukuh .mp4" autoplay muted loop></video>
         <div class="content active">
             <h1>Sugeng rawuh <br /><span>di Padukuhan Dukuh kelurahan Sinduharjo</span></h1>
             <p>
@@ -68,7 +67,7 @@
     <!-- Intro Kades -->
     <section class="about">
         <div class="about-img">
-            <img src="assets/Staff/Kades.png" alt="" class="fade-in-image" class="touch-animate-img" />
+            <img src="assets/Staff/Kelapa_Dukuh.png" alt="" class="fade-in-image" class="touch-animate-img" />
         </div>
         <div class="about-content">
             <h2 class="heading">SAMBUTAN KEPALA DUKUH</h2>
@@ -218,51 +217,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footter -->
     <footer>
-        <div class="container">
-            <div class="footer-brand">
-                <div class="logo-image-container">
-                    <img src="assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
-                </div>
-
-                <div class="footer-brand-content">
-                    <div class="footer-address">
-                        <p class="address-text">
-                            <span class="address-line">Padukuhan Dukuh, </span>
-                            <span class="address-line">Desa Sinduharjo, </span>
-                            <span class="address-line">Kecamatan Ngaglik, </span>
-                            <span class="address-line">Kabupaten Sleman, </span>
-                            <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
-                        </p>
-                    </div>
-
-                    <div class="footer-social">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-facebook social-icon"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram social-icon"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter social-icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-section contact">
-                <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
-                <p>
-                    <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
-                    (08.00 - 11.00)
-                </p>
-            </div>
-            <div class="footer-section emergency">
-                <h4>Nomer Telephone Penting</h4>
-                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
-            </div>
-        </div>
+        <?php
+        include 'footer.php';
+        ?>
     </footer>
 
     <!-- Swiper JS (di akhir body) -->
@@ -274,21 +233,21 @@
     <!-- Bootstrap JS (bundle includes Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
 
     <!-- Swiper Inisialisasi -->
     <script>
-        const swiper = new Swiper('.berita-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 15,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
+    const swiper = new Swiper('.berita-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
     </script>
 </body>
 

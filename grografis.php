@@ -17,7 +17,14 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
-
+    <style>
+    @media (max-width: 768px) {
+        .contact-section h2 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+    </style>
 </head>
 
 <body>
@@ -135,51 +142,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footter -->
     <footer>
-        <div class="container">
-            <div class="footer-brand">
-                <div class="logo-image-container">
-                    <img src="/assets/Logodesa.png" alt="Logo Desa Sinduharjo" class="footer-logo" />
-                </div>
-
-                <div class="footer-brand-content">
-                    <div class="footer-address">
-                        <p class="address-text">
-                            <span class="address-line">Padukuhan Dukuh, </span>
-                            <span class="address-line">Desa Sinduharjo, </span>
-                            <span class="address-line">Kecamatan Ngaglik, </span>
-                            <span class="address-line">Kabupaten Sleman, </span>
-                            <span class="address-line">Propinsi Daerah Istimewa Yogyakarta</span>
-                        </p>
-                    </div>
-
-                    <div class="footer-social">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-facebook social-icon"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram social-icon"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter social-icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-section contact">
-                <h4>Kontak Desa</h4>
-                <p><i class="fas fa-phone"></i> +62 858-0060-7454</p>
-                <p>
-                    <i class="fas fa-clock"></i> Senin - Kamis (08.00 - 15.00) & Jumat
-                    (08.00 - 11.00)
-                </p>
-            </div>
-            <div class="footer-section emergency">
-                <h4>Nomer Telephone Penting</h4>
-                <p>Vito Pratama/Pemuda Dukuh :<br /><strong>+62 858-0060-7454</strong></p>
-            </div>
-        </div>
+        <?php
+        include 'footer.php';
+        ?>
     </footer>
 
     <!--   *****   JQuery Link   *****   -->
@@ -191,7 +158,7 @@
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
