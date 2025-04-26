@@ -166,7 +166,7 @@
     </section>
 
     <!-- Admistrasi -->
-    <section id="stats" class="stats section dark-background mb-4">
+    <section id="stats" class="stats section dark-background mb-3">
         <img src="" alt="" data-aos="fade-in" />
         <div class="container-fluid position-relative" data-aos="fade-up" data-aos-delay="100">
             <!-- Subheading Section -->
