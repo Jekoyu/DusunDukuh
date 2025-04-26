@@ -212,6 +212,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
       border: none;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      margin-top: 2rem;
       margin-bottom: 2rem;
     }
 
