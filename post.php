@@ -1,7 +1,22 @@
 <?php
 include 'conn.php';
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+$q = "SELECT 
+    categories.name AS category_name,
+    COUNT(posts.id) AS total
+FROM 
+    categories
+LEFT JOIN 
+    posts ON posts.category_id = categories.id
+GROUP BY 
+    categories.id, categories.name
+ORDER BY 
+    total DESC;
+";
+$data = $conn->query($q);
+
+// var_dump($category->fetch_all(MYSQLI_ASSOC));
 
 // echo "<pre>GET Parameters: ";
 // print_r($_GET);
@@ -29,8 +44,8 @@ $category = $_GET['category'] ?? '';
 // }
 // Validasi input
 if (empty($slug) || empty($category)) {
-    header("HTTP/1.0 404 Not Found");
-    die("<h1>404 - Halaman tidak ditemukan</h1>");
+  header("HTTP/1.0 404 Not Found");
+  die("<h1>404 - Halaman tidak ditemukan</h1>");
 }
 
 // Sanitize input
@@ -55,8 +70,8 @@ $post = $result->fetch_assoc();
 
 // Jika tidak ditemukan, tampilkan 404
 if (!$post) {
-    header("HTTP/1.0 404 Not Found");
-    die("<h1>404 - Berita tidak ditemukan</h1>");
+  header("HTTP/1.0 404 Not Found");
+  die("<h1>404 - Berita tidak ditemukan</h1>");
 }
 
 
@@ -66,8 +81,8 @@ $date = date('d F Y', strtotime($post['created_at']));
 $content = $post['content'];
 $views = number_format($post['views'] ?? 0);
 $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $post['image_url']))
-    ? '/assets/uploads/' . $post['image_url']
-    : '/assets/berita/B_1.webp';
+  ? '/assets/uploads/' . $post['image_url']
+  : '/assets/berita/B_1.webp';
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +97,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css" />
   <!-- Font Awesome -->
-   
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -284,74 +299,26 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
             </div>
           </div>
 
-          <!-- Latest News Item 2 -->
-          <div class="latest-news-item">
-            <a href="#" class="text-decoration-none text-dark">
-              <h5 class="latest-news-title">Pembangunan Jembatan Penghubung Dusun Mulai Dikerjakan</h5>
-            </a>
-            <div class="latest-news-meta">
-              <span><i class="far fa-calendar-alt"></i> 28 Agustus 2024</span>
-              <span><i class="far fa-eye"></i> 645 kali</span>
-            </div>
-          </div>
-
-          <!-- Latest News Item 3 -->
-          <div class="latest-news-item">
-            <a href="#" class="text-decoration-none text-dark">
-              <h5 class="latest-news-title">Posyandu Desa Kersik Adakan Pemeriksaan Kesehatan Gratis</h5>
-            </a>
-            <div class="latest-news-meta">
-              <span><i class="far fa-calendar-alt"></i> 25 Agustus 2024</span>
-              <span><i class="far fa-eye"></i> 589 kali</span>
-            </div>
-          </div>
-
-          <!-- Latest News Item 4 -->
-          <div class="latest-news-item">
-            <a href="#" class="text-decoration-none text-dark">
-              <h5 class="latest-news-title">Kelompok Tani Desa Kersik Panen Raya Padi Varietas Unggul</h5>
-            </a>
-            <div class="latest-news-meta">
-              <span><i class="far fa-calendar-alt"></i> 20 Agustus 2024</span>
-              <span><i class="far fa-eye"></i> 512 kali</span>
-            </div>
-          </div>
-
-          <!-- Latest News Item 5 -->
-          <div class="latest-news-item">
-            <a href="#" class="text-decoration-none text-dark">
-              <h5 class="latest-news-title">BUMDes Kersik Makmur Luncurkan Program Simpan Pinjam</h5>
-            </a>
-            <div class="latest-news-meta">
-              <span><i class="far fa-calendar-alt"></i> 15 Agustus 2024</span>
-              <span><i class="far fa-eye"></i> 478 kali</span>
-            </div>
-          </div>
+         
         </div>
 
         <!-- Categories Widget -->
         <div class="card p-4">
           <h3 class="sidebar-title">Kategori</h3>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Pemerintahan Desa
-              <span class="badge bg-primary rounded-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Pembangunan
-              <span class="badge bg-primary rounded-pill">8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Kesehatan
-              <span class="badge bg-primary rounded-pill">6</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Pendidikan
-              <span class="badge bg-primary rounded-pill">5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Pertanian
-              <span class="badge bg-primary rounded-pill">4</span>
+            <?php
+            if ($data->num_rows > 0) {
+              while ($row = $data->fetch_assoc()) {
+                echo "<li class='list-group-item d-flex justify-content-between align-items-center'>
+                <span>" . htmlspecialchars($row['category_name']) . "</span>
+                <span class='badge bg-primary rounded-pill'>" . $row['total'] . "</span>";
+              }
+            } else {
+              echo 'Mohon maaf Belum ada berita saat ini.';
+            }
+
+
+            ?>
             </li>
           </ul>
         </div>
@@ -413,7 +380,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
       </div>
     </div>
   </footer>
-  
+
   <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
