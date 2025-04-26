@@ -1,9 +1,9 @@
 <?php
 include 'conn.php';
 
-$query = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC";
+$query = "SELECT posts.*,categories.name,categories.slug as category_slug FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC";
 $result = $conn->query($query);
-// var_dump($result->num_rows);
+// var_dump($result->fetch_assoc() );
 
 $query_2 = "SELECT * FROM posts join categories on categories.id = posts.category_id where posts.status = 'published' AND  categories.name = 'Event' ORDER BY created_at DESC";
 $event = $conn->query($query_2);
@@ -62,6 +62,19 @@ $event = $conn->query($query_2);
         .admin-info {
             font-size: 0.8rem;
             color: #6c757d;
+        }
+
+        .event-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .event-wrapper::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .event-wrapper::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
     </style>
 </head>
@@ -174,9 +187,11 @@ $event = $conn->query($query_2);
                     while ($row = $result->fetch_assoc()) {
                         $id = $row['id'];
                         $title = $row['title'];
+                        $slug = $row['slug'];
+                        $category_slug = $row['category_slug'];
                         $content = $row['content'];
                         $date = date('d M Y', strtotime($row['created_at']));
-                        ?>
+                ?>
                         <div class="col-lg-4 col-md-6">
                             <div class="card news-card h-100">
                                 <!-- Tambahkan h-100 untuk tinggi seragam -->
@@ -196,11 +211,11 @@ $event = $conn->query($query_2);
                                         <span>👤 Administrator</span> |
                                         <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
                                     </div>
-                                    <a href="berita_detail.php?id=<?= $id ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
+                                    <a href="<?= strtolower($row['category_slug']) ?>/<?= $row['slug'] ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     }
                 } else {
                     echo 'Mohon maaf Belum ada berita saat ini.';
@@ -216,34 +231,27 @@ $event = $conn->query($query_2);
             <h2 class="display-6">EVENT MASYARAKAT</h2>
             <p class="fw-semibold">Informasi event dan kegiatan yang diadakan masyarakat Dusun Dukuh</p>
         </div>
-        <div class="event-wrapper">
-            <div class="event-container p-4" id="event">
-                <div class="event-item" style="
-                background-image: url('assets/program/17 Agustusan.webp');
-              ">
-                    <span class="text-event">
-                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 17 Agustus 2024</p>
-                        <p>Padukuhan Dukuh meriahkan HUT RI ke-80.</p>
-                    </span>
-                </div>
-                <div class="event-item" style="
-                background-image: url('assets/program/Ruwuhan.webp');
-              ">
-                    <span class="text-event">
-                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 20 November 2025</p>
-                        <p>Padukuhan Dukuh menggelar tradisi Ruwahan.</p>
-                    </span>
-                </div>
-                <div class="event-item" style="
-                background-image: url('assets/program/Hadrohan.webp');
-              ">
-                    <span class="text-event">
-                        <p class="event-date"><i class="fas fa-calendar-alt"></i> 5 Desember 2025</p>
-                        <p>Kegiatan keagamaan Dusun Dukuh, penampilan Hadroh..</p>
-                    </span>
-                </div>
+        <div class="event-wrapper" style="overflow-x: auto; white-space: nowrap; padding: 20px;">
+            <div class="event-container d-inline-flex" id="event">
+                <?php
+                if ($event->num_rows > 0) {
+                    while ($row = $event->fetch_assoc()) {
+                ?>
+                        <div class="event-item me-3" style="flex: 0 0 auto; width: 300px; height: 200px; background-image: url('assets/program/17 Agustusan.webp'); background-size: cover; background-position: center; border-radius: 10px;">
+                            <span class="text-event" style="color: white; background: rgba(0,0,0,0.5); padding: 10px; display: block;">
+                                <p class="event-date"><i class="fas fa-calendar-alt"></i> <?= date('d M Y', strtotime($row['created_at'])) ?></p>
+                                <p><?= htmlspecialchars($row['title']) ?></p>
+                            </span>
+                        </div>
+                <?php
+                    }
+                } else {
+                    echo "<p>Tidak ada event.</p>";
+                }
+                ?>
             </div>
         </div>
+
     </section>
 
     <!-- Footter -->
@@ -265,49 +273,49 @@ $event = $conn->query($query_2);
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
 
     <script>
-    // ---------- Corasel slider Berita ------------ //
-    docu ment.addEventListener("DOMContentLoaded", function () {
-        const captions = document.querySelectorAll(".carousel-caption");
+        // ---------- Corasel slider Berita ------------ //
+        docu ment.addEventListener("DOMContentLoaded", function() {
+            const captions = document.querySelectorAll(".carousel-caption");
 
-        capt ions.forEach((caption) => {
-            gsap.set(caption, {
-                opacity: 0,
-                y: 50
-            });
-        });
-
-        func tion animateCaption(slideIndex) {
-            cons t activeCaption = document.querySelector(
-            `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-        );
-
-            if (activeCaption) {
-                gsap.to(activeCaption, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power3.out",
+            capt ions.forEach((caption) => {
+                gsap.set(caption, {
+                    opacity: 0,
+                    y: 50
                 });
-            }
-        }
-        const carousel = document.querySelector("#carouselExam  pleCaptions");
-        carousel.addEventListener("slid.bs.carousel", function (event) {
-            const newIndex = event.to;
-            gsap.set(captions, {
-                opacity: 0,
-                y: 50
             });
 
-            animateCaption(newIndex);
+            func tion animateCaption(slideIndex) {
+                cons t activeCaption = document.querySelector(
+                    `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
+                );
+
+                if (activeCaption) {
+                    gsap.to(activeCaption, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        ease: "power3.out",
+                    });
+                }
+            }
+            const carousel = document.querySelector("#carouselExam  pleCaptions");
+            carousel.addEventListener("slid.bs.carousel", function(event) {
+                const newIndex = event.to;
+                gsap.set(captions, {
+                    opacity: 0,
+                    y: 50
+                });
+
+                animateCaption(newIndex);
+            });
+            animateCaption(0);
         });
-        animateCaption(0);
-    });
     </script>
 </body>
 

@@ -80,9 +80,9 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <!-- Font Awesome -->
-  <base href="DusunDukuh/" />
+   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -365,7 +365,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
       <div class="footer-brand">
         <div class="logo-image-container">
           <img
-            src="/assets/Logodesa.png"
+            src="assets/Logodesa.png"
             alt="Logo Desa Sinduharjo"
             class="footer-logo" />
         </div>
@@ -471,7 +471,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
     crossorigin="anonymous"></script>
 
 
-  <script src="/js/main.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 
