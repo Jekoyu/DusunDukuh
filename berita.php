@@ -32,78 +32,78 @@ $event = $conn->query($query_2);
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-    .news-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: none;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .news-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .card-img-top {
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .date-badge {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.8rem;
-    }
-
-    .admin-info {
-        font-size: 0.8rem;
-        color: #6c757d;
-    }
-
-    .event-wrapper::-webkit-scrollbar {
-        height: 8px;
-    }
-
-    .event-wrapper::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-
-    .event-wrapper::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-
-    .btn-berita {
-        background: none;
-        border: none;
-        color: #333333;
-        font-size: 14px;
-        font-weight: 400;
-        text-decoration: underline;
-        cursor: pointer;
-        padding: 0;
-        font-family: 'Poppins', sans-serif;
-        display: block;
-        text-align: right;
-    }
-
-    .btn-berita:hover {
-        color: #f8a23d;
-    }
-
-    @media (max-width: 760px) {
-        .event-item {
-            font-size: 12px;
-            width: 170px !important;
-            height: 250px !important;
+        .news-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-    }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .date-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .admin-info {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        .event-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .event-wrapper::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .event-wrapper::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .btn-berita {
+            background: none;
+            border: none;
+            color: #333333;
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            display: block;
+            text-align: right;
+        }
+
+        .btn-berita:hover {
+            color: #f8a23d;
+        }
+
+        @media (max-width: 760px) {
+            .event-item {
+                font-size: 12px;
+                width: 170px !important;
+                height: 250px !important;
+            }
+        }
     </style>
 </head>
 
@@ -202,8 +202,8 @@ $event = $conn->query($query_2);
     <section class="card-berita">
         <div class="d-flex flex-column align-items-center text-center text-berita">
             <h2 class="display-6">BERITA DUSUN</h2>
-            <p class="fw-semibold">Menyajikan informasi terbaru tentang peristiwa, berita terkini, dan event-event di
-                Dusun Dukuh</p>
+            <p class="fw-semibold">Menyajikan informasi berita dan event-event di
+                Padukuhan Dukuh</p>
         </div>
         <div class="container p-5 pt-4 pb-5">
             <div class="row g-4">
@@ -219,12 +219,12 @@ $event = $conn->query($query_2);
                         $image = $row['image_url'];
                         $date = date('d M Y', strtotime($row['created_at']));
                         ?>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card news-card h-100">
-                        <!-- Tambahkan h-100 untuk tinggi seragam -->
-                        <div class="position-relative">
-                            <!-- Gunakan gambar dari database jika ada -->
-                            <?php
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card news-card h-100">
+                                <!-- Tambahkan h-100 untuk tinggi seragam -->
+                                <div class="position-relative">
+                                    <!-- Gunakan gambar dari database jika ada -->
+                                    <?php
 
                                     if ($image) {
                                         echo "<img src='assets/uploads/$image' class='card-img-top' alt='$title'>";
@@ -234,25 +234,25 @@ $event = $conn->query($query_2);
                                     }
 
                                     ?>
-                            <div class=" date-badge">
-                                <?= $date ?>
+                                    <div class=" date-badge">
+                                        <?= $date ?>
+                                    </div>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
+                                    <p class="card-text flex-grow-1">
+                                        <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
+                                    </p>
+                                    <div class="admin-info mt-auto">
+                                        <span>👤 Administrator</span> |
+                                        <span>Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
+                                    </div>
+                                    <a href="<?= strtolower($row['category_slug']) ?>/<?= $row['slug'] ?>"
+                                        class="btn btn-berita mt-2">Baca Selengkapnya</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="fw-semibold card-title"><?= htmlspecialchars(substr($title, 0, 50)) ?></h5>
-                            <p class="card-text flex-grow-1">
-                                <?= htmlspecialchars(substr(strip_tags($content), 0, 100)) ?>...
-                            </p>
-                            <div class="admin-info mt-auto">
-                                <span>👤 Administrator</span> |
-                                <span>Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
-                            </div>
-                            <a href="<?= strtolower($row['category_slug']) ?>/<?= $row['slug'] ?>"
-                                class="btn btn-berita mt-2">Baca Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <?php
+                        <?php
                     }
                 } else {
                     echo 'Mohon maaf Belum ada berita saat ini.';
@@ -266,7 +266,7 @@ $event = $conn->query($query_2);
     <section class="event m-5">
         <div class="d-flex flex-column align-items-center text-center">
             <h2 class="display-6">EVENT MASYARAKAT</h2>
-            <p class="fw-semibold">Informasi event dan kegiatan yang diadakan masyarakat Dusun Dukuh</p>
+            <p class="fw-semibold">Informasi event dan kegiatan yang diadakan masyarakat Padukuhan Dukuh</p>
         </div>
         <div class="event-wrapper" style="overflow-x: auto; white-space: nowrap; padding: 20px;">
             <div class="event-container d-inline-flex" id="event">
@@ -274,16 +274,16 @@ $event = $conn->query($query_2);
                 if ($event->num_rows > 0) {
                     while ($row = $event->fetch_assoc()) {
                         ?>
-                <div class="event-item me-3"
-                    style="flex: 0 0 auto; width: 250px; height: 350px; background-image: url('assets/program/17 Agustusan.webp'); background-size: cover; background-position: center; border-radius: 10px;">
-                    <span class="text-event"
-                        style="color: white; background: rgba(0,0,0,0.5); padding: 10px; display: block;">
-                        <p class="event-date"><i class="fas fa-calendar-alt"></i>
-                            <?= date('d M Y', strtotime($row['created_at'])) ?></p>
-                        <p><?= htmlspecialchars($row['title']) ?></p>
-                    </span>
-                </div>
-                <?php
+                        <div class="event-item me-3"
+                            style="flex: 0 0 auto; width: 250px; height: 350px; background-image: url('assets/program/17 Agustusan.webp'); background-size: cover; background-position: center; border-radius: 10px;">
+                            <span class="text-event"
+                                style="color: white; background: rgba(0,0,0,0.5); padding: 10px; display: block;">
+                                <p class="event-date"><i class="fas fa-calendar-alt"></i>
+                                    <?= date('d M Y', strtotime($row['created_at'])) ?></p>
+                                <p><?= htmlspecialchars($row['title']) ?></p>
+                            </span>
+                        </div>
+                        <?php
                     }
                 } else {
                     echo "<p>Tidak ada event.</p>";
@@ -313,49 +313,49 @@ $event = $conn->query($query_2);
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
 
     <script>
-    // ---------- Corasel slider Berita ------------ //
-    document.addEventListener("DOMContentLoaded", function() {
-        const ca ptions = document.querySelectorAll(".carousel-caption");
+        // ---------- Corasel slider Berita ------------ //
+        document.addEventListener("DOMContentLoaded", function () {
+            const ca ptions = document.querySelectorAll(".carousel-caption");
 
-        captions.forEach((caption) => {
-            gsap.set(caption, {
-                opacity: 0,
-                y: 50
-            });
-        });
-
-        function animateCaption(slideIndex) {
-            const activeCaption = document.querySelector(
-                `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
-            );
-
-            if (activeCaption) {
-                gsap.to(activeCaption, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power3.out",
+            captions.forEach((caption) => {
+                gsap.set(caption, {
+                    opacity: 0,
+                    y: 50
                 });
-            }
-        }
-        const ca rousel = document.querySelector("#carouselExam  pleCaptions");
-        carousel.addEventListener("slid.bs.carousel", function(event) {
-            const newIndex = event.to;
-            gsap.set(captions, {
-                opacity: 0,
-                y: 50
             });
 
-            animateCaption(newIndex);
+            function animateCaption(slideIndex) {
+                const activeCaption = document.querySelector(
+                    `.carousel-item:nth-child(${slideIndex + 1}) .carousel-caption`
+                );
+
+                if (activeCaption) {
+                    gsap.to(activeCaption, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        ease: "power3.out",
+                    });
+                }
+            }
+            const ca rousel = document.querySelector("#carouselExam  pleCaptions");
+            carousel.addEventListener("slid.bs.carousel", function (event) {
+                const newIndex = event.to;
+                gsap.set(captions, {
+                    opacity: 0,
+                    y: 50
+                });
+
+                animateCaption(newIndex);
+            });
+            animateCaption(0);
         });
-        animateCaption(0);
-    });
     </script>
 </body>
 
