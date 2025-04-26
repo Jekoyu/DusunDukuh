@@ -19,7 +19,7 @@ $data = $conn->query($q);
 
 $r = "SELECT posts.*,categories.name,categories.slug as category_slug FROM posts 
 join categories on categories.id = posts.category_id 
-where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC";
+where posts.status = 'published' AND  categories.name = 'Berita' ORDER BY created_at DESC LIMIT 5";
 $data2 = $conn->query($r);
 // var_dump($category->fetch_all(MYSQLI_ASSOC));
 
