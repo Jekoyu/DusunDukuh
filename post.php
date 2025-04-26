@@ -368,7 +368,7 @@ $image_url = (!empty($post['image_url']) && file_exists('assets/uploads/' . $pos
     </script>
 
 
-  <script src="js/navbar.js"></script>
+  <script src="/js/navbar.js"></script>
 
 </body>
 

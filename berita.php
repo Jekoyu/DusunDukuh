@@ -195,7 +195,7 @@ $event = $conn->query($query_2);
                         $content = $row['content'];
                         $image = $row['image_url'];
                         $date = date('d M Y', strtotime($row['created_at']));
-                ?>
+                        ?>
                         <div class="col-lg-4 col-md-6">
                             <div class="card news-card h-100">
                                 <!-- Tambahkan h-100 untuk tinggi seragam -->
@@ -222,13 +222,14 @@ $event = $conn->query($query_2);
                                     </p>
                                     <div class="admin-info mt-auto">
                                         <span>👤 Administrator</span> |
-                                        <span>👁️ Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
+                                        <span>Dilihat <?= $row['views'] ?? rand(500, 1000) ?> kali</span>
                                     </div>
-                                    <a href="<?= strtolower($row['category_slug']) ?>/<?= $row['slug'] ?>" class="btn btn-primary mt-2">Baca Selengkapnya</a>
+                                    <a href="<?= strtolower($row['category_slug']) ?>/<?= $row['slug'] ?>"
+                                        class="btn btn-primary mt-2">Baca Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
-                <?php
+                        <?php
                     }
                 } else {
                     echo 'Mohon maaf Belum ada berita saat ini.';
@@ -249,14 +250,17 @@ $event = $conn->query($query_2);
                 <?php
                 if ($event->num_rows > 0) {
                     while ($row = $event->fetch_assoc()) {
-                ?>
-                        <div class="event-item me-3" style="flex: 0 0 auto; width: 250px; height: 350px; background-image: url('assets/program/17 Agustusan.webp'); background-size: cover; background-position: center; border-radius: 10px;">
-                            <span class="text-event" style="color: white; background: rgba(0,0,0,0.5); padding: 10px; display: block;">
-                                <p class="event-date"><i class="fas fa-calendar-alt"></i> <?= date('d M Y', strtotime($row['created_at'])) ?></p>
+                        ?>
+                        <div class="event-item me-3"
+                            style="flex: 0 0 auto; width: 250px; height: 350px; background-image: url('assets/program/17 Agustusan.webp'); background-size: cover; background-position: center; border-radius: 10px;">
+                            <span class="text-event"
+                                style="color: white; background: rgba(0,0,0,0.5); padding: 10px; display: block;">
+                                <p class="event-date"><i class="fas fa-calendar-alt"></i>
+                                    <?= date('d M Y', strtotime($row['created_at'])) ?></p>
                                 <p><?= htmlspecialchars($row['title']) ?></p>
                             </span>
                         </div>
-                <?php
+                        <?php
                     }
                 } else {
                     echo "<p>Tidak ada event.</p>";
@@ -286,14 +290,14 @@ $event = $conn->query($query_2);
     <!-- Bootstrep JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Js main -->
     <script src="js/navbar.js"></script>
 
     <script>
         // ---------- Corasel slider Berita ------------ //
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const captions = document.querySelectorAll(".carousel-caption");
 
             captions.forEach((caption) => {
@@ -318,7 +322,7 @@ $event = $conn->query($query_2);
                 }
             }
             const carousel = document.querySelector("#carouselExam  pleCaptions");
-            carousel.addEventListener("slid.bs.carousel", function(event) {
+            carousel.addEventListener("slid.bs.carousel", function (event) {
                 const newIndex = event.to;
                 gsap.set(captions, {
                     opacity: 0,
