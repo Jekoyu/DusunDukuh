@@ -107,7 +107,7 @@ $event = $conn->query($query_2);
                 height: 250px !important;
             }
 
-            .berita-slider h2 {
+            .text-berita {
                 font-size: 20px;
             }
         }
