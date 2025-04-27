@@ -154,7 +154,7 @@ $event = $conn->query($query_2);
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/berita/B_2.webp" class="d-block w-100" alt="...">
+                    <img src="assets/berita/B_3.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption">
                         <h2
                             style="color: #f8a23d; font-family: 'Dancing Script', cursive; font-size: 40px; font-weight: 700; letter-spacing: 1px; text-transform: capitalize;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
